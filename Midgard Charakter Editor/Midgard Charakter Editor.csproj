@@ -157,6 +157,7 @@
     <Compile Include="Database\Class.cs" />
     <Compile Include="Database\MidgardContext.cs" />
     <Compile Include="Database\Race.cs" />
+    <Compile Include="Database\Spell.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

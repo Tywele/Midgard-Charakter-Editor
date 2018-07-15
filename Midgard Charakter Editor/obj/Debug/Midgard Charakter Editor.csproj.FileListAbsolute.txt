@@ -13,3 +13,172 @@ D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Mid
 D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csproj.CoreCompileInputs.cache
 D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.exe
 D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.pdb
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csprojAssemblyReference.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.exe.config
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\MainWindow.g.cs
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\App.g.cs
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor_Content.g.cs
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor_MarkupCompile.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor_MarkupCompile.lref
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.exe
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.pdb
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\x86\e_sqlite3.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\x64\e_sqlite3.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Midgard Charakter Editor.exe.config
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Midgard Charakter Editor.exe
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Midgard Charakter Editor.pdb
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\netstandard.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.AppContext.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Collections.Concurrent.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Collections.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Collections.NonGeneric.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Collections.Specialized.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ComponentModel.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ComponentModel.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Console.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Data.Common.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.Contracts.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.Debug.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.Process.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.Tools.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.Tracing.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Drawing.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Dynamic.Runtime.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Globalization.Calendars.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Globalization.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Globalization.Extensions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.Compression.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.FileSystem.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.IsolatedStorage.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.Pipes.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Linq.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Linq.Expressions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Linq.Parallel.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Linq.Queryable.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.Http.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.NameResolution.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.NetworkInformation.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.Ping.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.Requests.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.Security.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.Sockets.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.WebSockets.Client.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Net.WebSockets.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ObjectModel.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Reflection.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Reflection.Extensions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Reflection.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Resources.Reader.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Resources.ResourceManager.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Resources.Writer.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Extensions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Handles.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.InteropServices.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Numerics.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Claims.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.Principal.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Security.SecureString.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Text.Encoding.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Text.RegularExpressions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.Overlapped.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.Tasks.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.Thread.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.ThreadPool.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Threading.Timer.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ValueTuple.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Xml.ReaderWriter.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Xml.XDocument.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Xml.XmlDocument.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Xml.XmlSerializer.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Xml.XPath.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Data.Sqlite.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Remotion.Linq.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\SQLitePCLRaw.batteries_green.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\SQLitePCLRaw.core.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Buffers.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Collections.Immutable.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Interactive.Async.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Memory.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Numerics.Vectors.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Data.Sqlite.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.EntityFrameworkCore.Sqlite.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\Remotion.Linq.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Buffers.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Collections.Immutable.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Interactive.Async.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Memory.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Numerics.Vectors.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\MainWindow.baml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.g.resources
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard_Charakter_Editor.Properties.Resources.resources
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csproj.GenerateResource.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csproj.CoreCompileInputs.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csproj.CopyComplete

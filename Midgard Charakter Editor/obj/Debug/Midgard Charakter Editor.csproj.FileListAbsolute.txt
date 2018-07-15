@@ -1,0 +1,15 @@
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\bin\Debug\Midgard Charakter Editor.exe.config
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\bin\Debug\Midgard Charakter Editor.exe
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\bin\Debug\Midgard Charakter Editor.pdb
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csprojAssemblyReference.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\MainWindow.g.cs
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\App.g.cs
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor_MarkupCompile.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor_MarkupCompile.lref
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\MainWindow.baml
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.g.resources
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard_Charakter_Editor.Properties.Resources.resources
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csproj.GenerateResource.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.csproj.CoreCompileInputs.cache
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.exe
+D:\Dokumente\Visual Studio\Midgard-Charakter-Editor\Midgard Charakter Editor\Midgard Charakter Editor\obj\Debug\Midgard Charakter Editor.pdb

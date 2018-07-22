@@ -153,11 +153,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Database\Category.cs" />
     <Compile Include="Database\Character.cs" />
     <Compile Include="Database\Class.cs" />
     <Compile Include="Database\MidgardContext.cs" />
     <Compile Include="Database\Race.cs" />
+    <Compile Include="Database\Skill.cs" />
     <Compile Include="Database\Spell.cs" />
+    <Compile Include="Database\WeaponSkill.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

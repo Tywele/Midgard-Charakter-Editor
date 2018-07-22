@@ -8,5 +8,6 @@ namespace Midgard_Charakter_Editor.Database
 {
 	public class WeaponSkill
 	{
+
 	}
 }

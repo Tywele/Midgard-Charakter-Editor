@@ -8,5 +8,7 @@ namespace Midgard_Charakter_Editor.Database
 {
 	public class Category
 	{
+		public int CategoryID { get; set; }
+		public string Name { get; set; }
 	}
 }

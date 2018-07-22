@@ -155,7 +155,12 @@
     </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\Character.cs" />
+    <Compile Include="Database\CharacterHasSkill.cs" />
+    <Compile Include="Database\CharacterHasSpell.cs" />
+    <Compile Include="Database\CharacterHasWeaponSkill.cs" />
     <Compile Include="Database\Class.cs" />
+    <Compile Include="Database\ClassCategoryAffinity.cs" />
+    <Compile Include="Database\LearningCosts.cs" />
     <Compile Include="Database\MidgardContext.cs" />
     <Compile Include="Database\Race.cs" />
     <Compile Include="Database\Skill.cs" />

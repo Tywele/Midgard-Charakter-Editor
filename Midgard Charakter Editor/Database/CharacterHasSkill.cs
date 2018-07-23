@@ -8,5 +8,9 @@ namespace Midgard_Charakter_Editor.Database
 {
 	public class CharacterHasSkill
 	{
+		public int Id { get; set; }
+		public Character Character { get; set; }
+		public Skill Skill { get; set; }
+		public int Value { get; set; }
 	}
 }

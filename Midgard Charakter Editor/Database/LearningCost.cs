@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Midgard_Charakter_Editor.Database
 {
-	public class CharacterHasWeaponSkill
+	public class LearningCost
 	{
 		public int Id { get; set; }
-		public Character Character { get; set; }
-		public WeaponSkill WeaponSkill { get; set; }
 		public int Value { get; set; }
-		public bool Specialization { get; set; }
+		public int Easy { get; set; }
+		public int Normal { get; set; }
+		public int Hard { get; set; }
+		public int VeryHard { get; set; }
+		public Category Category { get; set; }
 	}
 }

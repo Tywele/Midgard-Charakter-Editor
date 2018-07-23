@@ -8,7 +8,9 @@ namespace Midgard_Charakter_Editor.Database
 {
 	public class Category
 	{
-		public int CategoryID { get; set; }
+		public int Id { get; set; }
 		public string Name { get; set; }
+
+		public virtual ICollection<SkillHasCategory> SkillHasCategories { get; set; }
 	}
 }

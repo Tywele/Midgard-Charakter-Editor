@@ -1,8 +1,10 @@
-﻿namespace Midgard_Charakter_Editor.Database
+﻿using System.Collections.Generic;
+
+namespace Midgard_Charakter_Editor.Database
 {
 	public class Character
 	{
-		public int CharacterID { get; set; }
+		public int Id { get; set; }
 		public string Name { get; set; }
 		public Race Race { get; set; }
 		public Class Class { get; set; }
@@ -28,5 +30,9 @@
 		public int Xp { get; set; }
 		public int Level { get; set; }
 		public int OpenXp { get; set; }
+
+		public virtual ICollection<CharacterHasSpell> CharacterHasSpells { get; set; }
+		public virtual ICollection<CharacterHasSkill> CharacterHasSkills { get; set; }
+		public virtual ICollection<CharacterHasWeaponSkill> CharacterHasWeaponSkills { get; set; }
 	}
 }

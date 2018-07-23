@@ -1,8 +1,10 @@
-﻿namespace Midgard_Charakter_Editor.Database
+﻿using System.Collections.Generic;
+
+namespace Midgard_Charakter_Editor.Database
 {
 	public class Spell
 	{
-		public int SpellID { get; set; }
+		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Type { get; set; }
 		public string Process { get; set; }
@@ -19,5 +21,7 @@
 		public string Material { get; set; }
 		public int Level { get; set; }
 		public string Category { get; set; }
+		
+		public virtual ICollection<Character> Characters { get; set; }
 	}
 }

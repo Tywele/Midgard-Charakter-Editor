@@ -16,5 +16,13 @@ namespace Midgard_Charakter_Editor.Database
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+
+        public ClassCost(int id, int value, int classId, int categoryId)
+        {
+            Id = id;
+            Value = value;
+            ClassId = classId;
+            CategoryId = categoryId;
+        }
     }
 }

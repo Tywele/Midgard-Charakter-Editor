@@ -14,8 +14,8 @@ namespace Midgard_Charakter_Editor
 			InitializeComponent();
 			using (var context = new MidgardContext())
 			{
-                foreach( var category in context.Categories.ToList())
-                    System.Console.WriteLine(category.Name);
+                //context.Classes.Add(new Class { Name = "Test", Abbreviation = "tst" });
+                //context.SaveChanges();
 			}
 		}
 	}

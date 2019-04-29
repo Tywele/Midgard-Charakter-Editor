@@ -7,7 +7,10 @@ namespace Midgard_Charakter_Editor.Database
 		public int Id { get; set; }
 		public string Name { get; set; }
 		public string Type { get; set; }
-		public string Process { get; set; }
+
+        public int ProcessId { get; set; }
+		public Category Process { get; set; }
+
 		public string Agent { get; set; }
 		public string Reagent { get; set; }
 		public string Cost { get; set; }
@@ -20,7 +23,9 @@ namespace Midgard_Charakter_Editor.Database
 		public string Description { get; set; }
 		public string Material { get; set; }
 		public int Level { get; set; }
-		public string Category { get; set; }
+
+        public int CategoryId { get; set; }
+		public Category Category { get; set; }
 		
 		public virtual ICollection<Character> Characters { get; set; }
 	}

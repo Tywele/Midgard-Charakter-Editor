@@ -366,6 +366,153 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<ClassCost>().HasData(new ClassCost(183, 60, 15, 16));
             modelBuilder.Entity<ClassCost>().HasData(new ClassCost(184, 60, 15, 17));
             modelBuilder.Entity<ClassCost>().HasData(new ClassCost(185, 60, 15, 18));
+
+            // Init Skills
+            modelBuilder.Entity<Skill>().HasData(new Skill(1, "Abwehr", "gw", "Kampf", 10));
+            modelBuilder.Entity<Skill>().HasData(new Skill(2, "Akrobatik", "gw", "Bewegung", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(3, "Alchemie", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(4, "Anführen", "pa", "Sozial", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(5, "Athletik", "st", "Körperbeherrschung", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(6, "Balancieren", "gw", "Bewegung", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(7, "Beidhändiger Kampf", "gs", "Kampf", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(8, "Beredsamkeit", "pa", "Sozial", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(9, "Betäuben", "gs", "Kampf", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(10, "Bootfahren", "gs", "Bewegung", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(11, "Erste Hilfe", "gs", "Fingerfertigkeit", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(12, "Etikette", "in", "Sozial", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(13, "Fälschen", "gs", "Fingerfertigkeit", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(14, "Fallen entdecken", "in", "Entdeckung", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(15, "Fallenmechanik", "gs", "Fingerfertigkeit", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(16, "Fechten", "gs", "Kampf", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(17, "Gassenwissen", "in", "Sozial", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(18, "Gaukeln", "gs", "Fingerfertigkeit", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(19, "Geländelauf", "gw", "Bewegung", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(20, "Gerätekunde", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(21, "Geschäftssinn", "in", "Sozial", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(22, "Glücksspiel", "gs", "Fingerfertigkeit", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(23, "Heilkunde", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(24, "Kampf in Vollrüstung", "st", "Kampf", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(25, "Klettern", "st", "Bewegung", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(26, "Landeskunde", "in", "Wissen", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(27, "Laufen", "ko", "Bewegung", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(28, "Lesen von Zauberschrift", "in", "Wissen"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(29, "Meditieren", "wk", "Körperbeherrschung", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(30, "Menschenkenntnis", "in", "Sozial", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(31, "Meucheln", "gs", "Kampf", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(32, "Musizieren", "gs", "Fingerfertigkeit"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(33, "Naturkunde", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(34, "Pflanzenkunde", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(35, "Reiten", "gw", "Bewegung", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(36, "Reiterkampf", "gw", "Kampf", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(37, "Geistresistenz", "in", "Körperbeherrschung", 10));
+            modelBuilder.Entity<Skill>().HasData(new Skill(38, "Körperresistenz", "ko", "Körperbeherrschung", 10));
+            modelBuilder.Entity<Skill>().HasData(new Skill(39, "Scharfschießen", "gs", "Kampf", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(40, "Schleichen", "gw", "Bewegung", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(41, "Schlösser öffnen", "gs", "Fingerfertigkeit", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(42, "Schreiben: Sprache", "in", "Wissen"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(43, "Schwimmen", "gw", "Bewegung", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(44, "Seilkunst", "gs", "Fingerfertigkeit", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(45, "Sprechen: Sprache", "in", "Wissen"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(46, "Spurensuche", "in", "Entdeckung", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(47, "Stehlen", "gs", "Fingerfertigkeit", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(48, "Tarnen", "gw", "Entdeckung", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(49, "Tauchen", "ko", "Bewegung", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(50, "Tierkunde", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(51, "Überleben: Gebirge", "in", "Wissen", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(52, "Überleben: Steppe", "in", "Wissen", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(53, "Überleben: Wald", "in", "Wissen", 6));
+            modelBuilder.Entity<Skill>().HasData(new Skill(54, "Verführen", "pa", "Sozial", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(55, "Verhören", "pa", "Sozial", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(56, "Verstellen", "pa", "Sozial", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(57, "Wagenlenken", "gs", "Bewegung", 3));
+            modelBuilder.Entity<Skill>().HasData(new Skill(58, "Zauberkunde", "in", "Wissen", 0));
+            modelBuilder.Entity<Skill>().HasData(new Skill(59, "Zaubern", "zt", "Zaubern", 3));
+
+            // Init SkillHasCategories
+            //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(1, 1, -1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(2, 2, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(3, 2, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(4, 3, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(5, 4, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(6, 4, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(7, 5, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(8, 5, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(9, 6, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(10, 6, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(11, 7, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(12, 8, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(13, 9, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(14, 9, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(15, 10, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(16, 11, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(17, 11, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(18, 12, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(19, 12, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(20, 13, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(21, 14, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(22, 15, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(23, 16, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(24, 17, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(25, 17, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(26, 17, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(27, 18, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(28, 19, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(29, 19, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(30, 20, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(31, 21, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(32, 22, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(33, 22, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(34, 23, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(35, 24, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(36, 25, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(37, 25, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(38, 25, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(39, 26, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(40, 27, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(41, 28, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(42, 29, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(43, 29, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(44, 30, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(45, 31, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(46, 32, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(47, 33, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(48, 33, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(49, 34, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(50, 34, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(51, 35, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(52, 35, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(53, 36, 4));
+            //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(54, 37, -1));
+            //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(55, 38, -1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(56, 39, 4));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(57, 40, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(58, 40, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(59, 41, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(60, 42, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(61, 42, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(62, 43, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(63, 43, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(64, 44, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(65, 45, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(66, 45, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(67, 46, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(68, 46, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(69, 47, 3));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(70, 47, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(71, 48, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(72, 48, 7));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(73, 49, 5));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(74, 50, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(75, 50, 9));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(76, 51, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(77, 52, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(78, 53, 2));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(79, 54, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(80, 55, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(81, 56, 6));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(82, 57, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(83, 58, 9));
+            //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(84, 59, -1));
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -377,6 +524,7 @@ namespace Midgard_Charakter_Editor.Database
         public DbSet<LearningCost> LearningCosts { get; set; }
         public DbSet<Race> Races { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<SkillHasCategory> SkillHasCategories { get; set; }
         public DbSet<Spell> Spells { get; set; }
         public DbSet<WeaponSkill> WeaponSkills { get; set; }
     }

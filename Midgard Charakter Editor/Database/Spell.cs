@@ -13,7 +13,7 @@ namespace Midgard_Charakter_Editor.Database
 
 		public string Agent { get; set; }
 		public string Reagent { get; set; }
-		public string Cost { get; set; }
+		public string CastingCost { get; set; }
 		public string Casttime { get; set; }
 		public string Range { get; set; }
 		public string Target { get; set; }
@@ -23,6 +23,7 @@ namespace Midgard_Charakter_Editor.Database
 		public string Description { get; set; }
 		public string Material { get; set; }
 		public int Level { get; set; }
+        public int LearningCost { get; set; }
 
         public int CategoryId { get; set; }
 		public Category Category { get; set; }

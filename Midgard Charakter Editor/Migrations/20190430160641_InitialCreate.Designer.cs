@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Midgard_Charakter_Editor.Database;
 
 namespace Midgard_Charakter_Editor.Migrations
 {
     [DbContext(typeof(MidgardContext))]
-    partial class MidgardContextModelSnapshot : ModelSnapshot
+    [Migration("20190430160641_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

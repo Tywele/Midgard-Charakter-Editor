@@ -839,6 +839,15 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Spell>().HasData(new Spell(317, "Die Klänge der Linderung", "-", 15, "Metall", "Luft", "1", "5 min", "15 m", "Geist", "1 Wesen", "0", "-", "Harfe oder Laute, Stimme", 5, 5, 19));
             modelBuilder.Entity<Spell>().HasData(new Spell(318, "Die Klänge des Zusammenwachsens", "-", 15, "Magan", "Erde", "2", "3 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Harfe oder Laute, Stimme", 5, 5, 19));
             modelBuilder.Entity<Spell>().HasData(new Spell(319, "Die überzeugende Stimme", "-", 10, "Feuer", "Luft", "2", "1 min", "15 m", "Geist", "1 Wesen", "2 min", "-", "Stimme", 5, 5, 19));
+
+            // Init DefenseWeaponLearningCosts
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(1, 2, 1));
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(2, 3, 2));
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(3, 4, 10));
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(4, 5, 30));
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(5, 6, 50));
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(6, 7, 100));
+            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(7, 8, 150));
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -847,6 +856,7 @@ namespace Midgard_Charakter_Editor.Database
         public DbSet<Class> Classes { get; set; }
         public DbSet<ClassCategoryAffinity> ClassCategoryAffinities { get; set; }
         public DbSet<ClassCost> ClassCosts { get; set; }
+        public DbSet<DefenseWeaponLearningCost> DefenseWeaponLearningCosts { get; set; }
         public DbSet<LearningCost> LearningCosts { get; set; }
         public DbSet<Race> Races { get; set; }
         public DbSet<Skill> Skills { get; set; }

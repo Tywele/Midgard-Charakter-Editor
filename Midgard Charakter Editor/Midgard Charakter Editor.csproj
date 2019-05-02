@@ -210,6 +210,7 @@
     <Compile Include="Database\Race.cs" />
     <Compile Include="Database\Skill.cs" />
     <Compile Include="Database\SkillHasCategory.cs" />
+    <Compile Include="Database\SocialClass.cs" />
     <Compile Include="Database\Spell.cs" />
     <Compile Include="Database\WeaponSkill.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -218,9 +219,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20190430160641_InitialCreate.cs" />
-    <Compile Include="Migrations\20190430160641_InitialCreate.designer.cs">
-      <DependentUpon>20190430160641_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20190502134726_InitialCreate.cs" />
+    <Compile Include="Migrations\20190502134726_InitialCreate.designer.cs">
+      <DependentUpon>20190502134726_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MidgardContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

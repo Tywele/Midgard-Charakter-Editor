@@ -1701,6 +1701,64 @@ namespace Midgard_Charakter_Editor.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Midgard_Charakter_Editor.Database.DefenseWeaponLearningCost", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Cost");
+
+                    b.Property<int>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DefenseWeaponLearningCosts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Cost = 1,
+                            Value = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Cost = 2,
+                            Value = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Cost = 10,
+                            Value = 4
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Cost = 30,
+                            Value = 5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Cost = 50,
+                            Value = 6
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Cost = 100,
+                            Value = 7
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Cost = 150,
+                            Value = 8
+                        });
+                });
+
             modelBuilder.Entity("Midgard_Charakter_Editor.Database.LearningCost", b =>
                 {
                     b.Property<int>("Id")
@@ -3200,6 +3258,8 @@ namespace Midgard_Charakter_Editor.Migrations
 
                     b.Property<int>("CategoryId");
 
+                    b.Property<int>("Difficulty");
+
                     b.Property<int>("SkillId");
 
                     b.HasKey("Id");
@@ -3215,480 +3275,560 @@ namespace Midgard_Charakter_Editor.Migrations
                         {
                             Id = 2,
                             CategoryId = 3,
+                            Difficulty = 2,
                             SkillId = 2
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 5,
+                            Difficulty = 3,
                             SkillId = 2
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 3
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 4,
+                            Difficulty = 2,
                             SkillId = 4
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 6,
+                            Difficulty = 1,
                             SkillId = 4
                         },
                         new
                         {
                             Id = 7,
                             CategoryId = 4,
+                            Difficulty = 2,
                             SkillId = 5
                         },
                         new
                         {
                             Id = 8,
                             CategoryId = 5,
+                            Difficulty = 3,
                             SkillId = 5
                         },
                         new
                         {
                             Id = 9,
                             CategoryId = 5,
+                            Difficulty = 1,
                             SkillId = 6
                         },
                         new
                         {
                             Id = 10,
                             CategoryId = 3,
+                            Difficulty = 1,
                             SkillId = 6
                         },
                         new
                         {
                             Id = 11,
                             CategoryId = 4,
+                            Difficulty = 4,
                             SkillId = 7
                         },
                         new
                         {
                             Id = 12,
                             CategoryId = 6,
+                            Difficulty = 2,
                             SkillId = 8
                         },
                         new
                         {
                             Id = 13,
                             CategoryId = 3,
+                            Difficulty = 4,
                             SkillId = 9
                         },
                         new
                         {
                             Id = 14,
                             CategoryId = 4,
+                            Difficulty = 3,
                             SkillId = 9
                         },
                         new
                         {
                             Id = 15,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 10
                         },
                         new
                         {
                             Id = 16,
                             CategoryId = 1,
+                            Difficulty = 3,
                             SkillId = 11
                         },
                         new
                         {
                             Id = 17,
                             CategoryId = 9,
+                            Difficulty = 2,
                             SkillId = 11
                         },
                         new
                         {
                             Id = 18,
                             CategoryId = 1,
+                            Difficulty = 3,
                             SkillId = 12
                         },
                         new
                         {
                             Id = 19,
                             CategoryId = 6,
+                            Difficulty = 1,
                             SkillId = 12
                         },
                         new
                         {
                             Id = 20,
                             CategoryId = 3,
+                            Difficulty = 1,
                             SkillId = 13
                         },
                         new
                         {
                             Id = 21,
                             CategoryId = 7,
+                            Difficulty = 2,
                             SkillId = 14
                         },
                         new
                         {
                             Id = 22,
                             CategoryId = 7,
+                            Difficulty = 3,
                             SkillId = 15
                         },
                         new
                         {
                             Id = 23,
                             CategoryId = 4,
+                            Difficulty = 4,
                             SkillId = 16
                         },
                         new
                         {
                             Id = 24,
                             CategoryId = 3,
+                            Difficulty = 3,
                             SkillId = 17
                         },
                         new
                         {
                             Id = 25,
                             CategoryId = 6,
+                            Difficulty = 2,
                             SkillId = 17
                         },
                         new
                         {
                             Id = 26,
                             CategoryId = 7,
+                            Difficulty = 1,
                             SkillId = 17
                         },
                         new
                         {
                             Id = 27,
                             CategoryId = 3,
+                            Difficulty = 1,
                             SkillId = 18
                         },
                         new
                         {
                             Id = 28,
                             CategoryId = 4,
+                            Difficulty = 1,
                             SkillId = 19
                         },
                         new
                         {
                             Id = 29,
                             CategoryId = 5,
+                            Difficulty = 1,
                             SkillId = 19
                         },
                         new
                         {
                             Id = 30,
                             CategoryId = 1,
+                            Difficulty = 4,
                             SkillId = 20
                         },
                         new
                         {
                             Id = 31,
                             CategoryId = 1,
+                            Difficulty = 4,
                             SkillId = 21
                         },
                         new
                         {
                             Id = 32,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 22
                         },
                         new
                         {
                             Id = 33,
                             CategoryId = 3,
+                            Difficulty = 1,
                             SkillId = 22
                         },
                         new
                         {
                             Id = 34,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 23
                         },
                         new
                         {
                             Id = 35,
                             CategoryId = 4,
+                            Difficulty = 4,
                             SkillId = 24
                         },
                         new
                         {
                             Id = 36,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 25
                         },
                         new
                         {
                             Id = 37,
                             CategoryId = 3,
+                            Difficulty = 1,
                             SkillId = 25
                         },
                         new
                         {
                             Id = 38,
                             CategoryId = 5,
+                            Difficulty = 1,
                             SkillId = 25
                         },
                         new
                         {
                             Id = 39,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 26
                         },
                         new
                         {
                             Id = 40,
                             CategoryId = 5,
+                            Difficulty = 3,
                             SkillId = 27
                         },
                         new
                         {
                             Id = 41,
                             CategoryId = 9,
+                            Difficulty = 1,
                             SkillId = 28
                         },
                         new
                         {
                             Id = 42,
                             CategoryId = 5,
+                            Difficulty = 3,
                             SkillId = 29
                         },
                         new
                         {
                             Id = 43,
                             CategoryId = 9,
+                            Difficulty = 2,
                             SkillId = 29
                         },
                         new
                         {
                             Id = 44,
                             CategoryId = 6,
+                            Difficulty = 3,
                             SkillId = 30
                         },
                         new
                         {
                             Id = 45,
                             CategoryId = 7,
+                            Difficulty = 3,
                             SkillId = 31
                         },
                         new
                         {
                             Id = 46,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 32
                         },
                         new
                         {
                             Id = 47,
                             CategoryId = 2,
+                            Difficulty = 2,
                             SkillId = 33
                         },
                         new
                         {
                             Id = 48,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 33
                         },
                         new
                         {
                             Id = 49,
                             CategoryId = 2,
+                            Difficulty = 2,
                             SkillId = 34
                         },
                         new
                         {
                             Id = 50,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 34
                         },
                         new
                         {
                             Id = 51,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 35
                         },
                         new
                         {
                             Id = 52,
                             CategoryId = 4,
+                            Difficulty = 1,
                             SkillId = 35
                         },
                         new
                         {
                             Id = 53,
                             CategoryId = 4,
+                            Difficulty = 1,
                             SkillId = 36
                         },
                         new
                         {
                             Id = 56,
                             CategoryId = 4,
+                            Difficulty = 4,
                             SkillId = 39
                         },
                         new
                         {
                             Id = 57,
                             CategoryId = 2,
+                            Difficulty = 3,
                             SkillId = 40
                         },
                         new
                         {
                             Id = 58,
                             CategoryId = 7,
+                            Difficulty = 2,
                             SkillId = 40
                         },
                         new
                         {
                             Id = 59,
                             CategoryId = 7,
+                            Difficulty = 2,
                             SkillId = 41
                         },
                         new
                         {
                             Id = 60,
                             CategoryId = 1,
+                            Difficulty = 2,
                             SkillId = 42
                         },
                         new
                         {
                             Id = 61,
                             CategoryId = 9,
+                            Difficulty = 1,
                             SkillId = 42
                         },
                         new
                         {
                             Id = 62,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 43
                         },
                         new
                         {
                             Id = 63,
                             CategoryId = 5,
+                            Difficulty = 1,
                             SkillId = 43
                         },
                         new
                         {
                             Id = 64,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 44
                         },
                         new
                         {
                             Id = 65,
                             CategoryId = 1,
+                            Difficulty = 2,
                             SkillId = 45
                         },
                         new
                         {
                             Id = 66,
                             CategoryId = 9,
+                            Difficulty = 1,
                             SkillId = 45
                         },
                         new
                         {
                             Id = 67,
                             CategoryId = 2,
+                            Difficulty = 3,
                             SkillId = 46
                         },
                         new
                         {
                             Id = 68,
                             CategoryId = 7,
+                            Difficulty = 2,
                             SkillId = 46
                         },
                         new
                         {
                             Id = 69,
                             CategoryId = 3,
+                            Difficulty = 3,
                             SkillId = 47
                         },
                         new
                         {
                             Id = 70,
                             CategoryId = 7,
+                            Difficulty = 1,
                             SkillId = 47
                         },
                         new
                         {
                             Id = 71,
                             CategoryId = 2,
+                            Difficulty = 3,
                             SkillId = 48
                         },
                         new
                         {
                             Id = 72,
                             CategoryId = 7,
+                            Difficulty = 2,
                             SkillId = 48
                         },
                         new
                         {
                             Id = 73,
                             CategoryId = 5,
+                            Difficulty = 2,
                             SkillId = 49
                         },
                         new
                         {
                             Id = 74,
                             CategoryId = 2,
+                            Difficulty = 2,
                             SkillId = 50
                         },
                         new
                         {
                             Id = 75,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 50
                         },
                         new
                         {
                             Id = 76,
                             CategoryId = 2,
+                            Difficulty = 1,
                             SkillId = 51
                         },
                         new
                         {
                             Id = 77,
                             CategoryId = 2,
+                            Difficulty = 1,
                             SkillId = 52
                         },
                         new
                         {
                             Id = 78,
                             CategoryId = 2,
+                            Difficulty = 1,
                             SkillId = 53
                         },
                         new
                         {
                             Id = 79,
                             CategoryId = 6,
+                            Difficulty = 1,
                             SkillId = 54
                         },
                         new
                         {
                             Id = 80,
                             CategoryId = 6,
+                            Difficulty = 2,
                             SkillId = 55
                         },
                         new
                         {
                             Id = 81,
                             CategoryId = 6,
+                            Difficulty = 1,
                             SkillId = 56
                         },
                         new
                         {
                             Id = 82,
                             CategoryId = 1,
+                            Difficulty = 1,
                             SkillId = 57
                         },
                         new
                         {
                             Id = 83,
                             CategoryId = 9,
+                            Difficulty = 3,
                             SkillId = 58
                         });
                 });

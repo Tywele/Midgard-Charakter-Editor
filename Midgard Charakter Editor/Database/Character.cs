@@ -11,6 +11,7 @@ namespace Midgard_Charakter_Editor.Database
 		public string Handedness { get; set; }
 		public string Build { get; set; }
 		public int Age { get; set; }
+        public SocialClass SocialClass { get;set }
 		public string Origin { get; set; }
 		public string Religion { get; set; }
 		public string Story { get; set; }

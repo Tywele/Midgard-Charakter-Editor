@@ -34,6 +34,20 @@ namespace Midgard_Charakter_Editor.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DefenseWeaponLearningCosts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Value = table.Column<int>(nullable: false),
+                    Cost = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DefenseWeaponLearningCosts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Races",
                 columns: table => new
                 {
@@ -208,6 +222,7 @@ namespace Midgard_Charakter_Editor.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Difficulty = table.Column<int>(nullable: false),
                     SkillId = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false)
                 },
@@ -473,17 +488,17 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Classes",
                 columns: new[] { "Id", "Abbreviation", "Name" },
-                values: new object[] { 15, "Sc", "Schamane" });
-
-            migrationBuilder.InsertData(
-                table: "Classes",
-                columns: new[] { "Id", "Abbreviation", "Name" },
                 values: new object[] { 14, "PS", "Priester, Streiter" });
 
             migrationBuilder.InsertData(
                 table: "Classes",
                 columns: new[] { "Id", "Abbreviation", "Name" },
                 values: new object[] { 13, "PB", "Priester, Beschützer" });
+
+            migrationBuilder.InsertData(
+                table: "Classes",
+                columns: new[] { "Id", "Abbreviation", "Name" },
+                values: new object[] { 12, "Ma", "Magier" });
 
             migrationBuilder.InsertData(
                 table: "Classes",
@@ -503,7 +518,7 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Classes",
                 columns: new[] { "Id", "Abbreviation", "Name" },
-                values: new object[] { 12, "Ma", "Magier" });
+                values: new object[] { 15, "Sc", "Schamane" });
 
             migrationBuilder.InsertData(
                 table: "Classes",
@@ -523,11 +538,6 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Classes",
                 columns: new[] { "Id", "Abbreviation", "Name" },
-                values: new object[] { 7, "Wa", "Waldläufer" });
-
-            migrationBuilder.InsertData(
-                table: "Classes",
-                columns: new[] { "Id", "Abbreviation", "Name" },
                 values: new object[] { 3, "Gl", "Glücksritter" });
 
             migrationBuilder.InsertData(
@@ -541,29 +551,59 @@ namespace Midgard_Charakter_Editor.Migrations
                 values: new object[] { 1, "As", "Assassine" });
 
             migrationBuilder.InsertData(
-                table: "Skills",
-                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 42, null, "Wissen", "in", "Schreiben: Sprache", null });
+                table: "Classes",
+                columns: new[] { "Id", "Abbreviation", "Name" },
+                values: new object[] { 7, "Wa", "Waldläufer" });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 6, 100, 7 });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 5, 50, 6 });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 4, 30, 5 });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 7, 150, 8 });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 2, 2, 3 });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 1, 1, 2 });
+
+            migrationBuilder.InsertData(
+                table: "DefenseWeaponLearningCosts",
+                columns: new[] { "Id", "Cost", "Value" },
+                values: new object[] { 3, 10, 4 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 41, null, "Fingerfertigkeit", "gs", "Schlösser öffnen", 0 });
+                values: new object[] { 43, null, "Bewegung", "gw", "Schwimmen", 3 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 40, null, "Bewegung", "gw", "Schleichen", 3 });
+                values: new object[] { 33, null, "Wissen", "in", "Naturkunde", 0 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 39, null, "Kampf", "gs", "Scharfschießen", 0 });
-
-            migrationBuilder.InsertData(
-                table: "Skills",
-                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 38, null, "Körperbeherrschung", "ko", "Körperresistenz", 10 });
+                values: new object[] { 34, null, "Wissen", "in", "Pflanzenkunde", 0 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -578,17 +618,12 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 43, null, "Bewegung", "gw", "Schwimmen", 3 });
+                values: new object[] { 37, null, "Körperbeherrschung", "in", "Geistresistenz", 10 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 34, null, "Wissen", "in", "Pflanzenkunde", 0 });
-
-            migrationBuilder.InsertData(
-                table: "Skills",
-                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 33, null, "Wissen", "in", "Naturkunde", 0 });
+                values: new object[] { 38, null, "Körperbeherrschung", "ko", "Körperresistenz", 10 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -598,7 +633,22 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 37, null, "Körperbeherrschung", "in", "Geistresistenz", 10 });
+                values: new object[] { 39, null, "Kampf", "gs", "Scharfschießen", 0 });
+
+            migrationBuilder.InsertData(
+                table: "Skills",
+                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
+                values: new object[] { 40, null, "Bewegung", "gw", "Schleichen", 3 });
+
+            migrationBuilder.InsertData(
+                table: "Skills",
+                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
+                values: new object[] { 41, null, "Fingerfertigkeit", "gs", "Schlösser öffnen", 0 });
+
+            migrationBuilder.InsertData(
+                table: "Skills",
+                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
+                values: new object[] { 42, null, "Wissen", "in", "Schreiben: Sprache", null });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -608,12 +658,17 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 47, null, "Fingerfertigkeit", "gs", "Stehlen", 3 });
+                values: new object[] { 51, null, "Wissen", "in", "Überleben: Gebirge", 6 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
                 values: new object[] { 46, null, "Entdeckung", "in", "Spurensuche", 0 });
+
+            migrationBuilder.InsertData(
+                table: "Skills",
+                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
+                values: new object[] { 47, null, "Fingerfertigkeit", "gs", "Stehlen", 3 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -629,11 +684,6 @@ namespace Midgard_Charakter_Editor.Migrations
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
                 values: new object[] { 50, null, "Wissen", "in", "Tierkunde", 0 });
-
-            migrationBuilder.InsertData(
-                table: "Skills",
-                columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 51, null, "Wissen", "in", "Überleben: Gebirge", 6 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -683,7 +733,7 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 12, null, "Sozial", "in", "Etikette", 0 });
+                values: new object[] { 9, null, "Kampf", "gs", "Betäuben", 6 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -733,7 +783,7 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 9, null, "Kampf", "gs", "Betäuben", 6 });
+                values: new object[] { 58, null, "Wissen", "in", "Zauberkunde", 0 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -748,7 +798,7 @@ namespace Midgard_Charakter_Editor.Migrations
             migrationBuilder.InsertData(
                 table: "Skills",
                 columns: new[] { "Id", "Description", "Field", "LeadingAttribute", "Name", "Untrained" },
-                values: new object[] { 58, null, "Wissen", "in", "Zauberkunde", 0 });
+                values: new object[] { 12, null, "Sozial", "in", "Etikette", 0 });
 
             migrationBuilder.InsertData(
                 table: "Skills",
@@ -2242,403 +2292,403 @@ namespace Midgard_Charakter_Editor.Migrations
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 23, 4, 16 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 23, 4, 4, 16 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 24, 3, 17 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 24, 3, 3, 17 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 25, 6, 17 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 25, 6, 2, 17 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 26, 7, 17 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 26, 7, 1, 17 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 27, 3, 18 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 27, 3, 1, 18 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 28, 4, 19 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 28, 4, 1, 19 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 29, 5, 19 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 29, 5, 1, 19 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 30, 1, 20 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 30, 1, 4, 20 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 22, 7, 15 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 22, 7, 3, 15 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 32, 1, 22 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 32, 1, 1, 22 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 33, 3, 22 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 33, 3, 1, 22 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 34, 9, 23 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 34, 9, 3, 23 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 35, 4, 24 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 35, 4, 4, 24 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 36, 1, 25 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 36, 1, 1, 25 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 37, 3, 25 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 37, 3, 1, 25 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 38, 5, 25 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 38, 5, 1, 25 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 31, 1, 21 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 31, 1, 4, 21 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 20, 3, 13 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 20, 3, 1, 13 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 19, 6, 12 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 19, 6, 1, 12 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 2, 3, 2 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 2, 3, 2, 2 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 3, 5, 2 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 3, 5, 3, 2 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 4, 9, 3 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 4, 9, 3, 3 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 5, 4, 4 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 5, 4, 2, 4 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 6, 6, 4 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 6, 6, 1, 4 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 7, 4, 5 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 7, 4, 2, 5 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 8, 5, 5 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 8, 5, 3, 5 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 9, 5, 6 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 9, 5, 1, 6 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 10, 3, 6 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 10, 3, 1, 6 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 11, 4, 7 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 11, 4, 4, 7 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 12, 6, 8 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 12, 6, 2, 8 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 13, 3, 9 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 13, 3, 4, 9 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 14, 4, 9 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 14, 4, 3, 9 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 15, 1, 10 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 15, 1, 1, 10 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 16, 1, 11 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 16, 1, 3, 11 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 17, 9, 11 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 17, 9, 2, 11 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 18, 1, 12 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 18, 1, 3, 12 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 21, 7, 14 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 21, 7, 2, 14 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 39, 9, 26 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 39, 9, 3, 26 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 41, 9, 28 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 41, 9, 1, 28 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 42, 5, 29 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 42, 5, 3, 29 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 66, 9, 45 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 66, 9, 1, 45 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 67, 2, 46 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 67, 2, 3, 46 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 68, 7, 46 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 68, 7, 2, 46 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 69, 3, 47 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 69, 3, 3, 47 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 70, 7, 47 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 70, 7, 1, 47 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 71, 2, 48 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 71, 2, 3, 48 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 72, 7, 48 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 72, 7, 2, 48 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 65, 1, 45 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 65, 1, 2, 45 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 73, 5, 49 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 73, 5, 2, 49 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 75, 9, 50 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 75, 9, 3, 50 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 76, 2, 51 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 76, 2, 1, 51 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 77, 2, 52 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 77, 2, 1, 52 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 78, 2, 53 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 78, 2, 1, 53 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 79, 6, 54 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 79, 6, 1, 54 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 80, 6, 55 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 80, 6, 2, 55 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 81, 6, 56 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 81, 6, 1, 56 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 74, 2, 50 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 74, 2, 2, 50 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 40, 5, 27 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 40, 5, 3, 27 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 64, 1, 44 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 64, 1, 1, 44 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 62, 1, 43 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 62, 1, 1, 43 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 44, 6, 30 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 44, 6, 3, 30 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 45, 7, 31 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 45, 7, 3, 31 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 46, 1, 32 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 46, 1, 1, 32 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 47, 2, 33 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 47, 2, 2, 33 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 48, 9, 33 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 48, 9, 3, 33 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 49, 2, 34 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 49, 2, 2, 34 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 50, 9, 34 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 50, 9, 3, 34 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 63, 5, 43 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 63, 5, 1, 43 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 51, 1, 35 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 51, 1, 1, 35 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 53, 4, 36 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 53, 4, 1, 36 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 56, 4, 39 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 56, 4, 4, 39 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 57, 2, 40 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 57, 2, 3, 40 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 58, 7, 40 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 58, 7, 2, 40 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 59, 7, 41 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 59, 7, 2, 41 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 60, 1, 42 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 60, 1, 2, 42 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 61, 9, 42 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 61, 9, 1, 42 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 52, 4, 35 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 52, 4, 1, 35 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 43, 9, 29 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 43, 9, 2, 29 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 83, 9, 58 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 83, 9, 3, 58 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "SkillId" },
-                values: new object[] { 82, 1, 57 });
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 82, 1, 1, 57 });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -4342,6 +4392,9 @@ namespace Midgard_Charakter_Editor.Migrations
 
             migrationBuilder.DropTable(
                 name: "ClassCosts");
+
+            migrationBuilder.DropTable(
+                name: "DefenseWeaponLearningCosts");
 
             migrationBuilder.DropTable(
                 name: "LearningCosts");

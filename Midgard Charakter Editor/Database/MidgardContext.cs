@@ -369,6 +369,7 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<ClassCost>().HasData(new ClassCost(185, 60, 15, 18));
 
             // Init Skills
+            // Allgemeine Fertigkeiten
             modelBuilder.Entity<Skill>().HasData(new Skill(1, "Abwehr", "gw", "Kampf", 10));
             modelBuilder.Entity<Skill>().HasData(new Skill(2, "Akrobatik", "gw", "Bewegung", 6));
             modelBuilder.Entity<Skill>().HasData(new Skill(3, "Alchemie", "in", "Wissen", 0));
@@ -428,6 +429,8 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Skill>().HasData(new Skill(57, "Wagenlenken", "gs", "Bewegung", 3));
             modelBuilder.Entity<Skill>().HasData(new Skill(58, "Zauberkunde", "in", "Wissen", 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(59, "Zaubern", "zt", "Zaubern", 3));
+            // TODO Waffenfertigkeiten
+
 
             // Init SkillHasCategories
             //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(1, , 1, ));
@@ -514,6 +517,7 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(82, 1, 57, 1));
             modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(83, 3, 58, 9));
             //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(84, , 59, ));
+            // TODO Waffenfertigkeiten
 
             // Init Spells
             // Zaubersprüche
@@ -858,9 +862,13 @@ namespace Midgard_Charakter_Editor.Database
 
             // Init SocialClasses
             modelBuilder.Entity<SocialClass>().HasData(new SocialClass(1, "Unfrei", 3));
-            modelBuilder.Entity<SocialClass>().HasData(new SocialClass(1, "Volk", 1));
-            modelBuilder.Entity<SocialClass>().HasData(new SocialClass(1, "Mittelschicht", 9));
-            modelBuilder.Entity<SocialClass>().HasData(new SocialClass(1, "Adel", 6));
+            modelBuilder.Entity<SocialClass>().HasData(new SocialClass(2, "Volk", 1));
+            modelBuilder.Entity<SocialClass>().HasData(new SocialClass(3, "Mittelschicht", 9));
+            modelBuilder.Entity<SocialClass>().HasData(new SocialClass(4, "Adel", 6));
+
+            // Init Weapons
+            // TODO
+
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -875,6 +883,6 @@ namespace Midgard_Charakter_Editor.Database
         public DbSet<Skill> Skills { get; set; }
         public DbSet<SkillHasCategory> SkillHasCategories { get; set; }
         public DbSet<Spell> Spells { get; set; }
-        public DbSet<WeaponSkill> WeaponSkills { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
     }
 }

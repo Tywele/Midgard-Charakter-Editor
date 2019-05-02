@@ -11,7 +11,7 @@ namespace Midgard_Charakter_Editor.Database
 		public string Handedness { get; set; }
 		public string Build { get; set; }
 		public int Age { get; set; }
-        public SocialClass SocialClass { get;set }
+        public SocialClass SocialClass { get; set; }
 		public string Origin { get; set; }
 		public string Religion { get; set; }
 		public string Story { get; set; }
@@ -34,6 +34,6 @@ namespace Midgard_Charakter_Editor.Database
 
 		public virtual ICollection<CharacterHasSpell> CharacterHasSpells { get; set; }
 		public virtual ICollection<CharacterHasSkill> CharacterHasSkills { get; set; }
-		public virtual ICollection<CharacterHasWeaponSkill> CharacterHasWeaponSkills { get; set; }
+		public virtual ICollection<CharacterHasWeapon> CharacterHasWeapons { get; set; }
 	}
 }

@@ -21,11 +21,14 @@ namespace Midgard_Charakter_Editor.Database
         public string Note { get; set; }
         public string Range { get; set; }
 
+        public int WeaponGroupId { get; set; }
+        public Skill WeaponGroup { get; set; }
+
 		public virtual ICollection<CharacterHasWeapon> CharacterHasWeapons { get; set; }
 
         public Weapon(int id, string name, string bluntDamage, string stabDamage, 
             string stormDamage, string protection, int minStrength, 
-            int minDexterity, int minAgility, string note, string range)
+            int minDexterity, int minAgility, string note, string range, int weaponGroupId)
         {
             Id = id;
             Name = name;
@@ -38,6 +41,7 @@ namespace Midgard_Charakter_Editor.Database
             MinAgility = minAgility;
             Note = note;
             Range = range;
+            WeaponGroupId = weaponGroupId;
 
             CharacterHasWeapons = new HashSet<CharacterHasWeapon>();
         }

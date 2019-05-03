@@ -429,8 +429,28 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Skill>().HasData(new Skill(57, "Wagenlenken", "gs", "Bewegung", 3));
             modelBuilder.Entity<Skill>().HasData(new Skill(58, "Zauberkunde", "in", "Wissen", 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(59, "Zaubern", "zt", "Zaubern", 3));
-            // TODO Waffenfertigkeiten
-
+            // Waffengruppen
+            modelBuilder.Entity<Skill>().HasData(new Skill(60, "Einhandschlagwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(61, "Einhandschwerter", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(62, "Fechtwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(63, "Kettenwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(64, "Spießwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(65, "Stichwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(66, "Stockwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(67, "Zauberstäbe", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(68, "Zweihandschlagwaffen", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(69, "Zweihandschwerter", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(70, "Waffenloser Kampf", null, "Nahkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(71, "Schilde", null, "Verteidigungswaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(72, "Parierwaffen", null, "Verteidigungswaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(73, "Stielwurfwaffen", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(74, "Wurfklingen", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(75, "Wurfscheiben", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(76, "Wurfspieße", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(77, "Armbrüste", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(78, "Blasrohre", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(79, "Bögen", null, "Fernkampfwaffe"));
+            modelBuilder.Entity<Skill>().HasData(new Skill(80, "Schleudern", null, "Fernkampfwaffe"));
 
             // Init SkillHasCategories
             //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(1, , 1, ));
@@ -517,7 +537,29 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(82, 1, 57, 1));
             modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(83, 3, 58, 9));
             //modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(84, , 59, ));
-            // TODO Waffenfertigkeiten
+            // Waffengruppen
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(85, 4, 3, 1));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(86, 2, 1, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(87, 2, 2, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(88, 3, 3, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(89, 4, 4, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(90, 1, 5, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(91, 1, 6, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(92, 4, 7, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(93, 1, 8, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(94, 3, 9, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(95, 3, 10, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(96, 4, 11, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(97, 1, 12, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(98, 2, 13, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(99, 2, 14, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(100, 2, 15, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(101, 3, 16, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(102, 2, 17, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(103, 3, 18, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(104, 3, 19, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(105, 3, 20, 8));
+            modelBuilder.Entity<SkillHasCategory>().HasData(new SkillHasCategory(106, 3, 21, 8));
 
             // Init Spells
             // Zaubersprüche

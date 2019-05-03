@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EA5C98B6-E3C8-46A6-9B48-0B9CEAC1A11E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Midgard_Charakter_Editor</RootNamespace>
+    <RootNamespace>MidgardCharakterEditor</RootNamespace>
     <AssemblyName>Midgard Charakter Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -569,7 +569,7 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Spell>().HasData(new Spell(4, "Auffrischen", "Geste", 14, "Magan", "Metall", "1", "10 sec", "15 m", "Umgebung", "1 Objekt", "30 min", "dr", "", 1, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(5, "Auflösung", "Geste", 16, "Magan", "Metall", "8", "30 sec", "30 m", "Umgebung", "1 m Umkreis", "2 min, k", "dä", "Moder, Staub, Knochenmehl, Rostflocken (20 GS)", 12, 90, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(6, "Auskühlen", "Geste", 15, "Eis", "Erde", "2", "10 sec", "15 m", "Körper", "1 Wesen", "2 min", "el", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(7, "Bannen von Kälte", "Geste", 16, "Feuer", "Eis", "4", "10 min", "0 m", "Umgebung", "3 m Umkreis", "8 h", "el", "Holzkohlest?ck (1 SS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(7, "Bannen von Kälte", "Geste", 16, "Feuer", "Eis", "4", "10 min", "0 m", "Umgebung", "3 m Umkreis", "8 h", "el", "Holzkohlestück (1 SS)", 5, 5, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(8, "Bannen von Licht", "Wort", 16, "Eis", "Feuer", "1", "Augenblick", "0 m", "Umgebung", "9 m Umkreis", "10 min", "gö", "", 2, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(9, "Bannen von Zauberwerk", "Wort", 16, "Metall", "Magan", "4", "2 min", "15 m", "Umgebung", "1 Wesen/Objekt", "0", "dä", "", 4, 3, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(10, "Beeinflussen", "Wort", 10, "Feuer", "Luft", "3", "10 sec", "15 m", "Geist", "1 Wesen", "10 min", "dä", "", 5, 5, 20));
@@ -628,7 +628,7 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Spell>().HasData(new Spell(63, "Frostball", "Geste", 13, "Eis", "Eis", "1", "10 sec", "200 m", "Umgebung", "Strahl", "0", "el", "Silberperle oder Bergkristall (10 GS)", 2, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(64, "Funkenregen", "Geste", 10, "Feuer", "Feuer", "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen", "1 min", "dä", "Sternenstaub (20 GS)", 7, 15, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(65, "Geisterhorn", "Geste", 12, "Magan", "Eis", "1", "10 sec", "0 m", "Umgebung", "100 m Umkreis", "10 min", "dä", "Kristallpyramide (10 GS)", 1, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(66, "Geistersperre", "Geste", 13, "Metall", "Metall", "1 je 5 m² Fläche", "10 sec", "Berührung", "Umgebung", "bis zu 100 m²", "8 h", "dä", "Eisensp?ne (10 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(66, "Geistersperre", "Geste", 13, "Metall", "Metall", "1 je 5 m² Fläche", "10 sec", "Berührung", "Umgebung", "bis zu 100 m²", "8 h", "dä", "Eisenspäne (10 GS)", 6, 10, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(67, "Geistesschild", "Gedanke", 16, "Feuer", "Magan", "var", "Augenblick", "-", "Geist", "Zauberer", "10 min", "dä", "", 6, 10, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(68, "Geräusche dämpfen", "Geste", 14, "Metall", "Luft", "1", "Augenblick", "0 m", "Umgebung", "3 m Umkreis", "5 min", "dä", "", 2, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(69, "Goldener Panzer", "Geste", 14, "Metall", "Metall", "2", "10 sec", "Berührung", "Umgebung", "1 Wesen", "2 min", "dä", "Goldstaub (50 GS)", 4, 3, 20));
@@ -647,7 +647,7 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Spell>().HasData(new Spell(82, "Hören der Geister", "Gedanke", 12, "Eis", "Luft", "1 je 10 sec Dauer", "10 sec", "0 m", "Körper", "6 m Umkreis", "10 sec je Grad", "dä", "", 5, 5, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(83, "Hören von Fernem", "Gedanke", 15, "Magan", "Wasser", "1", "1 min", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 1, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(84, "Hörnerklang", "Wort", 14, "Magan", "Luft", "1", "Augenblick", "0 m", "Umgebung", "2 km Umkreis", "10 sec", "dä", "", 2, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(85, "Juwelenauge", "Geste", 11, "Erde", "Feuer", "2", "10 sec", "500 m", "Umgebung", "1 Objekt", "30 min", "dä", "2 Greifenaugenh ? lften", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(85, "Juwelenauge", "Geste", 11, "Erde", "Feuer", "2", "10 sec", "500 m", "Umgebung", "1 Objekt", "30 min", "dä", "2 Greifenaugenhälften", 5, 5, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(86, "Kälteschutz", "Gedanke", 15, "Feuer", "Erde", "1", "Augenblick", "-", "Körper", "Zauberer", "2 min", "dä", "", 2, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(87, "Kraft entziehen", "Geste", 16, "Eis", "Feuer", "1", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 2, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(88, "Kraftraub", "Geste", 16, "Magan", "Feuer", "2", "10 sec", "30 m", "Umgebung", "1 m²", "2 min, k", "dä", "", 3, 2, 20));
@@ -669,7 +669,7 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Spell>().HasData(new Spell(104, "Mag. Kreis des Bewachens", "Geste", 12, "Magan", "Magan", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(105, "Mag. Kreis des Verschleierns", "Geste", 16, "Magan", "Magan", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(106, "Mag. Kreis des Widerstehens", "Geste", 14, "Magan", "Wasser", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(107, "Magischer Kreis, klein", "Geste", 12, "Magan", "Magan", "6", "10 min", "0 m", "Umgebung", "6 m Umkreis", "8 h", "dr", "mit Eisendraht umwickelte Zweige von Eiche, Esche und Wei?dorn (10 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(107, "Magischer Kreis, klein", "Geste", 12, "Magan", "Magan", "6", "10 min", "0 m", "Umgebung", "6 m Umkreis", "8 h", "dr", "mit Eisendraht umwickelte Zweige von Eiche, Esche und Weißdorn (10 GS)", 6, 10, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(108, "Marmorhaut", "Geste", 15, "Erde", "Erde", "3", "10 sec", "Berührung", "Körper", "1 Wesen", "10 min", "el", "Marmorstaub (1 GS)", 5, 5, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(109, "Mitfühlen", "Gedanke", 12, "Wasser", "Wasser", "1", "Augenblick", "500 m", "Geist", "1 Wesen", "30 min, k", "dä", "", 2, 1, 20));
             modelBuilder.Entity<Spell>().HasData(new Spell(110, "Namenloses Grauen", "Geste", 10, "Eis", "Wasser", "4 je Wesen", "20 sec", "30 m", "Geist", "1-3 Wesen", "2 min", "dä", "Schweiß von Albträumenden (20 GS)", 8, 20, 20));

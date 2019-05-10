@@ -909,8 +909,73 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<SocialClass>().HasData(new SocialClass(4, "Adel", 6));
 
             // Init Weapons
-            // TODO
-
+            // Nahkampf
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(1, "Handaxt", "1W6", "", "", 11, 0, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(2, "Keule", "1W6-1", "", "", 0, 0, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(3, "Kriegshammer", "1W6", "", "", 61, 11, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(4, "Schlachtbeil", "1W6+1", "", "", 91, 21, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(5, "Streitaxt", "1W6-1", "", "", 61, 11, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(6, "Streitkolben", "1W6", "", "", 31, 0, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(7, "Anderthalbhänder", "1W6+1", "", "", 81, 21, 0, "", "nah", 61));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(8, "Krummschwert", "1W6", "", "", 31, 11, 0, "", "nah", 61));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(9, "Langschwert", "1W6+1", "", "", 31, 21, 0, "", "nah", 61));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(10, "Florett", "", "", "", 0, 81, 0, "", "nah", 62));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(11, "Fuchtel", "", "", "", 61, 31, 0, "nur Parade", "nah", 62));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(12, "Rapier", "", "", "", 11, 51, 0, "", "nah", 62));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(13, "Kriegsflegel", "2W6-1", "", "", 61, 31, 0, "zweihändig", "nah", 63));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(14, "Morgenstern", "1W6+2", "", "", 61, 61, 0, "", "nah", 63));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(15, "NunChaku", "1W6-1", "", "", 31, 61, 0, "entwaffnen", "nah", 63));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(16, "Glefe", "1W6", "1W6+2", "", 11, 61, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(17, "Hellebarde", "1W6", "1W6+2", "", 61, 61, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(18, "Speer, leichter", "", "1W6+1", "", 0, 0, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(19, "Stielhammer", "1W6", "1W6-1", "", 81, 31, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(20, "Stoßspeer", "", "2W6", "", 31, 11, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(21, "Dolch", "1W6-1", "", "", 0, 0, 0, "", "nah", 65));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(22, "Kurzschwert", "1W6", "", "", 0, 0, 0, "", "nah", 65));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(23, "Ochsenzunge", "", "", "", 0, 31, 0, "", "nah", 65));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(24, "Bo-Stab", "1W6", "", "", 21, 61, 0, "Abwehr, Entwaffnen", "nah", 66));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(25, "Kampfstab", "1W6", "", "", 31, 61, 0, "Abwehr, Entwaffnen", "nah", 66));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(26, "Magierstab", "1W6", "", "", 0, 31, 0, "bei Kämpfer wie Keule", "nah", 67));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(27, "Magierstecken", "", "", "", 31, 31, 0, "Abwehr, Entwaffnen", "nah", 67));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(28, "Barbarenstreitaxt", "2W6", "", "", 81, 31, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(29, "Glefe", "1W6+2", "1W6+2", "", 11, 61, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(30, "Hellebarde", "2W6-1", "1W6+2", "", 61, 61, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(31, "Ogerhammer", "4W6-4", "", "", 91, 61, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(32, "Schlachtbeil", "1W6+3", "", "", 91, 21, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(33, "Stabkeule", "2W6-2", "", "", 81, 0, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(34, "Stielhammer", "2W6", "1W6+1", "", 81, 31, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(35, "Anderthalbhänder", "1W6+2", "", "", 81, 21, 0, "", "nah", 69));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(36, "Bihänder", "2W6", "", "", 61, 31, 0, "", "nah", 69));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(37, "Faustkampf", "1W6-4", "", "", 31, 21, 21, "betäuben", "nah", 70));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(38, "Ringen", "1W6-4", "", "", 21, 31, 31, "erstetzt Raufen", "nah", 70));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(39, "Buckler", "", "2 AP", "", 0, 61, 0, "gegen Einhandschwert, Zauberstab, Stich-, Stock- , Spießwaffe, Fecht-, Parierwaffe oder Buckler", "nah", 71));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(40, "Schild, großer", "", "0 AP", "", 61, 0, 0, "gegen alle Angriffe, auch Schuss- und Wurfwaffen sowie zweihändige Hiebwaffen", "nah", 71));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(41, "Schild, kleiner", "", "1 AP", "", 31, 11, 0, "gegen alle Nahkampfangriffe ausgenommen zweihändige Hiebwaffen sowie Schuss und Wurfwaffen", "nah", 71));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(42, "Kampfgabeln", "(1W6-3)/(1W6-4)", "2 AP", "", 31, 61, 0, "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "nah", 72));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(43, "Parierdolch", "", "1 AP", "", 0, 61, 0, "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "nah", 72));
+            // Fernkampf
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(44, "Wurfaxt", "1W6", "", "", 31, 31, 0, "Nahkampf wie Handaxt", "10/20/30", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(45, "Wurfeisen", "1W6", "", "", 61, 61, 0, "", "10/20/50", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(46, "Wurfhammer", "1W6", "", "", 61, 31, 0, "Nahkampf w. Kriegshammer", "10/20/30", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(47, "Wurfkeule", "1W6-1", "", "", 31, 31, 0, "Nahkampf wie Keule", "10/20/50", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(48, "Wurfmesser", "1W6-1", "", "", 0, 61, 0, "Nahkampf wie Dolch", "10/15/20", 74));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(49, "Wurfpfeil", "1W6-2", "", "", 11, 31, 0, "", "10/20/30", 74));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(50, "Wurfscheibe", "1W6-2", "", "", 61, 61, 0, "pro Runde 2 Angriffe", "10/20/30", 75));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(51, "Wurfstern", "1W6-3", "", "", 0, 61, 0, "pro Runde 3 Angriffe", "5/10/15", 75));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(52, "Speerschleuder", "1W6", "", "", 31, 61, 0, "", "20/40/70", 76));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(53, "Wurfspeer", "1W6-1", "", "", 31, 21, 0, "Nahkampf wie Speer, leicht", "10/30/50", 76));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(54, "Wurfspie?", "1W6", "", "", 61, 21, 0, "Nahkampf wie Speer, leicht", "10/20/30", 76));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(55, "Armbrust, leichte", "1W6", "", "", 0, 61, 0, "", "30/120/220", 77));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(56, "Armbrust, schwere", "2W6-1", "", "", 61, 31, 0, "Schuss jede 2. Runde", "30/120/240", 77));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(57, "Handarmbrust", "1W6-1", "", "", 0, 31, 0, "", "20/40/70", 77));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(58, "Blasrohr, lang", "(Gift)", "", "", 0, 61, 0, "(Gift 3W6-5W6 Schaden)", "10/15/20", 78));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(59, "Blasrohr, kurz", "(Gift)", "", "", 0, 61, 0, "(Gift 3W6-5W6 Schaden)", "5/7/10", 78));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(60, "Bogen", "1W6", "", "", 31, 31, 0, "", "30/100/180", 79));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(61, "Kompositbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(62, "Kurzbogen", "1W6-1", "", "", 11, 31, 0, "", "30/80/120", 79));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(63, "Langbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(64, "Schleuder", "1W6", "", "", 0, 61, 0, "", "30/60/90", 80));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(65, "Stockschleuder", "2W6-2", "", "", 31, 81, 0, "", "50/100/180", 80));
         }
 
         public DbSet<Category> Categories { get; set; }

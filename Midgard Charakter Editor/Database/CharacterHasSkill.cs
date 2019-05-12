@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Midgard_Charakter_Editor.Database
+namespace MidgardCharakterEditor.Database
 {
 	public class CharacterHasSkill
 	{

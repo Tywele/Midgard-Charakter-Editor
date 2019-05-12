@@ -1,4 +1,4 @@
-﻿namespace Midgard_Charakter_Editor.Database
+﻿namespace MidgardCharakterEditor.Database
 {
 	public class Race
 	{

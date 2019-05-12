@@ -96,8 +96,9 @@
     <Compile Include="Database\Class.cs" />
     <Compile Include="Database\ClassCategoryAffinity.cs" />
     <Compile Include="Database\ClassCost.cs" />
-    <Compile Include="Database\DefenseWeaponLearningCost.cs" />
-    <Compile Include="Database\LearningCost.cs" />
+    <Compile Include="Database\DefenseWeaponTrainingCost.cs" />
+    <Compile Include="Database\SkillLearningCost.cs" />
+    <Compile Include="Database\SkillTrainingCost.cs" />
     <Compile Include="Database\MidgardContext.cs" />
     <Compile Include="Database\Race.cs" />
     <Compile Include="Database\Skill.cs" />

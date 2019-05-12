@@ -1,6 +1,6 @@
-﻿namespace Midgard_Charakter_Editor.Database
+﻿namespace MidgardCharakterEditor.Database
 {
-    public class LearningCost
+    public class SkillTrainingCost
 	{
 		public int Id { get; set; }
 		public int Value { get; set; }
@@ -12,7 +12,7 @@
         public int CategoryId { get; set; }
 		public Category Category { get; set; }
 
-        public LearningCost(int id, int value, int easy, int normal, int hard, int veryHard, int categoryId)
+        public SkillTrainingCost(int id, int value, int easy, int normal, int hard, int veryHard, int categoryId)
         {
             Id = id;
             Value = value;
@@ -23,7 +23,7 @@
             CategoryId = categoryId;
         }
 
-        public LearningCost(int id, int value, int easy, int normal, int hard, int categoryId)
+        public SkillTrainingCost(int id, int value, int easy, int normal, int hard, int categoryId)
         {
             Id = id;
             Value = value;

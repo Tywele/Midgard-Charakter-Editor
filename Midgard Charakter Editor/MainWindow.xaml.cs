@@ -1,15 +1,13 @@
-﻿using Midgard_Charakter_Editor.Database;
-using System.Linq;
+﻿using MidgardCharakterEditor.Database;
 using System.Windows;
 using Microsoft.VisualBasic.FileIO;
-using System.Text;
 
-namespace Midgard_Charakter_Editor
+namespace MidgardCharakterEditor
 {
-	/// <summary>
-	/// Interaktionslogik für MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow : Window
+    /// <summary>
+    /// Interaktionslogik für MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
 	{
 		public MainWindow()
 		{

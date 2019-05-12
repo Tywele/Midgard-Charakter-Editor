@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Midgard_Charakter_Editor.Database;
+using MidgardCharakterEditor.Database;
 
 namespace MidgardCharakterEditor.Migrations
 {
@@ -16,7 +16,7 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Category", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -130,7 +130,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Character", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Character", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -202,7 +202,7 @@ namespace MidgardCharakterEditor.Migrations
                     b.ToTable("Characters");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.CharacterHasSkill", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSkill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -222,7 +222,7 @@ namespace MidgardCharakterEditor.Migrations
                     b.ToTable("CharacterHasSkills");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.CharacterHasSpell", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSpell", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -240,7 +240,7 @@ namespace MidgardCharakterEditor.Migrations
                     b.ToTable("CharacterHasSpell");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.CharacterHasWeapon", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasWeapon", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -262,7 +262,7 @@ namespace MidgardCharakterEditor.Migrations
                     b.ToTable("CharacterHasWeapon");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Class", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Class", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -368,7 +368,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.ClassCategoryAffinity", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCategoryAffinity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -388,7 +388,7 @@ namespace MidgardCharakterEditor.Migrations
                     b.ToTable("ClassCategoryAffinities");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.ClassCost", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCost", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -1705,7 +1705,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.DefenseWeaponLearningCost", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.DefenseWeaponLearningCost", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -1763,7 +1763,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.LearningCost", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.LearningCost", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -2749,7 +2749,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Race", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Race", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -2802,7 +2802,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Skill", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Skill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -3418,7 +3418,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.SkillHasCategory", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.SkillHasCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -4154,7 +4154,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.SocialClass", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.SocialClass", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -4196,7 +4196,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Spell", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Spell", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -10626,7 +10626,7 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Weapon", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Weapon", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -11572,129 +11572,129 @@ namespace MidgardCharakterEditor.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Character", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Character", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Class", "Class")
+                    b.HasOne("MidgardCharakterEditor.Database.Class", "Class")
                         .WithMany()
                         .HasForeignKey("ClassId");
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Race", "Race")
+                    b.HasOne("MidgardCharakterEditor.Database.Race", "Race")
                         .WithMany()
                         .HasForeignKey("RaceId");
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.SocialClass", "SocialClass")
+                    b.HasOne("MidgardCharakterEditor.Database.SocialClass", "SocialClass")
                         .WithMany()
                         .HasForeignKey("SocialClassId");
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Spell")
+                    b.HasOne("MidgardCharakterEditor.Database.Spell")
                         .WithMany("Characters")
                         .HasForeignKey("SpellId");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.CharacterHasSkill", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSkill", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Character", "Character")
+                    b.HasOne("MidgardCharakterEditor.Database.Character", "Character")
                         .WithMany("CharacterHasSkills")
                         .HasForeignKey("CharacterId");
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Skill", "Skill")
+                    b.HasOne("MidgardCharakterEditor.Database.Skill", "Skill")
                         .WithMany("CharacterHasSkills")
                         .HasForeignKey("SkillId");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.CharacterHasSpell", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSpell", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Character", "Character")
+                    b.HasOne("MidgardCharakterEditor.Database.Character", "Character")
                         .WithMany("CharacterHasSpells")
                         .HasForeignKey("CharacterId");
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Spell", "Spell")
+                    b.HasOne("MidgardCharakterEditor.Database.Spell", "Spell")
                         .WithMany()
                         .HasForeignKey("SpellId");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.CharacterHasWeapon", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasWeapon", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Character", "Character")
+                    b.HasOne("MidgardCharakterEditor.Database.Character", "Character")
                         .WithMany("CharacterHasWeapons")
                         .HasForeignKey("CharacterId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Weapon", "Weapon")
+                    b.HasOne("MidgardCharakterEditor.Database.Weapon", "Weapon")
                         .WithMany("CharacterHasWeapons")
                         .HasForeignKey("WeaponId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.ClassCategoryAffinity", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCategoryAffinity", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "Category")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Class", "Class")
+                    b.HasOne("MidgardCharakterEditor.Database.Class", "Class")
                         .WithMany()
                         .HasForeignKey("ClassId");
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.ClassCost", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCost", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "Category")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Class", "Class")
+                    b.HasOne("MidgardCharakterEditor.Database.Class", "Class")
                         .WithMany()
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.LearningCost", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.LearningCost", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "Category")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.SkillHasCategory", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.SkillHasCategory", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "Category")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany("SkillHasCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Skill", "Skill")
+                    b.HasOne("MidgardCharakterEditor.Database.Skill", "Skill")
                         .WithMany("SkillHasCategories")
                         .HasForeignKey("SkillId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.SocialClass", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.SocialClass", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "BonusCategory")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "BonusCategory")
                         .WithMany()
                         .HasForeignKey("BonusCategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Spell", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Spell", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "Category")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Midgard_Charakter_Editor.Database.Category", "Process")
+                    b.HasOne("MidgardCharakterEditor.Database.Category", "Process")
                         .WithMany()
                         .HasForeignKey("ProcessId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Midgard_Charakter_Editor.Database.Weapon", b =>
+            modelBuilder.Entity("MidgardCharakterEditor.Database.Weapon", b =>
                 {
-                    b.HasOne("Midgard_Charakter_Editor.Database.Skill", "WeaponGroup")
+                    b.HasOne("MidgardCharakterEditor.Database.Skill", "WeaponGroup")
                         .WithMany()
                         .HasForeignKey("WeaponGroupId")
                         .OnDelete(DeleteBehavior.Cascade);

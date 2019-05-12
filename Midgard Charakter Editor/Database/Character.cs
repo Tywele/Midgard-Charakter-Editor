@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Midgard_Charakter_Editor.Database
+namespace MidgardCharakterEditor.Database
 {
 	public class Character
 	{

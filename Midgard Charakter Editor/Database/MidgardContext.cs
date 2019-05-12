@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Midgard_Charakter_Editor.Database
+namespace MidgardCharakterEditor.Database
 {
     public class MidgardContext : DbContext
     {
@@ -42,112 +42,112 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Category>().HasData(new Category(19, "Lied"));
             modelBuilder.Entity<Category>().HasData(new Category(20, "Zauberspruch"));
 
-            // Init LearningCosts
+            // Init SkillTrainingCosts
             // Alltag
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(1, 9, 0, 1, 2, 5, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(2, 10, 0, 1, 2, 5, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(3, 11, 0, 1, 5, 10, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(4, 12, 0, 1, 5, 10, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(5, 13, 1, 2, 10, 20, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(6, 14, 2, 2, 10, 20, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(7, 15, 5, 5, 20, 50, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(8, 16, 10, 10, 20, 50, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(9, 17, 10, 10, 50, 100, 1));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(10, 18, 20, 20, 50, 100, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(1, 9, 0, 1, 2, 5, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(2, 10, 0, 1, 2, 5, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(3, 11, 0, 1, 5, 10, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(4, 12, 0, 1, 5, 10, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(5, 13, 1, 2, 10, 20, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(6, 14, 2, 2, 10, 20, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(7, 15, 5, 5, 20, 50, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(8, 16, 10, 10, 20, 50, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(9, 17, 10, 10, 50, 100, 1));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(10, 18, 20, 20, 50, 100, 1));
             // Freiland
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(11, 9, 1, 2, 5, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(12, 10, 1, 5, 5, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(13, 11, 1, 5, 10, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(14, 12, 2, 10, 10, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(15, 13, 2, 10, 20, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(16, 14, 2, 20, 20, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(17, 15, 5, 20, 50, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(18, 16, 5, 20, 50, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(19, 17, 10, 50, 100, 2));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(20, 18, 10, 50, 100, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(11, 9, 1, 2, 5, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(12, 10, 1, 5, 5, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(13, 11, 1, 5, 10, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(14, 12, 2, 10, 10, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(15, 13, 2, 10, 20, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(16, 14, 2, 20, 20, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(17, 15, 5, 20, 50, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(18, 16, 5, 20, 50, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(19, 17, 10, 50, 100, 2));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(20, 18, 10, 50, 100, 2));
             // Halbwelt
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(21, 9, 0, 2, 2, 5, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(22, 10, 0, 2, 5, 10, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(23, 11, 0, 5, 5, 20, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(24, 12, 0, 5, 10, 20, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(25, 13, 1, 10, 10, 30, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(26, 14, 2, 10, 20, 50, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(27, 15, 5, 20, 20, 80, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(28, 16, 10, 20, 50, 80, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(29, 17, 10, 50, 50, 100, 3));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(30, 18, 20, 50, 50, 100, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(21, 9, 0, 2, 2, 5, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(22, 10, 0, 2, 5, 10, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(23, 11, 0, 5, 5, 20, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(24, 12, 0, 5, 10, 20, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(25, 13, 1, 10, 10, 30, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(26, 14, 2, 10, 20, 50, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(27, 15, 5, 20, 20, 80, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(28, 16, 10, 20, 50, 80, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(29, 17, 10, 50, 50, 100, 3));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(30, 18, 20, 50, 50, 100, 3));
             // Kampf
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(31, 6, 0, 0, 0, 2, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(32, 7, 0, 0, 0, 5, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(33, 8, 0, 0, 0, 10, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(34, 9, 0, 2, 5, 10, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(35, 10, 0, 2, 10, 20, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(36, 11, 0, 5, 20, 20, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(37, 12, 0, 5, 20, 30, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(38, 13, 1, 10, 30, 50, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(39, 14, 2, 10, 50, 50, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(40, 15, 5, 20, 80, 100, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(41, 16, 10, 20, 80, 100, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(42, 17, 10, 50, 100, 150, 4));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(43, 18, 20, 50, 100, 200, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(31, 6, 0, 0, 0, 2, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(32, 7, 0, 0, 0, 5, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(33, 8, 0, 0, 0, 10, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(34, 9, 0, 2, 5, 10, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(35, 10, 0, 2, 10, 20, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(36, 11, 0, 5, 20, 20, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(37, 12, 0, 5, 20, 30, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(38, 13, 1, 10, 30, 50, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(39, 14, 2, 10, 50, 50, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(40, 15, 5, 20, 80, 100, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(41, 16, 10, 20, 80, 100, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(42, 17, 10, 50, 100, 150, 4));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(43, 18, 20, 50, 100, 200, 4));
             // Körperbeherrschung
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(44, 9, 0, 1, 2, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(45, 10, 0, 1, 2, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(46, 11, 0, 2, 5, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(47, 12, 0, 2, 5, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(48, 13, 1, 5, 10, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(49, 14, 2, 10, 10, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(50, 15, 5, 10, 20, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(51, 16, 10, 20, 20, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(52, 17, 10, 20, 50, 5));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(53, 18, 20, 50, 50, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(44, 9, 0, 1, 2, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(45, 10, 0, 1, 2, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(46, 11, 0, 2, 5, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(47, 12, 0, 2, 5, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(48, 13, 1, 5, 10, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(49, 14, 2, 10, 10, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(50, 15, 5, 10, 20, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(51, 16, 10, 20, 20, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(52, 17, 10, 20, 50, 5));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(53, 18, 20, 50, 50, 5));
             // Sozial
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(54, 9, 2, 2, 5, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(55, 10, 2, 2, 5, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(56, 11, 5, 5, 10, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(57, 12, 5, 10, 10, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(58, 13, 10, 10, 20, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(59, 14, 10, 20, 20, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(60, 15, 20, 20, 50, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(61, 16, 20, 50, 50, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(62, 17, 50, 50, 100, 6));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(63, 18, 50, 50, 100, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(54, 9, 2, 2, 5, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(55, 10, 2, 2, 5, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(56, 11, 5, 5, 10, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(57, 12, 5, 10, 10, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(58, 13, 10, 10, 20, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(59, 14, 10, 20, 20, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(60, 15, 20, 20, 50, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(61, 16, 20, 50, 50, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(62, 17, 50, 50, 100, 6));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(63, 18, 50, 50, 100, 6));
             // Unterwelt
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(64, 9, 2, 5, 5, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(65, 10, 5, 5, 10, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(66, 11, 5, 10, 20, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(67, 12, 10, 10, 20, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(68, 13, 10, 20, 30, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(69, 14, 20, 20, 50, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(70, 15, 20, 50, 80, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(71, 16, 50, 50, 80, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(72, 17, 50, 100, 100, 7));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(73, 18, 50, 100, 100, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(64, 9, 2, 5, 5, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(65, 10, 5, 5, 10, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(66, 11, 5, 10, 20, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(67, 12, 10, 10, 20, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(68, 13, 10, 20, 30, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(69, 14, 20, 20, 50, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(70, 15, 20, 50, 80, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(71, 16, 50, 50, 80, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(72, 17, 50, 100, 100, 7));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(73, 18, 50, 100, 100, 7));
             // Waffen
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(74, 6, 1, 1, 1, 1, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(75, 7, 1, 1, 2, 2, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(76, 8, 1, 2, 2, 2, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(77, 9, 2, 2, 5, 5, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(78, 10, 2, 5, 5, 10, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(79, 11, 5, 10, 10, 20, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(80, 12, 10, 20, 20, 50, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(81, 13, 20, 50, 50, 100, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(82, 14, 50, 50, 100, 150, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(83, 15, 100, 100, 150, 200, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(84, 16, 100, 150, 200, 300, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(85, 17, 150, 150, 300, 300, 8));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(86, 18, 150, 200, 300, 400, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(74, 6, 1, 1, 1, 1, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(75, 7, 1, 1, 2, 2, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(76, 8, 1, 2, 2, 2, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(77, 9, 2, 2, 5, 5, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(78, 10, 2, 5, 5, 10, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(79, 11, 5, 10, 10, 20, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(80, 12, 10, 20, 20, 50, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(81, 13, 20, 50, 50, 100, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(82, 14, 50, 50, 100, 150, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(83, 15, 100, 100, 150, 200, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(84, 16, 100, 150, 200, 300, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(85, 17, 150, 150, 300, 300, 8));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(86, 18, 150, 200, 300, 400, 8));
             // Wissen
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(87, 9, 1, 2, 2, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(88, 10, 1, 2, 5, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(89, 11, 1, 5, 5, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(90, 12, 1, 5, 10, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(91, 13, 2, 10, 10, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(92, 14, 2, 10, 20, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(93, 15, 5, 20, 20, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(94, 16, 10, 20, 20, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(95, 17, 10, 50, 50, 9));
-            modelBuilder.Entity<LearningCost>().HasData(new LearningCost(96, 18, 20, 50, 50, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(87, 9, 1, 2, 2, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(88, 10, 1, 2, 5, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(89, 11, 1, 5, 5, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(90, 12, 1, 5, 10, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(91, 13, 2, 10, 10, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(92, 14, 2, 10, 20, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(93, 15, 5, 20, 20, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(94, 16, 10, 20, 20, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(95, 17, 10, 50, 50, 9));
+            modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(96, 18, 20, 50, 50, 9));
 
             // Init Classes
             modelBuilder.Entity<Class>().HasData(new Class(1, "Assassine", "As"));
@@ -886,14 +886,14 @@ namespace Midgard_Charakter_Editor.Database
             modelBuilder.Entity<Spell>().HasData(new Spell(318, "Die Klänge des Zusammenwachsens", "-", 15, "Magan", "Erde", "2", "3 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Harfe oder Laute, Stimme", 5, 5, 19));
             modelBuilder.Entity<Spell>().HasData(new Spell(319, "Die überzeugende Stimme", "-", 10, "Feuer", "Luft", "2", "1 min", "15 m", "Geist", "1 Wesen", "2 min", "-", "Stimme", 5, 5, 19));
 
-            // Init DefenseWeaponLearningCosts
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(1, 2, 1));
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(2, 3, 2));
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(3, 4, 10));
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(4, 5, 30));
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(5, 6, 50));
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(6, 7, 100));
-            modelBuilder.Entity<DefenseWeaponLearningCost>().HasData(new DefenseWeaponLearningCost(7, 8, 150));
+            // Init DefenseWeaponSkillTrainingCosts
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(1, 2, 1));
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(2, 3, 2));
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(3, 4, 10));
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(4, 5, 30));
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(5, 6, 50));
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(6, 7, 100));
+            modelBuilder.Entity<DefenseWeaponTrainingCost>().HasData(new DefenseWeaponTrainingCost(7, 8, 150));
 
             // Init Races
             modelBuilder.Entity<Race>().HasData(new Race(1, "Mensch", 0, 0));
@@ -984,11 +984,12 @@ namespace Midgard_Charakter_Editor.Database
         public DbSet<Class> Classes { get; set; }
         public DbSet<ClassCategoryAffinity> ClassCategoryAffinities { get; set; }
         public DbSet<ClassCost> ClassCosts { get; set; }
-        public DbSet<DefenseWeaponLearningCost> DefenseWeaponLearningCosts { get; set; }
-        public DbSet<LearningCost> LearningCosts { get; set; }
+        public DbSet<DefenseWeaponTrainingCost> DefenseWeaponSkillTrainingCosts { get; set; }
         public DbSet<Race> Races { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<SkillHasCategory> SkillHasCategories { get; set; }
+        public DbSet<SkillLearningCost> SkillLearningCost { get; set; }
+        public DbSet<SkillTrainingCost> SkillTrainingCosts { get; set; }
         public DbSet<Spell> Spells { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
     }

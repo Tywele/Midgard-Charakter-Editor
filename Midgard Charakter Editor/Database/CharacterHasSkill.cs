@@ -12,5 +12,6 @@ namespace MidgardCharakterEditor.Database
 		public Character Character { get; set; }
 		public Skill Skill { get; set; }
 		public int Value { get; set; }
+        public string Note { get; set; }
 	}
 }

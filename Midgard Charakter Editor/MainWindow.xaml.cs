@@ -16,7 +16,7 @@ namespace MidgardCharakterEditor
             {
 
             }
-            var path = @"C:\Liste der Waffen - Fernkampf.csv";
+            var path = @"C:\Liste der Lerneinheiten für Kategorien.csv";
             using (TextFieldParser csvParser = new TextFieldParser(path))
             {
                 csvParser.CommentTokens = new string[] { "#" };
@@ -26,7 +26,7 @@ namespace MidgardCharakterEditor
                 // Skip the row with the column names
                 csvParser.ReadLine();
 
-                var counter = 42;
+                var counter = -1;
 
                 while (!csvParser.EndOfData)
                 {
@@ -35,7 +35,7 @@ namespace MidgardCharakterEditor
                     string[] fields = csvParser.ReadFields();
 
 
-                    line = $"modelBuilder.Entity<Weapon>().HasData(new Weapon({counter}, \"{fields[1]}\", \"{fields[6]}\", \"\", \"\", {fields[2]}, {fields[3]}, {fields[4]}, \"{fields[13]}\", \"{fields[7]}/{fields[8]}/{fields[9]}\", {fields[0]}));";
+                    line = $"modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost({fields[0]}, {fields[1]}, {fields[2]}, {fields[3]}));";
                     counter++;
 
                     //if (fields[6] != "-")

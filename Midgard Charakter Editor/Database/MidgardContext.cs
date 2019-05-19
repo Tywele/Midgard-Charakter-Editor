@@ -976,6 +976,39 @@ namespace MidgardCharakterEditor.Database
             modelBuilder.Entity<Weapon>().HasData(new Weapon(63, "Langbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(64, "Schleuder", "1W6", "", "", 0, 61, 0, "", "30/60/90", 80));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(65, "Stockschleuder", "2W6-2", "", "", 31, 81, 0, "", "50/100/180", 80));
+
+            // Init SkillLearningCosts
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(1, 1, 1, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(2, 1, 2, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(3, 1, 3, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(4, 1, 4, 10));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(5, 2, 1, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(6, 2, 2, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(7, 2, 3, 4));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(8, 3, 1, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(9, 3, 2, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(10, 3, 3, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(11, 3, 4, 10));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(12, 4, 1, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(13, 4, 2, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(14, 4, 3, 10));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(15, 4, 4, 10));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(16, 5, 1, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(17, 5, 2, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(18, 5, 3, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(19, 6, 1, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(20, 6, 2, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(21, 6, 3, 4));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(22, 7, 1, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(23, 7, 2, 4));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(24, 7, 3, 10));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(25, 8, 1, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(26, 8, 2, 4));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(27, 8, 3, 6));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(28, 8, 4, 8));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(29, 9, 1, 1));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(30, 9, 2, 2));
+            modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(31, 9, 3, 2));
         }
 
         public DbSet<Category> Categories { get; set; }

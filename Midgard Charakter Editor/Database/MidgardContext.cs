@@ -150,21 +150,24 @@ namespace MidgardCharakterEditor.Database
             modelBuilder.Entity<SkillTrainingCost>().HasData(new SkillTrainingCost(96, 18, 20, 50, 50, 9));
 
             // Init Classes
-            modelBuilder.Entity<Class>().HasData(new Class(1, "Assassine", "As"));
-            modelBuilder.Entity<Class>().HasData(new Class(2, "Barbar", "Bb"));
-            modelBuilder.Entity<Class>().HasData(new Class(3, "Glücksritter", "Gl"));
-            modelBuilder.Entity<Class>().HasData(new Class(4, "Händler", "Hä"));
-            modelBuilder.Entity<Class>().HasData(new Class(5, "Krieger", "Kr"));
-            modelBuilder.Entity<Class>().HasData(new Class(6, "Spitzbube", "Sp"));
-            modelBuilder.Entity<Class>().HasData(new Class(7, "Waldläufer", "Wa"));
-            modelBuilder.Entity<Class>().HasData(new Class(8, "Barde", "Ba"));
-            modelBuilder.Entity<Class>().HasData(new Class(9, "Ordenskrieger", "Or"));
-            modelBuilder.Entity<Class>().HasData(new Class(10, "Druide", "Dr"));
-            modelBuilder.Entity<Class>().HasData(new Class(11, "Hexer", "Hx"));
-            modelBuilder.Entity<Class>().HasData(new Class(12, "Magier", "Ma"));
-            modelBuilder.Entity<Class>().HasData(new Class(13, "Priester, Beschützer", "PB"));
-            modelBuilder.Entity<Class>().HasData(new Class(14, "Priester, Streiter", "PS"));
-            modelBuilder.Entity<Class>().HasData(new Class(15, "Schamane", "Sc"));
+            // 0 = Kämpfer
+            modelBuilder.Entity<Class>().HasData(new Class(1, "Assassine", "As", 0));
+            modelBuilder.Entity<Class>().HasData(new Class(2, "Barbar", "Bb", 0));
+            modelBuilder.Entity<Class>().HasData(new Class(3, "Glücksritter", "Gl", 0));
+            modelBuilder.Entity<Class>().HasData(new Class(4, "Händler", "Hä", 0));
+            modelBuilder.Entity<Class>().HasData(new Class(5, "Krieger", "Kr", 0));
+            modelBuilder.Entity<Class>().HasData(new Class(6, "Spitzbube", "Sp", 0));
+            modelBuilder.Entity<Class>().HasData(new Class(7, "Waldläufer", "Wa", 0));
+            // 1 = Zauberkundiger Kämpfer
+            modelBuilder.Entity<Class>().HasData(new Class(8, "Barde", "Ba", 1));
+            modelBuilder.Entity<Class>().HasData(new Class(9, "Ordenskrieger", "Or", 1));
+            // 2 = Zauberer
+            modelBuilder.Entity<Class>().HasData(new Class(10, "Druide", "Dr", 2));
+            modelBuilder.Entity<Class>().HasData(new Class(11, "Hexer", "Hx", 2));
+            modelBuilder.Entity<Class>().HasData(new Class(12, "Magier", "Ma", 2));
+            modelBuilder.Entity<Class>().HasData(new Class(13, "Priester, Beschützer", "PB", 2));
+            modelBuilder.Entity<Class>().HasData(new Class(14, "Priester, Streiter", "PS", 2));
+            modelBuilder.Entity<Class>().HasData(new Class(15, "Schamane", "Sc", 2));
 
             // Init ClassCosts
             // Assassine

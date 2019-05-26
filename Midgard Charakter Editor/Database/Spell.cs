@@ -28,11 +28,13 @@ namespace MidgardCharakterEditor.Database
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public virtual ICollection<Character> Characters { get; set; }
+        public bool PossibleStarter { get; set; }
+
+        public virtual ICollection<CharacterHasSpell> CharacterHasSpells { get; set; }
 
         public Spell(int id, string name, string type, int processId, string agent, string reagent, string castingCost, 
             string castingTime, string range, string target, string affectedArea, string duration, string origin, 
-            string material, int level, int learningCost, int categoryId)
+            string material, int level, int learningCost, int categoryId, bool possibleStarter = false)
         {
             Id = id;
             Name = name;
@@ -51,6 +53,7 @@ namespace MidgardCharakterEditor.Database
             Level = level;
             LearningCost = learningCost;
             CategoryId = categoryId;
+            PossibleStarter = possibleStarter;
         }
     }
 }

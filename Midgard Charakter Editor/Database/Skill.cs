@@ -11,11 +11,12 @@ namespace MidgardCharakterEditor.Database
 		public int? Untrained { get; set; }
 		public string Description { get; set; }
         public int InitialValue { get; set; }
+        public bool PossibleStarter { get; set; }
 
 		public virtual ICollection<SkillHasCategory> SkillHasCategories { get; set; }
 		public virtual ICollection<CharacterHasSkill> CharacterHasSkills { get; set; }
 
-        public Skill(int id, string name, string leadingAttribute, string field, int initialValue, int? untrained = null)
+        public Skill(int id, string name, string leadingAttribute, string field, int initialValue, bool possibleStarter, int? untrained = null)
         {
             Id = id;
             Name = name;
@@ -23,6 +24,7 @@ namespace MidgardCharakterEditor.Database
             Field = field;
             Untrained = untrained;
             InitialValue = initialValue;
+            PossibleStarter = possibleStarter;
         }
 	}
 }

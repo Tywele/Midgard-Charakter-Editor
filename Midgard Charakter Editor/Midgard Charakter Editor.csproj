@@ -116,11 +116,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20190510161342_InitialCreate.cs" />
-    <Compile Include="Migrations\20190510161342_InitialCreate.designer.cs">
-      <DependentUpon>20190510161342_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\MidgardContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

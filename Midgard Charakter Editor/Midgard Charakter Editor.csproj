@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\Character.cs" />
+    <Compile Include="Database\CharacterHasInnateSkill.cs" />
     <Compile Include="Database\CharacterHasSkill.cs" />
     <Compile Include="Database\CharacterHasSpell.cs" />
     <Compile Include="Database\CharacterHasWeapon.cs" />
@@ -97,6 +98,9 @@
     <Compile Include="Database\ClassCategoryAffinity.cs" />
     <Compile Include="Database\ClassCost.cs" />
     <Compile Include="Database\DefenseWeaponTrainingCost.cs" />
+    <Compile Include="Database\InnateSkill.cs" />
+    <Compile Include="Database\Land.cs" />
+    <Compile Include="Database\Language.cs" />
     <Compile Include="Database\SkillLearningCost.cs" />
     <Compile Include="Database\SkillTrainingCost.cs" />
     <Compile Include="Database\MidgardContext.cs" />

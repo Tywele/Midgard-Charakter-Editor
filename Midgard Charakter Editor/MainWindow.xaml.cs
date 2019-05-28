@@ -16,7 +16,7 @@ namespace MidgardCharakterEditor
             {
 
             }
-            var path = @"C:\Liste der Lerneinheiten für Kategorien.csv";
+            var path = @"C:\Liste der Länder.csv";
             using (TextFieldParser csvParser = new TextFieldParser(path))
             {
                 csvParser.CommentTokens = new string[] { "#" };
@@ -26,7 +26,7 @@ namespace MidgardCharakterEditor
                 // Skip the row with the column names
                 csvParser.ReadLine();
 
-                var counter = -1;
+                var counter = 0;
 
                 while (!csvParser.EndOfData)
                 {
@@ -35,7 +35,7 @@ namespace MidgardCharakterEditor
                     string[] fields = csvParser.ReadFields();
 
 
-                    line = $"modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost({fields[0]}, {fields[1]}, {fields[2]}, {fields[3]}));";
+                    line = $"modelBuilder.Entity<Land>().HasData(new Land({fields[0]}, \"{fields[1]}\"));";
                     counter++;
 
                     //if (fields[6] != "-")

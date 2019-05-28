@@ -1012,20 +1012,81 @@ namespace MidgardCharakterEditor.Database
             modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(29, 9, 1, 1));
             modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(30, 9, 2, 2));
             modelBuilder.Entity<SkillLearningCost>().HasData(new SkillLearningCost(31, 9, 3, 2));
+
+            // Init Languages
+            modelBuilder.Entity<Language>().HasData(new Language(1, "Albisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(2, "Aranisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(3, "Chryseisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(4, "Erainnisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(5, "Hurritisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(6, "KanThaiTun"));
+            modelBuilder.Entity<Language>().HasData(new Language(7, "Kibulugi"));
+            modelBuilder.Entity<Language>().HasData(new Language(8, "Medjisisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(9, "Minangpahitisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(10, "Moravisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(11, "Nahuatlantisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(12, "Neu-Vallinga"));
+            modelBuilder.Entity<Language>().HasData(new Language(13, "Ongana"));
+            modelBuilder.Entity<Language>().HasData(new Language(14, "Rawindi"));
+            modelBuilder.Entity<Language>().HasData(new Language(15, "Scharidisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(16, "Tegarisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(17, "Twyneddisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(18, "Vallinga"));
+            modelBuilder.Entity<Language>().HasData(new Language(19, "Waelska"));
+            modelBuilder.Entity<Language>().HasData(new Language(20, "Dvarska"));
+            modelBuilder.Entity<Language>().HasData(new Language(21, "Eldalyn"));
+            modelBuilder.Entity<Language>().HasData(new Language(22, "Gnomenon"));
+            modelBuilder.Entity<Language>().HasData(new Language(23, "Halftan"));
+            modelBuilder.Entity<Language>().HasData(new Language(24, "Altoqua"));
+            modelBuilder.Entity<Language>().HasData(new Language(25, "Eradórisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(26, "Hochcoraniaid"));
+            modelBuilder.Entity<Language>().HasData(new Language(27, "Maralinga"));
+            modelBuilder.Entity<Language>().HasData(new Language(28, "Meketisch"));
+            modelBuilder.Entity<Language>().HasData(new Language(29, "Tuskisch"));
+
+            // Init Lands
+            modelBuilder.Entity<Land>().HasData(new Land(1, "Alba"));
+            modelBuilder.Entity<Land>().HasData(new Land(2, "Aran"));
+            modelBuilder.Entity<Land>().HasData(new Land(3, "Buluga"));
+            modelBuilder.Entity<Land>().HasData(new Land(4, "Chryseia"));
+            modelBuilder.Entity<Land>().HasData(new Land(5, "Clanngadarn"));
+            modelBuilder.Entity<Land>().HasData(new Land(6, "Erainn"));
+            modelBuilder.Entity<Land>().HasData(new Land(7, "Eschar"));
+            modelBuilder.Entity<Land>().HasData(new Land(8, "Ikengabecken"));
+            modelBuilder.Entity<Land>().HasData(new Land(9, "KanThaiPan (Ost)"));
+            modelBuilder.Entity<Land>().HasData(new Land(10, "KanThaiPan (TsaiChen-Tal)"));
+            modelBuilder.Entity<Land>().HasData(new Land(11, "Küstenstaaten"));
+            modelBuilder.Entity<Land>().HasData(new Land(12, "Medjis"));
+            modelBuilder.Entity<Land>().HasData(new Land(13, "Minangpahit"));
+            modelBuilder.Entity<Land>().HasData(new Land(14, "Moravod"));
+            modelBuilder.Entity<Land>().HasData(new Land(15, "Nahuatlan"));
+            modelBuilder.Entity<Land>().HasData(new Land(16, "Rawindra"));
+            modelBuilder.Entity<Land>().HasData(new Land(17, "Tegarische Steppe"));
+            modelBuilder.Entity<Land>().HasData(new Land(18, "Urruti"));
+            modelBuilder.Entity<Land>().HasData(new Land(19, "Valian"));
+            modelBuilder.Entity<Land>().HasData(new Land(20, "Waeland"));
+            modelBuilder.Entity<Land>().HasData(new Land(21, "Ywerddon"));
         }
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Character> Characters { get; set; }
+        public DbSet<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; }
         public DbSet<CharacterHasSkill> CharacterHasSkills { get; set; }
+        public DbSet<CharacterHasSpell> CharacterHasSpells { get; set; }
+        public DbSet<CharacterHasWeapon> CharacterHasWeapons { get; set; }
         public DbSet<Class> Classes { get; set; }
         public DbSet<ClassCategoryAffinity> ClassCategoryAffinities { get; set; }
         public DbSet<ClassCost> ClassCosts { get; set; }
         public DbSet<DefenseWeaponTrainingCost> DefenseWeaponSkillTrainingCosts { get; set; }
+        public DbSet<InnateSkill> InnateSkills { get; set; }
+        public DbSet<Land> Lands { get; set; }
+        public DbSet<Language> Languages { get; set; }
         public DbSet<Race> Races { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<SkillHasCategory> SkillHasCategories { get; set; }
         public DbSet<SkillLearningCost> SkillLearningCost { get; set; }
         public DbSet<SkillTrainingCost> SkillTrainingCosts { get; set; }
+        public DbSet<SocialClass> SocialClasses { get; set; }
         public DbSet<Spell> Spells { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
     }

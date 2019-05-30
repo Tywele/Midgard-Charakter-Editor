@@ -13,14 +13,18 @@
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
+        public int? SecondaryCategoryId { get; set; }
+        public Category SecondaryCategory { get; set; }
+
         public int Value { get; set; }
 
-        public ClassCategoryAffinity(int id, int classId, int categoryId, int value)
+        public ClassCategoryAffinity(int id, int classId, int value, int categoryId, int? secondaryCategoryId = null)
         {
             Id = id;
             ClassId = classId;
-            CategoryId = categoryId;
             Value = value;
+            CategoryId = categoryId;
+            SecondaryCategoryId = secondaryCategoryId;
         }
     }
 }

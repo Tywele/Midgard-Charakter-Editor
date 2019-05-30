@@ -16,7 +16,7 @@ namespace MidgardCharakterEditor
             {
 
             }
-            var path = @"C:\Liste der Länder.csv";
+            var path = @"C:\Liste der Lerneinheiten bei Spielbeginn.csv";
             using (TextFieldParser csvParser = new TextFieldParser(path))
             {
                 csvParser.CommentTokens = new string[] { "#" };
@@ -34,8 +34,11 @@ namespace MidgardCharakterEditor
                     // Read current line fields, pointer moves to the next line.
                     string[] fields = csvParser.ReadFields();
 
+                    if (int.TryParse(fields[5], out var result))
+                        line = $"modelBuilder.Entity<ClassCategoryAffinity>().HasData(new ClassCategoryAffinity({fields[0]}, {fields[1]}, {fields[3]}, {fields[4]}, {fields[5]}));";
+                    else
+                        line = $"modelBuilder.Entity<ClassCategoryAffinity>().HasData(new ClassCategoryAffinity({fields[0]}, {fields[1]}, {fields[3]}, {fields[4]}));";
 
-                    line = $"modelBuilder.Entity<Land>().HasData(new Land({fields[0]}, \"{fields[1]}\"));";
                     counter++;
 
                     //if (fields[6] != "-")

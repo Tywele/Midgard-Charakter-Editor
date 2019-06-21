@@ -118,6 +118,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20190530125827_InitialCreate.cs" />
+    <Compile Include="Migrations\20190530125827_InitialCreate.designer.cs">
+      <DependentUpon>20190530125827_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MidgardContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -156,6 +161,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro">
+      <Version>1.6.5</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers">
       <Version>2.2.4</Version>
     </PackageReference>
@@ -177,10 +185,10 @@
       <Version>12.0.2</Version>
     </PackageReference>
     <PackageReference Include="NLog.Config">
-      <Version>4.6.3</Version>
+      <Version>4.6.4</Version>
     </PackageReference>
     <PackageReference Include="NLog.Schema">
-      <Version>4.6.3</Version>
+      <Version>4.6.4</Version>
     </PackageReference>
     <PackageReference Include="SQLitePCLRaw.bundle_green">
       <Version>1.1.13</Version>

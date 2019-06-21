@@ -36,7 +36,6 @@ namespace MidgardCharakterEditor.Database
             seeder.SeedLands(modelBuilder);
             seeder.SeedInnateSkills(modelBuilder);
             seeder.SeedClassCategoryAffinities(modelBuilder);
-            
         }
 
         public DbSet<Category> Categories { get; set; }

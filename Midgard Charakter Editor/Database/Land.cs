@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die verschiedenen Länder Midgards aus denen der Charakter stammen kann (siehe Seite 30-32 im Kodex).
+    /// </summary>
     public class Land
     {
         public int Id { get; set; }

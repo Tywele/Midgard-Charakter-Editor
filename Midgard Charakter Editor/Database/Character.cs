@@ -2,6 +2,9 @@
 
 namespace MidgardCharakterEditor.Database
 {
+	/// <summary>
+	/// Ein Charakter.
+	/// </summary>
 	public class Character
 	{
 		public int Id { get; set; }

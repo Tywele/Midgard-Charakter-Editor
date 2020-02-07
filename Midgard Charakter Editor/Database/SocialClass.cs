@@ -1,5 +1,8 @@
 ﻿namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Stände, denen Charakter in Midgard angehören können (siehe Seite 29 im Kodex).
+    /// </summary>
     public class SocialClass
     {
         public int Id { get; set; }

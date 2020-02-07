@@ -1,5 +1,8 @@
 ﻿namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Welchen Kategorien die verschiedenen Fertigkeiten angehören (siehe Seite 158ff im Kodex).
+    /// </summary>
     public class SkillHasCategory
     {
         public int Id { get; set; }

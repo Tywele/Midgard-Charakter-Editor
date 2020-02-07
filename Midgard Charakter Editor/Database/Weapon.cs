@@ -2,6 +2,9 @@
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Waffen.
+    /// </summary>
     public class Weapon
 	{
 		public int Id { get; set; }

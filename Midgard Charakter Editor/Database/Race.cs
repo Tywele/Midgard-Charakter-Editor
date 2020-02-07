@@ -1,5 +1,8 @@
 ﻿namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Völker Midgards (siehe Seite 20-21 im Kodex).
+    /// </summary>
 	public class Race
 	{
 		public int Id { get; set; }

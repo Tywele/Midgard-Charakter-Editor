@@ -1,5 +1,8 @@
 ﻿namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Trainingskosten der Fertigkeiten (siehe Seite 158ff im Kodex)
+    /// </summary>
     public class SkillTrainingCost
 	{
 		public int Id { get; set; }

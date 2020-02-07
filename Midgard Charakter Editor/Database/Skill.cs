@@ -2,6 +2,9 @@
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Fertigkeiten (siehe Seite 100ff im Kodex).
+    /// </summary>
     public class Skill
 	{
 		public int Id { get; set; }

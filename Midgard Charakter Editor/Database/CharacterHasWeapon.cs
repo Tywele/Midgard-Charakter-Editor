@@ -2,6 +2,9 @@
 {
     public class CharacterHasWeapon
 	{
+		/// <summary>
+		/// Jede Waffe mit der jeder Charakter den Umgang gelernt hat.
+		/// </summary>
 		public int Id { get; set; }
 
         public int CharacterId { get;set; }

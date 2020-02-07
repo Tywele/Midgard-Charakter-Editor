@@ -1,7 +1,7 @@
 ﻿namespace MidgardCharakterEditor.Database
 {
     /// <summary>
-    /// Lerneinheiten bei Spielbeginn? Kodex Seite 38
+    /// Die Lerneinheiten der Klassen in den verschiedenen Kategorien bei Spielbeginn (siehe Seite 38 im Kodex).
     /// </summary>
     public class ClassCategoryAffinity
     {

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die angeborenen Fertigkeiten (siehe Seite 27 im Kodex).
+    /// </summary>
     public class InnateSkill
     {
         public int Id { get; set; }

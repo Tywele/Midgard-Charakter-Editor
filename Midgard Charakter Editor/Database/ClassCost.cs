@@ -1,5 +1,8 @@
 ﻿namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Kosten der verschiedenen Kategorien für alle Klassen (siehe Seite 157 im Kodex).
+    /// </summary>
     public class ClassCost
     {
         public int Id { get; set; }

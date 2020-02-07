@@ -2,6 +2,9 @@
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Zauber (siehe Arkanum).
+    /// </summary>
     public class Spell
     {
         public int Id { get; set; }

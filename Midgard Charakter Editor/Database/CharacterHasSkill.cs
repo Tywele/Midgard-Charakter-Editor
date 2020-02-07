@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MidgardCharakterEditor.Database
 {
+	/// <summary>
+	/// Welche Fertigkeiten jeder Charakter gelernt hat.
+	/// </summary>
 	public class CharacterHasSkill
 	{
 		public int Id { get; set; }

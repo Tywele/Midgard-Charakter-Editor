@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Die Sprachen, die in Midgard gesprochen werden (siehe Seite 127 im Kodex).
+    /// </summary>
     public class Language
     {
         public int Id { get; set; }

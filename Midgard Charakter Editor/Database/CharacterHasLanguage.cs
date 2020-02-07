@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MidgardCharakterEditor.Database
 {
+    /// <summary>
+    /// Welche Sprachen jeder Charakter beherrscht.
+    /// </summary>
     public class CharacterHasLanguage
     {
         public int Id { get; set; }

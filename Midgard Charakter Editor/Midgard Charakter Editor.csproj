@@ -88,7 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Character\CharacterCreator.cs" />
+    <Compile Include="Generators\CharacterGenerator.cs" />
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\Character.cs" />
     <Compile Include="Database\CharacterHasInnateSkill.cs" />
@@ -113,6 +113,7 @@
     <Compile Include="Database\SocialClass.cs" />
     <Compile Include="Database\Spell.cs" />
     <Compile Include="Database\Weapon.cs" />
+    <Compile Include="Generators\DiceGenerator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -214,6 +215,9 @@
     <PackageReference Include="xunit">
       <Version>2.4.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Character\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

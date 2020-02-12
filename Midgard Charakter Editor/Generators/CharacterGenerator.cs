@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MidgardCharakterEditor.Character
 {
-    public class CharacterCreator
+    public class CharacterGenerator
     {
     }
 }

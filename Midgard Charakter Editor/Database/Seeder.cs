@@ -5,7 +5,7 @@ namespace MidgardCharakterEditor.Database
     /// <summary>
     /// Class for initializing data for database through seeding.
     /// </summary>
-    public class Seeder
+    public class Seeder : ISeeder
     {
         /// <summary>
         /// Initializes Categories for the database.

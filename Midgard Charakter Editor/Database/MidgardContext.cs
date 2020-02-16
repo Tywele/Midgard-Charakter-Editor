@@ -6,8 +6,11 @@ namespace MidgardCharakterEditor.Database
 {
     public class MidgardContext : DbContext, IMidgardContext
     {
-        public MidgardContext()
+        private readonly ISeeder _seeder;
+
+        public MidgardContext(ISeeder seeder)
         {
+            _seeder = seeder;
             Database.Migrate();
         }
 
@@ -18,24 +21,22 @@ namespace MidgardCharakterEditor.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var seeder = new Seeder();
-
-            seeder.SeedCategories(modelBuilder);
-            seeder.SeedSkillTrainingCosts(modelBuilder);
-            seeder.SeedClasses(modelBuilder);
-            seeder.SeedClassCosts(modelBuilder);
-            seeder.SeedSkills(modelBuilder);
-            seeder.SeedSkillHasCategories(modelBuilder);
-            seeder.SeedSpells(modelBuilder);
-            seeder.SeedDefenseWeaponTrainingCosts(modelBuilder);
-            seeder.SeedRaces(modelBuilder);
-            seeder.SeedSocialClasses(modelBuilder);
-            seeder.SeedWeapons(modelBuilder);
-            seeder.SeedSkillLearningCosts(modelBuilder);
-            seeder.SeedLanguages(modelBuilder);
-            seeder.SeedLands(modelBuilder);
-            seeder.SeedInnateSkills(modelBuilder);
-            seeder.SeedClassCategoryAffinities(modelBuilder);
+            _seeder.SeedCategories(modelBuilder);
+            _seeder.SeedSkillTrainingCosts(modelBuilder);
+            _seeder.SeedClasses(modelBuilder);
+            _seeder.SeedClassCosts(modelBuilder);
+            _seeder.SeedSkills(modelBuilder);
+            _seeder.SeedSkillHasCategories(modelBuilder);
+            _seeder.SeedSpells(modelBuilder);
+            _seeder.SeedDefenseWeaponTrainingCosts(modelBuilder);
+            _seeder.SeedRaces(modelBuilder);
+            _seeder.SeedSocialClasses(modelBuilder);
+            _seeder.SeedWeapons(modelBuilder);
+            _seeder.SeedSkillLearningCosts(modelBuilder);
+            _seeder.SeedLanguages(modelBuilder);
+            _seeder.SeedLands(modelBuilder);
+            _seeder.SeedInnateSkills(modelBuilder);
+            _seeder.SeedClassCategoryAffinities(modelBuilder);
         }
 
         public DbSet<Category> Categories { get; set; }

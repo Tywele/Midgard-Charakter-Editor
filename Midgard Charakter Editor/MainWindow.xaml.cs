@@ -1,4 +1,5 @@
-﻿using MidgardCharakterEditor.Database;
+﻿using Autofac;
+using MidgardCharakterEditor.Database;
 
 namespace MidgardCharakterEditor
 {
@@ -10,9 +11,10 @@ namespace MidgardCharakterEditor
         public MainWindow()
         {
             InitializeComponent();
-            using (var context = new MidgardContext())
-            {
 
+            using (ILifetimeScope scope = AppWide.LifetimeScope.BeginLifetimeScope())
+            {
+                IMidgardContext context = scope.Resolve<IMidgardContext>();
             }
         }
     }

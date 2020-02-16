@@ -80,8 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppWide.cs" />
     <Compile Include="BootStrapper.cs" />
     <Compile Include="Database\IMidgardContext.cs" />
+    <Compile Include="Database\ISeeder.cs" />
     <Compile Include="Utilities\IDie.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

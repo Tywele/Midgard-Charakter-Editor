@@ -80,6 +80,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="Database\IMidgardContext.cs" />
+    <Compile Include="Utilities\IDie.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,7 +91,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Generators\CharacterGenerator.cs" />
     <Compile Include="Database\Category.cs" />
     <Compile Include="Database\Character.cs" />
     <Compile Include="Database\CharacterHasInnateSkill.cs" />
@@ -113,7 +115,7 @@
     <Compile Include="Database\SocialClass.cs" />
     <Compile Include="Database\Spell.cs" />
     <Compile Include="Database\Weapon.cs" />
-    <Compile Include="Generators\DiceGenerator.cs" />
+    <Compile Include="Utilities\Die.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -163,6 +165,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Autofac">
+      <Version>5.1.1</Version>
+    </PackageReference>
     <PackageReference Include="MahApps.Metro">
       <Version>1.6.5</Version>
     </PackageReference>

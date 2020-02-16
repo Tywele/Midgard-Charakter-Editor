@@ -1,19 +1,24 @@
-﻿using MidgardCharakterEditor.Generators;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MidgardCharakterEditor.Utilities;
 using Xunit;
 
 namespace Tests
 {
     public class DiceGeneratorTests
     {
+        private readonly Die _die;
+
+        public DiceGeneratorTests()
+        {
+            _die = new Die();
+        }
+
         [Fact]
         public void RollDiceTest1()
         {
-            var diceGenerator = new DiceGenerator(2, 6);
+            int result = 0;
 
-            var result = diceGenerator.RollDice();
+            for (int i = 0; i < 2; i++)
+                result += _die.Roll(6);
 
             Assert.InRange(result, 2, 12);
         }
@@ -21,9 +26,7 @@ namespace Tests
         [Fact]
         public void RollDiceTest2()
         {
-            var diceGenerator = new DiceGenerator(1, 100);
-
-            var result = diceGenerator.RollDice();
+            int result = _die.Roll(100);
 
             Assert.InRange(result, 1, 100);
         }
@@ -31,9 +34,9 @@ namespace Tests
         [Fact]
         public void RollDiceTest3()
         {
-            var diceGenerator = new DiceGenerator(4, 10);
-
-            var result = diceGenerator.RollDice();
+            int result = 0;
+            for (int i = 0; i < 4; i++)
+                result = _die.Roll(10);
 
             Assert.InRange(result, 4, 40);
         }
@@ -41,34 +44,31 @@ namespace Tests
         [Fact]
         public void RollSeparateDiceTest1()
         {
-            var diceGenerator = new DiceGenerator(2, 6);
-
-            var results = diceGenerator.RollSeparateDice();
-
-            foreach (var result in results)
+            for (int i = 0; i < 2; i++)
+            {
+                int result = _die.Roll(6);
                 Assert.InRange(result, 1, 6);
+            }
         }
 
         [Fact]
         public void RollSeparateDiceTest2()
         {
-            var diceGenerator = new DiceGenerator(1, 100);
-
-            var results = diceGenerator.RollSeparateDice();
-
-            foreach (var result in results)
+            for (int i = 0; i < 1; i++)
+            {
+                int result = _die.Roll(100);
                 Assert.InRange(result, 1, 100);
+            }
         }
 
         [Fact]
         public void RollSeparateDiceTest3()
         {
-            var diceGenerator = new DiceGenerator(4, 10);
-
-            var results = diceGenerator.RollSeparateDice();
-
-            foreach(var result in results)
+            for (int i = 0; i < 4; i++)
+            {
+                int result = _die.Roll(10);
                 Assert.InRange(result, 1, 10);
+            }
         }
     }
 }

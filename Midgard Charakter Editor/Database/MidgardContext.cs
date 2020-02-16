@@ -4,7 +4,7 @@ using System.IO;
 
 namespace MidgardCharakterEditor.Database
 {
-    public class MidgardContext : DbContext
+    public class MidgardContext : DbContext, IMidgardContext
     {
         public MidgardContext()
         {

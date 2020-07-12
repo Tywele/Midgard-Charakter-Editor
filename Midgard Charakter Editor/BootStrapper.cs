@@ -14,6 +14,7 @@ namespace MidgardCharakterEditor
 
             builder.RegisterType<Seeder>().As<ISeeder>();
             builder.RegisterType<MidgardContext>().As<IMidgardContext>();
+            //builder.RegisterGeneric < typeof(LogManager.GetCurrentClassLogger()))>.As<ILogger>();
             builder.RegisterType<Die>().As<IDie>();
 
             AppWide.LifetimeScope = builder.Build();

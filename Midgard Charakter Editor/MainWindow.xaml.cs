@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using MidgardCharakterEditor.Database;
+using System;
+using System.Linq;
 
 namespace MidgardCharakterEditor
 {
@@ -15,6 +17,7 @@ namespace MidgardCharakterEditor
             using (ILifetimeScope scope = AppWide.LifetimeScope.BeginLifetimeScope())
             {
                 IMidgardContext context = scope.Resolve<IMidgardContext>();
+                Console.WriteLine(context.Lands.Count());
             }
         }
     }

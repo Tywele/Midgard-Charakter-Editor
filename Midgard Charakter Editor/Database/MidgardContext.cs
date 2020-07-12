@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.IO;
 
 namespace MidgardCharakterEditor.Database
 {
@@ -16,6 +14,7 @@ namespace MidgardCharakterEditor.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=M5Editor;Trusted_Connection=True;");
             optionsBuilder.UseSqlite($"Data Source={Path.Combine(Environment.CurrentDirectory, "m5editor.db")}");
         }
 

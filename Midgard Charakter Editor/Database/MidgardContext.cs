@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
 
 namespace MidgardCharakterEditor.Database
 {
-    public class MidgardContext : DbContext, IMidgardContext
+    public sealed class MidgardContext : DbContext, IMidgardContext
     {
         private readonly ISeeder _seeder;
 

@@ -9,6 +9,6 @@
         Height="450" 
         Width="800" ResizeMode="CanResizeWithGrip">
     <Grid>
-        
+        <TextBlock x:Name="TheTextBlock"></TextBlock>
     </Grid>
 </Window>

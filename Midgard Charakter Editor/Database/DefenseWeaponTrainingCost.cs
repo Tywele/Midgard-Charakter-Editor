@@ -5,15 +5,15 @@
     /// </summary>
     public class DefenseWeaponTrainingCost
     {
-        public int Id { get; set; }
+        public int Id    { get; set; }
         public int Value { get; set; }
-        public int Cost { get; set; }
+        public int Cost  { get; set; }
 
         public DefenseWeaponTrainingCost(int id, int value, int cost)
         {
-            Id = id;
+            Id    = id;
             Value = value;
-            Cost = cost;
+            Cost  = cost;
         }
     }
 }

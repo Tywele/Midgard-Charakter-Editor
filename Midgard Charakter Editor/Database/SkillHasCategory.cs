@@ -5,21 +5,21 @@
     /// </summary>
     public class SkillHasCategory
     {
-        public int Id { get; set; }
+        public int Id         { get; set; }
         public int Difficulty { get; set; }
 
-        public int SkillId { get; set; }
-        public Skill Skill { get; set; }
+        public int   SkillId { get; set; }
+        public Skill Skill   { get; set; }
 
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public int      CategoryId { get; set; }
+        public Category Category   { get; set; }
 
         public SkillHasCategory(int id, int difficulty, int skillId, int categoryId)
         {
-            Id = id;
+            Id         = id;
             Difficulty = difficulty;
-            SkillId = skillId;
+            SkillId    = skillId;
             CategoryId = categoryId;
-        } 
+        }
     }
 }

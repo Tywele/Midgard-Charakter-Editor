@@ -10,8 +10,7 @@ namespace MidgardCharakterEditor
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
-            BootStrapper.Start();
+            Bootstrapper.Startup();
         }
     }
 }

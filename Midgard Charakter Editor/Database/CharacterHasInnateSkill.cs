@@ -13,10 +13,10 @@ namespace MidgardCharakterEditor.Database
     {
         public int Id { get; set; }
 
-        public int InnateSkillId { get; set; }
-        public InnateSkill InnateSkill { get; set; }
+        public int         InnateSkillId { get; set; }
+        public InnateSkill InnateSkill   { get; set; }
 
-        public int CharacterId { get; set; }
-        public Character Character { get; set; }
+        public int       CharacterId { get; set; }
+        public Character Character   { get; set; }
     }
 }

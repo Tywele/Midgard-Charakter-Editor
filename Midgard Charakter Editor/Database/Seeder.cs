@@ -404,7 +404,8 @@ namespace MidgardCharakterEditor.Database
             modelBuilder.Entity<Skill>().HasData(new Skill(12, "Etikette", "in", "Sozial", 8, true, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(13, "Fälschen", "gs", "Fingerfertigkeit", 12, true, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(14, "Fallen entdecken", "in", "Entdeckung", 8, true, 0));
-            modelBuilder.Entity<Skill>().HasData(new Skill(15, "Fallenmechanik", "gs", "Fingerfertigkeit", 8, false, 0));
+            modelBuilder.Entity<Skill>()
+                        .HasData(new Skill(15, "Fallenmechanik", "gs", "Fingerfertigkeit", 8, false, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(16, "Fechten", "gs", "Kampf", 5, false, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(17, "Gassenwissen", "in", "Sozial", 8, true, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(18, "Gaukeln", "gs", "Fingerfertigkeit", 12, true, 0));
@@ -426,11 +427,14 @@ namespace MidgardCharakterEditor.Database
             modelBuilder.Entity<Skill>().HasData(new Skill(34, "Pflanzenkunde", "in", "Wissen", 8, true, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(35, "Reiten", "gw", "Bewegung", 12, true, 6));
             modelBuilder.Entity<Skill>().HasData(new Skill(36, "Reiterkampf", "gw", "Kampf", 12, true, 0));
-            modelBuilder.Entity<Skill>().HasData(new Skill(37, "Geistresistenz", "in", "Körperbeherrschung", 10, false, 10));
-            modelBuilder.Entity<Skill>().HasData(new Skill(38, "Körperresistenz", "ko", "Körperbeherrschung", 10, false, 10));
+            modelBuilder.Entity<Skill>()
+                        .HasData(new Skill(37, "Geistresistenz", "in", "Körperbeherrschung", 10, false, 10));
+            modelBuilder.Entity<Skill>()
+                        .HasData(new Skill(38, "Körperresistenz", "ko", "Körperbeherrschung", 10, false, 10));
             modelBuilder.Entity<Skill>().HasData(new Skill(39, "Scharfschießen", "gs", "Kampf", 5, false, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(40, "Schleichen", "gw", "Bewegung", 8, true, 3));
-            modelBuilder.Entity<Skill>().HasData(new Skill(41, "Schlösser öffnen", "gs", "Fingerfertigkeit", 8, true, 0));
+            modelBuilder.Entity<Skill>()
+                        .HasData(new Skill(41, "Schlösser öffnen", "gs", "Fingerfertigkeit", 8, true, 0));
             modelBuilder.Entity<Skill>().HasData(new Skill(42, "Schreiben: Sprache", "in", "Wissen", 8, true));
             modelBuilder.Entity<Skill>().HasData(new Skill(43, "Schwimmen", "gw", "Bewegung", 12, true, 3));
             modelBuilder.Entity<Skill>().HasData(new Skill(44, "Seilkunst", "gs", "Fingerfertigkeit", 12, true, 3));
@@ -595,328 +599,691 @@ namespace MidgardCharakterEditor.Database
         public void SeedSpells(ModelBuilder modelBuilder)
         {
             // Zaubersprüche
-            modelBuilder.Entity<Spell>().HasData(new Spell(1, "Angst", "Wort", 10, "Feuer", "Wasser", "2 je Wesen", "Augenblick", "30 m", "Geist", "max 10 Wesen", "10 min", "dr", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(2, "Anstacheln", "Wort", 10, "Luft", "Wasser", "2", "10 sec", "-", "Geist", "1 Wesen", "2 h", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(3, "Anziehen", "Wort", 10, "Wasser", "Wasser", "2", "10 sec", "30 m", "Geist", "1 Wesen", "6 h", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(4, "Auffrischen", "Geste", 14, "Magan", "Metall", "1", "10 sec", "15 m", "Umgebung", "1 Objekt", "30 min", "dr", "", 1, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(5, "Auflösung", "Geste", 16, "Magan", "Metall", "8", "30 sec", "30 m", "Umgebung", "1 m Umkreis", "2 min, k", "dä", "Moder, Staub, Knochenmehl, Rostflocken (20 GS)", 12, 90, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(6, "Auskühlen", "Geste", 15, "Eis", "Erde", "2", "10 sec", "15 m", "Körper", "1 Wesen", "2 min", "el", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(7, "Bannen von Kälte", "Geste", 16, "Feuer", "Eis", "4", "10 min", "0 m", "Umgebung", "3 m Umkreis", "8 h", "el", "Holzkohlestück (1 SS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(8, "Bannen von Licht", "Wort", 16, "Eis", "Feuer", "1", "Augenblick", "0 m", "Umgebung", "9 m Umkreis", "10 min", "gö", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(9, "Bannen von Zauberwerk", "Wort", 16, "Metall", "Magan", "4", "2 min", "15 m", "Umgebung", "1 Wesen/Objekt", "0", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(10, "Beeinflussen", "Wort", 10, "Feuer", "Luft", "3", "10 sec", "15 m", "Geist", "1 Wesen", "10 min", "dä", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(11, "Befestigen", "Geste", 11, "Magan", "Metall", "2", "1 min", "Berührung", "Umgebung", "1 Objekt", "1 Monat", "dä", "eigener Speichel", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(12, "Besänftigen", "Wort", 10, "Wasser", "Wasser", "1 je Grad", "10 sec", "30 m", "Geist", "1 Wesen", "0", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(13, "Beschleunigen", "Geste", 15, "Magan", "Erde", "6", "10 sec", "15 m", "Körper", "1 Wesen", "1 min", "dä", "", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(14, "Binden des Vertrauten", "Gedanke", 10, "Wasser", "Wasser", "3", "Augenblick", "Berührung", "Geist", "1 km Umkreis", "2 h", "dä", "", 6, 10, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(15, "Blaue Bannsphäre", "Geste", 10, "Luft", "Eis", "2", "20 sec", "0 m", "Geist", "3 m Umkreis", "2 min", "gö", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(16, "Blauer Zwingkreis", "Geste", 10, "Luft", "Eis", "4", "20 sec", "30 m", "Geist", "6 m Umkreis", "10 min", "gö", "Eichenholzreif (20 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(17, "Blenden", "Geste", 13, "Feuer", "Feuer", "4", "Augenblick", "9 m Umkreis", "Umgebung", "-", "1 min", "gö", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(18, "Blendwerk", "Geste", 10, "Magan", "Feuer", "4", "10 sec", "50 m", "Geist", "1 Wesen/Objekt", "1W6x10 min", "dä", "Goldstaub (50 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(19, "Blitze schleudern", "Geste", 13, "Luft", "Feuer", "2 je Blitz", "10 sec", "200 m", "Umgebung", "1-10 Strahlen", "0", "dä", "getrocknetes Zitteraalherz (5 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(20, "Böser Blick", "Gedanke", 16, "Eis", "Holz", "2", "10 sec", "15 m", "Körper", "1 Wesen", "?", "sm", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(21, "Brot und Wasser", "Gedanke", 13, "Holz", "Wasser", "3", "10 min", "0 m", "Umgebung", "-", "0", "dä", "Mehlstaub und Wassertropfen (1 GS)", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(22, "Dämonenfeuer", "Geste", 13, "Magan", "Magan", "3", "10 sec", "30 m", "Umgebung", "Strahl", "2 min, k", "dä", "Phosphor (50 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(23, "Dämonenkugeln", "Geste", 13, "Magan", "Magan", "4", "10 sec", "50 m", "Umgebung", "Strahl", "2 min, k", "dä", "Phosphor (50 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(24, "Dämonenschwert", "Geste", 13, "Magan", "Magan", "4", "10 sec", "0 m", "Umgebung", "-", "2 min", "dä", "Phosphor (50 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(25, "Dämonische Zaubermacht", "Wort", 15, "Magan", "Wasser", "1", "10 min", "-", "Körper", "Zauberer", "10 min", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(26, "Deckmantel", "Geste", 16, "Magan", "Magan", "6", "10 sec", "0 m", "Umgebung", "6 m Umkreis", "8 h, k", "dä", "Goldreif (50 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(27, "Dinge verbergen", "Gedanke", 16, "Magan", "Magan", "1", "10 min", "Berührung", "Geist", "1 Objekt", "12 h", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(28, "Dinge wiederfinden", "Gedanke", 12, "Magan", "Metall", "1", "10 min", "unbegrenzt", "Geist", "1 Objekt", "10 min", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(29, "Donnerkeil", "Geste", 13, "Luft", "Feuer", "4", "10 sec", "50 m", "Umgebung", "Strahl", "0", "dä", "Murmeln aus Donnerechsenhorn (50 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(30, "Drittes Auge", "Geste", 12, "Magan", "Feuer", "1", "10 sec", "0 m", "Umgebung", "100 m Umkreis", "10 min", "el", "Kristallauge (10 GS)", 1, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(31, "Dschungelwand", "Geste", 13, "Holz", "Holz", "1 je m Breite", "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Smaragd (50 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(32, "Eisenhaut", "Geste", 15, "Metall", "Erde", "4", "20 sec", "Berührung", "Körper", "1 Wesen", "2 min", "dä", "Eisenpulver (20 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(33, "Eisiger Nebel", "Geste", 13, "Eis", "Eis", "1 je m²", "10 sec", "50 m", "Umgebung", "3 m Umkreis", "1 min", "el", "Bergkristall (20 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(34, "Eiswand", "Geste", 13, "Eis", "Eis", "1 je m Breite", "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Diamant (50 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(35, "Eiswandlung", "Geste", 14, "Wasser", "Eis", "3", "10 sec", "200 m", "Umgebung", "bis zu 10 m²", "var", "el", "reinstes Wasser (50 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(36, "Elementenwandlung", "Geste", 14, "Ausgangselement", "Zielelement", "6", "var", "5 m", "Umgebung", "bis zu 1 m²", "?", "el", "Edelstein (100 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(37, "Entgiften", "Wort", 16, "Magan", "Eis", "2", "30 sec", "3 m", "Umgebung", "1 Objekt", "0", "dr", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(38, "Erdbeben", "Geste", 11, "Erde", "Erde", "6", "1 min", "0 m", "Umgebung", "1 km Umkreis", "10 min", "el", "", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(39, "Erdfessel", "Geste", 11, "Erde", "Erde", "3", "Augenblick", "50 m", "Umgebung", "1 m Umkreis", "2 min", "el", "Honig-Erd-Gemisch (5 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(40, "Erdwandlung", "Geste", 14, "Erde", "Erde", "6", "20 sec", "Berührung", "Umgebung", "1 m²", "?", "el", "Bernstein (100 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(41, "Erkennen von Leben", "Gedanke", 12, "Magan", "Wasser", "1", "Augenblick", "0 m", "Geist", "15 m Kegel", "1 min", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(42, "Erkennen von Zauberei", "Gedanke", 12, "Magan", "Magan", "2", "Augenblick", "15 m", "Geist", "1 m²", "0", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(43, "Erscheinungen", "Geste", 10, "Magan", "Feuer", "6", "20 sec", "30 m", "Geist", "3 m Umkreis", "2 min, k", "dä", "Blütenstaub vom blauen Mohn (100 GS)", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(44, "Erwecken", "Geste", 15, "Eis", "Erde", "3", "10 sec", "30 m", "Körper", "1 Wesen", "2 min", "sm", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(45, "Felsenfaust", "Geste", 15, "Erde", "Erde", "1", "10 sec", "Berührung", "Körper", "1 Wesen", "2 min", "el", "Kieselstein (1 SS)", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(46, "Fesselbann", "Geste", 13, "Luft", "Magan", "2 je Grad", "10 sec", "30 m", "Körper", "1 Wesen", "10 min, k", "gö", "Fadenstück einer Riesenspinne (50 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(47, "Feuerfinger", "Geste", 13, "Feuer", "Feuer", "1", "Augenblick", "0 m", "Umgebung", "Zauberer", "2 min, k", "el", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(48, "Feuerkugel", "Geste", 13, "Feuer", "Feuer", "2", "10 sec", "50 m", "Umgebung", "3 m Umkreis", "2 min, k", "el", "Blutstein (30 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(49, "Feuerlanze", "Geste", 13, "Feuer", "Feuer", "3", "10 sec", "50 m", "Umgebung", "Strahl", "0", "el", "Korallenstück (20 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(50, "Feuerlauf", "Gedanke", 15, "Erde", "Erde", "3", "10 sec", "-", "Körper", "1 Wesen", "10 min", "el", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(51, "Feuermeisterschaft", "Geste", 14, "Feuer", "Feuer", "6", "20 sec", "30 m", "Umgebung", "2 m Umkreis", "2 min", "el", "Stück einer Drachenzunge (100 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(52, "Feuerregen", "Geste", 13, "Feuer", "Feuer", "18", "30 sec", "100 m", "Umgebung", "30 m Umkreis", "1 min, k", "el", "Basaltstaub und Rubinsplitter (100 GS)", 12, 90, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(53, "Feuerring", "Geste", 13, "Feuer", "Feuer", "4", "20 sec", "0 m", "Umgebung", "6 m Umkreis", "30 min", "el", "Zwergdrachenflügel und Zauberöl (100 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(54, "Feuerschild", "Geste", 13, "Eis", "Eis", "3", "10 sec", "15 m", "Umgebung", "-", "2 min", "el", "Diamantstaub (20 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(55, "Feuerwand", "Geste", 13, "Feuer", "Feuer", "1 je m Breite", "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Rubin (50 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(56, "Flammende Hand", "Geste", 13, "Feuer", "Feuer", "2", "10 sec", "0 m", "Umgebung", "Zauberer", "2 min", "el", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(57, "Flammenklinge", "Geste", 14, "Feuer", "Metall", "4", "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "el", "Klinge aus Alchimistenmetall", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(58, "Flammenkreis", "Geste", 13, "Holz", "Holz", "1", "Augenblick", "Berührung", "Umgebung", "1 Wesen", "2 min", "dr", "Zunder (1 SS)", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(59, "Flammenteppich", "Geste", 13, "Feuer", "Feuer", "1 je m²", "10 sec", "50 m", "Umgebung", "bis zu 10 m²", "1 min", "el", "Feuertopas (20 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(60, "Flicken", "Geste", 14, "Magan", "Metall", "1", "10 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dr", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(61, "Fliegen", "Geste", 11, "Luft", "Erde", "9", "30 sec", "-", "Körper", "Zauberer", "1 h, k", "dä", "Greifenschwungfeder (100 GS)", 11, 60, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(62, "Freundesauge", "Gedanke", 10, "Wasser", "Feuer", "4", "10 sec", "500 m", "Geist", "1 Wesen", "30 min, k", "dä", "", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(63, "Frostball", "Geste", 13, "Eis", "Eis", "1", "10 sec", "200 m", "Umgebung", "Strahl", "0", "el", "Silberperle oder Bergkristall (10 GS)", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(64, "Funkenregen", "Geste", 10, "Feuer", "Feuer", "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen", "1 min", "dä", "Sternenstaub (20 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(65, "Geisterhorn", "Geste", 12, "Magan", "Eis", "1", "10 sec", "0 m", "Umgebung", "100 m Umkreis", "10 min", "dä", "Kristallpyramide (10 GS)", 1, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(66, "Geistersperre", "Geste", 13, "Metall", "Metall", "1 je 5 m² Fläche", "10 sec", "Berührung", "Umgebung", "bis zu 100 m²", "8 h", "dä", "Eisenspäne (10 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(67, "Geistesschild", "Gedanke", 16, "Feuer", "Magan", "var", "Augenblick", "-", "Geist", "Zauberer", "10 min", "dä", "", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(68, "Geräusche dämpfen", "Geste", 14, "Metall", "Luft", "1", "Augenblick", "0 m", "Umgebung", "3 m Umkreis", "5 min", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(69, "Goldener Panzer", "Geste", 14, "Metall", "Metall", "2", "10 sec", "Berührung", "Umgebung", "1 Wesen", "2 min", "dä", "Goldstaub (50 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(70, "Goldene Sphäre", "Geste", 16, "Metall", "Magan", "2", "20 sec", "0 m", "Umgebung", "3 m Umkreis", "2 min", "gö", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(71, "Graue Hand", "Geste", 16, "Eis", "Erde", "7", "10 sec", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(72, "Hagel", "Geste", 13, "Eis", "Eis", "12", "30 sec", "100 m", "Umgebung", "30 m Umkreis", "2 min, k", "el", "Wasser und Diamantsplitter (50 GS)", 12, 90, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(73, "Hauch der Betäubung", "Geste", 13, "Eis", "Holz", "3", "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dä", "getrocknetes Vampirmoos (10 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(74, "Hauch der Verwesung", "Geste", 13, "Eis", "Erde", "2", "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dä", "Stinkmorschelasche (2 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(75, "Hauch des Winters", "Geste", 14, "Eis", "Luft", "1", "Augenblick", "0 m", "Umgebung", "12 m Umkreis", "10 min", "el", "Schneewolfhaare (20 GS)", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(76, "Heimfeder", "Geste", 12, "Wasser", "Luft", "2", "1 min", "3 m", "Umgebung", "1 Objekt", "30 min", "dr", "Taubenschwungfeder (5 SS) und Wasser", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(77, "Heranholen", "Geste", 11, "Luft", "Metall", "1", "10 sec", "30 m", "Umgebung", "1 Objekt", "10 sec", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(78, "Hexenstreich", "Geste", 15, "Magan", "Erde", "2", "10 sec", "15 m", "Körper", "1 Wesen", "?", "dä", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(79, "Himmelsleiter", "Geste", 13, "Metall", "Feuer", "6", "1 min", "50 m", "Umgebung", "-", "10 min", "gö", "", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(80, "Hitzeschutz", "Gedanke", 15, "Wasser", "Erde", "1", "Augenblick", "-", "Körper", "Zauberer", "2 min", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(81, "Höhenblick", "Geste", 11, "Luft", "Feuer", "2", "10 sec", "50 m", "Umgebung", "-", "1 min, k", "dä", "Auge eines Greifvogels (50 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(82, "Hören der Geister", "Gedanke", 12, "Eis", "Luft", "1 je 10 sec Dauer", "10 sec", "0 m", "Körper", "6 m Umkreis", "10 sec je Grad", "dä", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(83, "Hören von Fernem", "Gedanke", 15, "Magan", "Wasser", "1", "1 min", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(84, "Hörnerklang", "Wort", 14, "Magan", "Luft", "1", "Augenblick", "0 m", "Umgebung", "2 km Umkreis", "10 sec", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(85, "Juwelenauge", "Geste", 11, "Erde", "Feuer", "2", "10 sec", "500 m", "Umgebung", "1 Objekt", "30 min", "dä", "2 Greifenaugenhälften", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(86, "Kälteschutz", "Gedanke", 15, "Feuer", "Erde", "1", "Augenblick", "-", "Körper", "Zauberer", "2 min", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(87, "Kraft entziehen", "Geste", 16, "Eis", "Feuer", "1", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(88, "Kraftraub", "Geste", 16, "Magan", "Feuer", "2", "10 sec", "30 m", "Umgebung", "1 m²", "2 min, k", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(89, "Lähmung", "Geste", 15, "Metall", "Erde", "8", "20 sec", "30 m", "Körper", "1 Wesen", "24 h", "dä", "Basiliskenschuppe (100 GS)", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(90, "Lauschen", "Gedanke", 14, "Magan", "Metall", "1", "1 min", "30 cm", "Umgebung", "-", "10 min, k", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(91, "Lichtbrücke", "Geste", 13, "Metall", "Feuer", "4", "1 min", "50 m", "Umgebung", "-", "10 min", "gö", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(92, "Lichtrunen", "Geste", 14, "Feuer", "Metall", "1", "10 min", "Berührung", "Umgebung", "1 m²", "?", "dä", "Nachtmarderhaarpinsel (50 GS)", 2, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(93, "Liebeszauber", "Geste", 10, "Wasser", "Wasser", "4", "1 h", "-", "Geist", "1 Wesen", "?", "dä", "Liebestrank oder Locke", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(94, "Liniensicht", "Gedanke", 12, "Magan", "Holz", "1", "Augenblick", "bis zu 5 km", "Geist", "Zauberer", "10 sec", "dr", "", 1, 1, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(95, "Luftlauf", "Gedanke", 11, "Luft", "Erde", "4", "20 sec", "-", "Körper", "Zauberer", "2 min, k", "el", "", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(96, "Luftsphäre", "Geste", 13, "Luft", "Luft", "4", "20 sec", "0 m", "Umgebung", "3 m Umkreis", "1 h", "el", "Perle (100 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(97, "Macht über das Selbst", "Gedanke", 10, "Metall", "Feuer", "1", "10 sec", "-", "Körper", "Zauberer", "24 h, k", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(98, "Macht über die belebte Natur", "Wort", 10, "Magan", "Wasser", "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen je Grad", "mind. 2 h", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(99, "Macht über die Sinne", "Geste", 10, "Magan", "Feuer", "1 je Variation", "10 sec", "50 m", "Geist", "Zauberer", "2-10 min", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(100, "Macht über Leben", "Geste", 16, "Eis", "Erde", "mind. 8", "10 sec", "6 m", "Körper", "1 Wesen", "2 min", "dä", "", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(101, "Macht über magische Wesen", "Wort", 10, "Magan", "Magan", "3 je Grad", "20 sec", "30 m", "Geist", "1 Wesen je Grad", "var", "dä", "", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(102, "Macht über Menschen", "Wort", 10, "Magan", "Luft", "3 je Grad", "20 sec", "30 m", "Geist", "1 Wesen je Grad", "var", "dä", "", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(103, "Macht über Unbelebtes", "Geste", 11, "Feuer", "Metall", "2", "Augenblick", "30 m", "Umgebung", "-", "10 sec", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(104, "Mag. Kreis des Bewachens", "Geste", 12, "Magan", "Magan", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(105, "Mag. Kreis des Verschleierns", "Geste", 16, "Magan", "Magan", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(106, "Mag. Kreis des Widerstehens", "Geste", 14, "Magan", "Wasser", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(107, "Magischer Kreis, klein", "Geste", 12, "Magan", "Magan", "6", "10 min", "0 m", "Umgebung", "6 m Umkreis", "8 h", "dr", "mit Eisendraht umwickelte Zweige von Eiche, Esche und Weißdorn (10 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(108, "Marmorhaut", "Geste", 15, "Erde", "Erde", "3", "10 sec", "Berührung", "Körper", "1 Wesen", "10 min", "el", "Marmorstaub (1 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(109, "Mitfühlen", "Gedanke", 12, "Wasser", "Wasser", "1", "Augenblick", "500 m", "Geist", "1 Wesen", "30 min, k", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(110, "Namenloses Grauen", "Geste", 10, "Eis", "Wasser", "4 je Wesen", "20 sec", "30 m", "Geist", "1-3 Wesen", "2 min", "dä", "Schweiß von Albträumenden (20 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(111, "Nebel schaffen", "Geste", 13, "Wasser", "Wasser", "4", "20 sec", "0 m", "Umgebung", "50 m Umkreis", "30 min", "el", "versiegeltes Fläschchen voll Nebel (10 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(112, "Nebel wecken", "Geste", 14, "Wasser", "Luft", "2", "10 sec", "0 m", "Umgebung", "500 m Umkreis", "-", "el", "Staub (1 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(113, "Person wiederfinden", "Gedanke", 12, "Magan", "Luft", "2", "10 min", "unbegrenzt", "Geist", "1 Wesen", "10 min", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(114, "Pestklaue", "Geste", 16, "Eis", "Erde", "5", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "Pestkrötenklaue (50 GS)", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(115, "Pflanzenfessel", "Geste", 11, "Feuer", "Holz", "4", "20 sec", "50 m", "Umgebung", "10 m Umkreis", "2 min", "dr", "Samenmischung (10 GS)", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(116, "Rauchwolke", "Geste", 14, "Feuer", "Luft", "2", "10 sec", "30 m", "Umgebung", "9 m Umkreis", "10 min", "el", "Asche und Zunder (1 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(117, "Reaktionsschnelle", "Geste", 15, "Magan", "Feuer", "1", "30 sec", "30 m", "Geist", "1 Wesen", "10 min", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(118, "Reise der Seele", "Gedanke", 11, "Luft", "Feuer", "6", "30 min", "-", "Geist", "Zauberer", "var", "dr", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(119, "Rost", "Geste", 14, "Eis", "Metall", "2", "Augenblick", "Berührung", "Umgebung", "1 Objekt", "0", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(120, "Schallwächter", "Geste", 12, "Magan", "Luft", "2", "10 sec", "15 m", "Geist", "Zauberer", "10 min", "el", "Golddrahtreif (10 GS)", 3, 2, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(121, "Scharfblick", "Gedanke", 15, "Magan", "Feuer", "1", "1 min", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(122, "Schattenrobe", "Wort", 14, "Magan", "Feuer", "2", "10 sec", "-", "Umgebung", "Zauberer", "10 min", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(123, "Schattenschrecken", "Geste", 11, "Eis", "Feuer", "4", "20 sec", "0 m", "Umgebung", "100 m Umkreis", "30 min", "dä", "", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(124, "Schatten verstärken", "Geste", 14, "Eis", "Feuer", "1", "Augenblick", "0 m", "Umgebung", "15 m Umkreis", "10 min", "dä", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(125, "Schlaf", "Geste", 10, "Magan", "Wasser", "4 je Wesen", "10 sec", "30 m", "Körper", "bis zu 6 Wesen", "8 h", "dä", "Lotusblütenstaub (10 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(126, "Schlangenbiss", "Wort", 15, "Eis", "Holz", "4", "10 sec", "Berührung", "Körper", "1 Wesen", "2 min", "dä", "Schlangengift (20 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(127, "Schlummer", "Geste", 10, "Magan", "Wasser", "2 je Wesen", "10 sec", "30 m", "Körper", "bis zu 6 Wesen", "30 min", "dä", "Baldrianwurzel (5 GS)", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(128, "Schmerzen", "Geste", 16, "Magan", "Feuer", "2", "10 sec", "30 m", "Körper", "1 Wesen", "1 min", "dä", "Silber- oder Knochennadel (5 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(129, "Schrumpfen", "Geste", 15, "Holz", "Erde", "6", "20 sec", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(130, "Schutzgeste", "Geste", 15, "Metall", "Erde", "2", "Augenblick", "-", "Körper", "Zauberer", "0", "gö", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(131, "Schwäche", "Geste", 15, "Magan", "Erde", "1 je Wesen", "Augenblick", "30 m", "Körper", "1-10 Wesen", "2 min", "dä", "Eschenrinde (1 GS)", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(132, "Schwarze Sphäre", "Gedanke", 16, "Magan", "Wasser", "var", "20 sec", "0 m", "Umgebung", "5 m Umkreis", "10 min", "dä", "", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(133, "Schwarze Zone", "Gedanke", 16, "Magan", "Magan", "var", "Augenblick", "0 m", "Umgebung", "5 m Umkreis", "10 min", "dä", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(134, "Schweben", "Geste", 11, "Luft", "Erde", "6", "20 sec", "-", "Körper", "Zauberer", "1 min", "dä", "Kolibriflügel (100 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(135, "Schwerelosigkeit", "Geste", 11, "Luft", "Metall", "4", "1 min", "Berührung", "Umgebung", "1 Objekt", "0", "el", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(136, "Seelenkompass", "Geste", 12, "Feuer", "Luft", "2", "1 min", "6 km", "Geist", "1 Wesen", "10 min", "dä", "Silbernadel (10 GS) und Haar der Zielperson", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(137, "Sehen in Dunkelheit", "Gedanke", 15, "Feuer", "Feuer", "2", "1 min", "50 m", "Körper", "Zauberer", "30 min", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(138, "Sehen von Verborgenem", "Gedanke", 14, "Magan", "Metall", "1", "1 min", "30 cm", "Umgebung", "-", "10 min, k", "dä", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(139, "Silberne Bannsphäre", "Geste", 10, "Luft", "Feuer", "2", "20 sec", "0 m", "Geist", "3 m Umkreis", "2 min", "gö", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(140, "Silberner Zwingkreis", "Geste", 10, "Luft", "Feuer", "4", "20 sec", "30 m", "Geist", "6 m Umkreis", "10 min", "gö", "Silberreif (50 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(141, "Silberstaub", "Geste", 13, "Magan", "Metall", "1", "Augenblick", "Berührung", "Umgebung", "1 Wesen", "2 min", "dä", "Silberstaub (2 GS)", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(142, "Spruch intensivieren", "Gedanke", 15, "Magan", "Magan", "6", "10 sec", "-", "Geist", "Zauberer", "30 sec", "dä", "", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(143, "Stärke", "Geste", 15, "Magan", "Erde", "1 je Wesen", "Augenblick", "30 m", "Körper", "1-10 Wesen", "2 min", "dä", "getrockneter Fliegenpilz (1 GS)", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(144, "Steinkugel", "Geste", 13, "Erde", "Erde", "3", "10 sec", "50 m", "Umgebung", "3 m Umkreis", "2 min, k", "el", "Diamant (50 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(145, "Steinwand", "Geste", 13, "Erde", "Erde", "1 je m", "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Bernstein (50 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(146, "Stille", "Geste", 14, "Metall", "Luft", "2", "Augenblick", "0 m", "Umgebung", "3 m Umkreis", "1 min", "dä", "pulverisierte Eulenfedern (2 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(147, "Stimmenwerfen", "Gedanke", 11, "Magan", "Luft", "1", "Augenblick", "15 m", "Umgebung", "-", "2 min", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(148, "Sturmhand", "Geste", 11, "Luft", "Erde", "4", "10 sec", "Berührung", "Körper", "1 Wesen", "0", "el", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(149, "Sturmwind", "Geste", 11, "Luft", "Luft", "6", "20 sec", "0 m", "Umgebung", "30 m Kegel", "2 min, k", "el", "", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(150, "Sumpfboden", "Geste", 14, "Wasser", "Erde", "1", "10 sec", "50 m", "Umgebung", "15 m Umkreis", "2 min", "el", "Wasserlinsen (1 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(151, "Thursenstein", "Geste", 14, "Erde", "Erde", "6", "10 sec", "Berührung", "Umgebung", "1 Objekt", "10 sec", "dr", "Zauberkiesel", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(152, "Tierisches Handeln", "Geste", 10, "Wasser", "Luft", "6 je Wesen", "20 sec", "30 m", "Geist", "1-3 Wesen", "var", "dä", "Tierblutmischung (50 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(153, "Tiersprache", "Wort", 12, "Wasser", "Luft", "4", "20 sec", "15 m", "Körper", "Zauberer", "2 min", "dr", "", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(154, "Todeshauch", "Geste", 13, "Eis", "Wasser", "3", "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dä", "Fliegenpilzasche (1 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(155, "Todeskeule", "Geste", 14, "Eis", "Erde", "3", "10 sec", "Berührung", "Umgebung", "1 Objekt", "2 min", "dä", "Oberschenkelknochen", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(156, "Todeszauber", "Wort", 16, "Eis", "Holz", "1 je Schadenspunkt", "20 sec", "30 m", "Körper", "1 Wesen", "0", "dä", "", 11, 60, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(157, "Torwandeln", "Geste", 14, "Magan", "Holz", "4", "10 min", "Berührung", "Umgebung", "30 cm", "1 min", "el", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(158, "Umkehrschild", "Geste", 13, "Metall", "Magan", "6 je Seite", "30 sec", "-", "Umgebung", "Zauberer", "2 min", "dä", "versilberte Drachenschuppe (100 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(159, "Ungezieferplage", "Wort", 10, "Magan", "Wasser", "2", "30 sec", "0 m", "Geist", "1 Schwarm", "2 min", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(160, "Unsichtbarkeit", "Wort", 15, "Luft", "Metall", "4", "10 sec", "-", "Körper", "Zauberer", "10 min, k", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(161, "Verdorren", "Geste", 15, "Eis", "Erde", "5", "10 sec", "Berührung", "Körper", "1 Wesen", "?", "sm", "", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(162, "Vereisen", "Geste", 15, "Eis", "Erde", "7", "10 sec", "Berührung", "Körper", "1 Wesen", "?", "dä", "", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(163, "Vergiften", "Wort", 16, "Eis", "Erde", "2", "30 sec", "3 m", "Körper", "1 Wesen", "0", "sm", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(164, "Vergrößern", "Geste", 14, "Magan", "Metall", "6", "20 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dä", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(165, "Verkleinern", "Geste", 14, "Magan", "Metall", "6", "20 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dä", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(166, "Verlangsamen", "Geste", 15, "Metall", "Erde", "2", "10 sec", "15 m", "Körper", "1 Wesen", "1 min", "dä", "Blei (20 GS)", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(167, "Vermehren", "Geste", 14, "Magan", "Metall", "2", "10 sec", "15 m", "Umgebung", "1 Objekt", "30 min", "dr", "", 1, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(168, "Verschmutzen", "Geste", 14, "Magan", "Metall", "2", "10 sec", "15 m", "Umgebung", "1 Objekt", "0", "dr", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(169, "Versetzen", "Geste", 11, "Magan", "Metall", "2 je Wesen", "20 sec", "500 m", "Umgebung", "1-6 Wesen", "24 h", "dä", "Phosphorkreide (200 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(170, "Versteinern", "Geste", 15, "Erde", "Erde", "8", "10 sec", "Berührung", "Körper", "1 Wesen", "?", "sm", "", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(171, "Vertieren", "Geste", 10, "Wasser", "Luft", "3", "10 sec", "30 m", "Geist", "1 Wesen", "10 min", "dä", "Tierspeichelmischung (20 GS)", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(172, "Verursachen von Krankheit", "Geste", 15, "Eis", "Erde", "2", "Augenblick", "Berührung", "Körper", "1 Wesen", "3W6 Tage", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(173, "Verursachen schw. Wunden", "Geste", 16, "Eis", "Erde", "3", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(174, "Verursachen von Wunden", "Geste", 16, "Eis", "Erde", "1", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(175, "Verwandlung", "Geste", 15, "Holz", "Erde", "mind. 9", "30 sec", "Berührung", "Körper", "1 Wesen", "?", "dä", "Kern des Großen Kürbis (100 GS)", 11, 60, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(176, "Verwirren", "Geste", 10, "Magan", "Feuer", "1 je Grad", "Augenblick", "30 m", "Geist", "1 Wesen", "10 sec", "dä", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(177, "Verwünschen", "Wort", 15, "Luft", "Wasser", "2 je Wesen", "10 sec", "15 m", "Körper", "bis zu 6 Wesen", "30 min", "dä", "", 4, 3, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(178, "Verzweiflung", "Geste", 15, "Magan", "Luft", "5", "10 sec", "Berührung", "Geist", "1 Wesen", "1 h", "dä", "in Alkohol gelöste Kräutermischung (50 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(179, "Wachsen", "Geste", 15, "Holz", "Erde", "6", "20 sec", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 6, 10, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(180, "Wahnsinn", "Geste", 16, "Magan", "Luft", "7", "20 sec", "15 m", "Geist", "1 Wesen", "?", "dä", "Birkenrinde und Blüten des Wahnsinnkrautes (50 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(181, "Wahrsehen", "Geste", 12, "Magan", "Magan", "6", "20 sec", "15 m", "Geist", "3 m Umkreis", "10 min", "gö", "vierblättriger Klee (10 GS)", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(182, "Wandwandeln", "Geste", 14, "Magan", "Erde", "6", "10 min", "Berührung", "Umgebung", "-", "1 min", "el", "", 9, 30, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(183, "Warnung", "Geste", 12, "Luft", "Eis", "2", "10 sec", "0 m", "Geist", "15 m Umkreis", "10 min", "dä", "Einhornhaar und Espenholz (50 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(184, "Wasseratmen", "Geste", 15, "Luft", "Wasser", "2", "10 sec", "Berührung", "Körper", "1 Wesen", "8 h", "el", "", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(185, "Wasserlauf", "Gedanke", 11, "Wasser", "Erde", "3", "20 sec", "-", "Körper", "Zauberer", "10 min", "el", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(186, "Wassermeisterschaft", "Geste", 11, "Wasser", "Wasser", "6", "20 sec", "-", "Umgebung", "1 Wesen/Objekt", "1 h", "el", "Perle (100 GS)", 10, 40, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(187, "Wasserstrahl", "Geste", 13, "Wasser", "Wasser", "4", "20 sec", "5 m", "Umgebung", "Strahl", "1 min, k", "el", "Riesenkrakentrichter (100 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(188, "Wasserwandlung", "Geste", 14, "Eis", "Wasser", "4", "20 sec", "200 m", "Umgebung", "bis zu 10 m²", "var", "el", "reines Eis (50 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(189, "Windmeisterschaft", "Geste", 11, "Luft", "Luft", "4", "20 sec", "0 m", "Umgebung", "1 km Umkreis", "1 h", "el", "Sturmvogelfedern (10 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(190, "Windstoß", "Geste", 11, "Luft", "Luft", "1", "Augenblick", "0 m", "Umgebung", "30 m Kegel", "10 sec", "el", "", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(191, "Wirbelwind", "Geste", 11, "Luft", "Luft", "9", "30 sec", "0 m", "Umgebung", "3-6 m Umkreis", "2 min, k", "el", "", 12, 90, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(192, "Zauberauge", "Geste", 11, "Luft", "Feuer", "4", "20 sec", "500 m", "Umgebung", "-", "30 min, k", "dä", "Auge eines Toten (50 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(193, "Zauberhand", "Geste", 14, "Erde", "Luft", "4", "20 sec", "50 m", "Umgebung", "1 Wesen", "1 min, k", "dä", "Wachspuppe (20 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(194, "Zauberschild", "Geste", 13, "Metall", "Magan", "4 je Seite", "20 sec", "-", "Umgebung", "Zauberer", "2 min", "dä", "Drachenschuppe (100 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(195, "Zauberschlaf", "Geste", 10, "Magan", "Wasser", "6 je Wesen", "10 sec", "30 m", "Körper", "bis zu 6 Wesen", "24 h", "dä", "Lotusblütenstaub und Blutrosendorn (20 GS)", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(196, "Zauberschloss", "Geste", 11, "Metall", "Holz", "1", "10 sec", "Berührung", "Umgebung", "1 Objekt", "12 h", "dä", "Silberschlüssel (50 GS)", 2, 1, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(197, "Zauberschlüssel", "Geste", 11, "Magan", "Holz", "2", "10 sec", "Berührung", "Umgebung", "1 Objekt", "0", "dä", "Springwurzspan (50 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(198, "Zauberschmiede", "Geste", 14, "Magan", "Metall", "03. Sep", "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "dä", "Waffe aus Alchimistenmetall", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(199, "Zauberstimme", "Geste", 13, "Magan", "Luft", "2", "10 min", "50 m", "Umgebung", "-", "12 h", "dä", "Papageienzunge (20 GS)", 3, 2, 20, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(200, "Zauberwirklichkeit", "Geste", 10, "Magan", "Feuer", "9", "3 h", "50 m", "Geist", "6 m Umkreis", "30 min", "dä", "Blütenstaub, Essenzen, Edelmetallsplitter (200 GS)", 12, 90, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(201, "Zauberzunge", "Geste", 12, "Luft", "Luft", "4", "1 min", "-", "Geist", "Zauberer", "30 min", "dä", "Papageienhirn und -zunge (50 GS)", 7, 15, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(202, "Zielsuche", "Geste", 14, "Luft", "Holz", "2", "10 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dr", "", 5, 5, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(203, "Zweite Haut", "Gedanke", 16, "Erde", "Magan", "var", "Augenblick", "-", "Körper", "Zauberer", "10 min", "dä", "", 8, 20, 20));
-            modelBuilder.Entity<Spell>().HasData(new Spell(204, "Zwiesprache", "Wort", 12, "Feuer", "Luft", "1", "Augenblick", "500 m", "Körper", "Zauberer", "10 min, k", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(1, "Angst", "Wort", 10, "Feuer", "Wasser", "2 je Wesen",
+                "Augenblick", "30 m", "Geist", "max 10 Wesen", "10 min", "dr", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(2, "Anstacheln", "Wort", 10, "Luft", "Wasser", "2", "10 sec",
+                "-", "Geist", "1 Wesen", "2 h", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(3, "Anziehen", "Wort", 10, "Wasser", "Wasser", "2", "10 sec",
+                "30 m", "Geist", "1 Wesen", "6 h", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(4, "Auffrischen", "Geste", 14, "Magan", "Metall", "1",
+                "10 sec", "15 m", "Umgebung", "1 Objekt", "30 min", "dr", "", 1, 1, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(5, "Auflösung", "Geste", 16, "Magan", "Metall", "8",
+                "30 sec", "30 m", "Umgebung", "1 m Umkreis", "2 min, k", "dä",
+                "Moder, Staub, Knochenmehl, Rostflocken (20 GS)", 12, 90, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(6, "Auskühlen", "Geste", 15, "Eis", "Erde", "2", "10 sec",
+                "15 m", "Körper", "1 Wesen", "2 min", "el", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(7, "Bannen von Kälte", "Geste", 16, "Feuer", "Eis", "4",
+                "10 min", "0 m", "Umgebung", "3 m Umkreis", "8 h", "el", "Holzkohlestück (1 SS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(8, "Bannen von Licht", "Wort", 16, "Eis", "Feuer", "1",
+                "Augenblick", "0 m", "Umgebung", "9 m Umkreis", "10 min", "gö", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(9, "Bannen von Zauberwerk", "Wort", 16, "Metall", "Magan",
+                "4", "2 min", "15 m", "Umgebung", "1 Wesen/Objekt", "0", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(10, "Beeinflussen", "Wort", 10, "Feuer", "Luft", "3",
+                "10 sec", "15 m", "Geist", "1 Wesen", "10 min", "dä", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(11, "Befestigen", "Geste", 11, "Magan", "Metall", "2",
+                "1 min", "Berührung", "Umgebung", "1 Objekt", "1 Monat", "dä", "eigener Speichel", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(12, "Besänftigen", "Wort", 10, "Wasser", "Wasser",
+                "1 je Grad", "10 sec", "30 m", "Geist", "1 Wesen", "0", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(13, "Beschleunigen", "Geste", 15, "Magan", "Erde", "6",
+                "10 sec", "15 m", "Körper", "1 Wesen", "1 min", "dä", "", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(14, "Binden des Vertrauten", "Gedanke", 10, "Wasser",
+                "Wasser", "3", "Augenblick", "Berührung", "Geist", "1 km Umkreis", "2 h", "dä", "", 6, 10, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(15, "Blaue Bannsphäre", "Geste", 10, "Luft", "Eis", "2",
+                "20 sec", "0 m", "Geist", "3 m Umkreis", "2 min", "gö", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(16, "Blauer Zwingkreis", "Geste", 10, "Luft", "Eis", "4",
+                "20 sec", "30 m", "Geist", "6 m Umkreis", "10 min", "gö", "Eichenholzreif (20 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(17, "Blenden", "Geste", 13, "Feuer", "Feuer", "4",
+                "Augenblick", "9 m Umkreis", "Umgebung", "-", "1 min", "gö", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(18, "Blendwerk", "Geste", 10, "Magan", "Feuer", "4",
+                "10 sec", "50 m", "Geist", "1 Wesen/Objekt", "1W6x10 min", "dä", "Goldstaub (50 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(19, "Blitze schleudern", "Geste", 13, "Luft", "Feuer",
+                "2 je Blitz", "10 sec", "200 m", "Umgebung", "1-10 Strahlen", "0", "dä",
+                "getrocknetes Zitteraalherz (5 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(20, "Böser Blick", "Gedanke", 16, "Eis", "Holz", "2",
+                "10 sec", "15 m", "Körper", "1 Wesen", "?", "sm", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(21, "Brot und Wasser", "Gedanke", 13, "Holz", "Wasser", "3",
+                "10 min", "0 m", "Umgebung", "-", "0", "dä", "Mehlstaub und Wassertropfen (1 GS)", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(22, "Dämonenfeuer", "Geste", 13, "Magan", "Magan", "3",
+                "10 sec", "30 m", "Umgebung", "Strahl", "2 min, k", "dä", "Phosphor (50 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(23, "Dämonenkugeln", "Geste", 13, "Magan", "Magan", "4",
+                "10 sec", "50 m", "Umgebung", "Strahl", "2 min, k", "dä", "Phosphor (50 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(24, "Dämonenschwert", "Geste", 13, "Magan", "Magan", "4",
+                "10 sec", "0 m", "Umgebung", "-", "2 min", "dä", "Phosphor (50 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(25, "Dämonische Zaubermacht", "Wort", 15, "Magan", "Wasser",
+                "1", "10 min", "-", "Körper", "Zauberer", "10 min", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(26, "Deckmantel", "Geste", 16, "Magan", "Magan", "6",
+                "10 sec", "0 m", "Umgebung", "6 m Umkreis", "8 h, k", "dä", "Goldreif (50 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(27, "Dinge verbergen", "Gedanke", 16, "Magan", "Magan", "1",
+                "10 min", "Berührung", "Geist", "1 Objekt", "12 h", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(28, "Dinge wiederfinden", "Gedanke", 12, "Magan", "Metall",
+                "1", "10 min", "unbegrenzt", "Geist", "1 Objekt", "10 min", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(29, "Donnerkeil", "Geste", 13, "Luft", "Feuer", "4",
+                "10 sec", "50 m", "Umgebung", "Strahl", "0", "dä", "Murmeln aus Donnerechsenhorn (50 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(30, "Drittes Auge", "Geste", 12, "Magan", "Feuer", "1",
+                "10 sec", "0 m", "Umgebung", "100 m Umkreis", "10 min", "el", "Kristallauge (10 GS)", 1, 1, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(31, "Dschungelwand", "Geste", 13, "Holz", "Holz",
+                "1 je m Breite", "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Smaragd (50 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(32, "Eisenhaut", "Geste", 15, "Metall", "Erde", "4",
+                "20 sec", "Berührung", "Körper", "1 Wesen", "2 min", "dä", "Eisenpulver (20 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(33, "Eisiger Nebel", "Geste", 13, "Eis", "Eis", "1 je m²",
+                "10 sec", "50 m", "Umgebung", "3 m Umkreis", "1 min", "el", "Bergkristall (20 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(34, "Eiswand", "Geste", 13, "Eis", "Eis", "1 je m Breite",
+                "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Diamant (50 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(35, "Eiswandlung", "Geste", 14, "Wasser", "Eis", "3",
+                "10 sec", "200 m", "Umgebung", "bis zu 10 m²", "var", "el", "reinstes Wasser (50 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(36, "Elementenwandlung", "Geste", 14, "Ausgangselement",
+                "Zielelement", "6", "var", "5 m", "Umgebung", "bis zu 1 m²", "?", "el", "Edelstein (100 GS)", 5, 5,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(37, "Entgiften", "Wort", 16, "Magan", "Eis", "2", "30 sec",
+                "3 m", "Umgebung", "1 Objekt", "0", "dr", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(38, "Erdbeben", "Geste", 11, "Erde", "Erde", "6", "1 min",
+                "0 m", "Umgebung", "1 km Umkreis", "10 min", "el", "", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(39, "Erdfessel", "Geste", 11, "Erde", "Erde", "3",
+                "Augenblick", "50 m", "Umgebung", "1 m Umkreis", "2 min", "el", "Honig-Erd-Gemisch (5 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(40, "Erdwandlung", "Geste", 14, "Erde", "Erde", "6",
+                "20 sec", "Berührung", "Umgebung", "1 m²", "?", "el", "Bernstein (100 GS)", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(41, "Erkennen von Leben", "Gedanke", 12, "Magan", "Wasser",
+                "1", "Augenblick", "0 m", "Geist", "15 m Kegel", "1 min", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(42, "Erkennen von Zauberei", "Gedanke", 12, "Magan", "Magan",
+                "2", "Augenblick", "15 m", "Geist", "1 m²", "0", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(43, "Erscheinungen", "Geste", 10, "Magan", "Feuer", "6",
+                "20 sec", "30 m", "Geist", "3 m Umkreis", "2 min, k", "dä", "Blütenstaub vom blauen Mohn (100 GS)", 10,
+                40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(44, "Erwecken", "Geste", 15, "Eis", "Erde", "3", "10 sec",
+                "30 m", "Körper", "1 Wesen", "2 min", "sm", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(45, "Felsenfaust", "Geste", 15, "Erde", "Erde", "1",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "2 min", "el", "Kieselstein (1 SS)", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(46, "Fesselbann", "Geste", 13, "Luft", "Magan", "2 je Grad",
+                "10 sec", "30 m", "Körper", "1 Wesen", "10 min, k", "gö", "Fadenstück einer Riesenspinne (50 GS)", 6,
+                10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(47, "Feuerfinger", "Geste", 13, "Feuer", "Feuer", "1",
+                "Augenblick", "0 m", "Umgebung", "Zauberer", "2 min, k", "el", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(48, "Feuerkugel", "Geste", 13, "Feuer", "Feuer", "2",
+                "10 sec", "50 m", "Umgebung", "3 m Umkreis", "2 min, k", "el", "Blutstein (30 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(49, "Feuerlanze", "Geste", 13, "Feuer", "Feuer", "3",
+                "10 sec", "50 m", "Umgebung", "Strahl", "0", "el", "Korallenstück (20 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(50, "Feuerlauf", "Gedanke", 15, "Erde", "Erde", "3",
+                "10 sec", "-", "Körper", "1 Wesen", "10 min", "el", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(51, "Feuermeisterschaft", "Geste", 14, "Feuer", "Feuer", "6",
+                "20 sec", "30 m", "Umgebung", "2 m Umkreis", "2 min", "el", "Stück einer Drachenzunge (100 GS)", 9, 30,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(52, "Feuerregen", "Geste", 13, "Feuer", "Feuer", "18",
+                "30 sec", "100 m", "Umgebung", "30 m Umkreis", "1 min, k", "el",
+                "Basaltstaub und Rubinsplitter (100 GS)", 12, 90, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(53, "Feuerring", "Geste", 13, "Feuer", "Feuer", "4",
+                "20 sec", "0 m", "Umgebung", "6 m Umkreis", "30 min", "el", "Zwergdrachenflügel und Zauberöl (100 GS)",
+                8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(54, "Feuerschild", "Geste", 13, "Eis", "Eis", "3", "10 sec",
+                "15 m", "Umgebung", "-", "2 min", "el", "Diamantstaub (20 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(55, "Feuerwand", "Geste", 13, "Feuer", "Feuer",
+                "1 je m Breite", "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Rubin (50 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(56, "Flammende Hand", "Geste", 13, "Feuer", "Feuer", "2",
+                "10 sec", "0 m", "Umgebung", "Zauberer", "2 min", "el", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(57, "Flammenklinge", "Geste", 14, "Feuer", "Metall", "4",
+                "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "el", "Klinge aus Alchimistenmetall", 6, 10,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(58, "Flammenkreis", "Geste", 13, "Holz", "Holz", "1",
+                "Augenblick", "Berührung", "Umgebung", "1 Wesen", "2 min", "dr", "Zunder (1 SS)", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(59, "Flammenteppich", "Geste", 13, "Feuer", "Feuer",
+                "1 je m²", "10 sec", "50 m", "Umgebung", "bis zu 10 m²", "1 min", "el", "Feuertopas (20 GS)", 5, 5,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(60, "Flicken", "Geste", 14, "Magan", "Metall", "1", "10 sec",
+                "Berührung", "Umgebung", "1 Objekt", "10 min", "dr", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(61, "Fliegen", "Geste", 11, "Luft", "Erde", "9", "30 sec",
+                "-", "Körper", "Zauberer", "1 h, k", "dä", "Greifenschwungfeder (100 GS)", 11, 60, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(62, "Freundesauge", "Gedanke", 10, "Wasser", "Feuer", "4",
+                "10 sec", "500 m", "Geist", "1 Wesen", "30 min, k", "dä", "", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(63, "Frostball", "Geste", 13, "Eis", "Eis", "1", "10 sec",
+                "200 m", "Umgebung", "Strahl", "0", "el", "Silberperle oder Bergkristall (10 GS)", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(64, "Funkenregen", "Geste", 10, "Feuer", "Feuer",
+                "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen", "1 min", "dä", "Sternenstaub (20 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(65, "Geisterhorn", "Geste", 12, "Magan", "Eis", "1",
+                "10 sec", "0 m", "Umgebung", "100 m Umkreis", "10 min", "dä", "Kristallpyramide (10 GS)", 1, 1, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(66, "Geistersperre", "Geste", 13, "Metall", "Metall",
+                "1 je 5 m² Fläche", "10 sec", "Berührung", "Umgebung", "bis zu 100 m²", "8 h", "dä",
+                "Eisenspäne (10 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(67, "Geistesschild", "Gedanke", 16, "Feuer", "Magan", "var",
+                "Augenblick", "-", "Geist", "Zauberer", "10 min", "dä", "", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(68, "Geräusche dämpfen", "Geste", 14, "Metall", "Luft", "1",
+                "Augenblick", "0 m", "Umgebung", "3 m Umkreis", "5 min", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(69, "Goldener Panzer", "Geste", 14, "Metall", "Metall", "2",
+                "10 sec", "Berührung", "Umgebung", "1 Wesen", "2 min", "dä", "Goldstaub (50 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(70, "Goldene Sphäre", "Geste", 16, "Metall", "Magan", "2",
+                "20 sec", "0 m", "Umgebung", "3 m Umkreis", "2 min", "gö", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(71, "Graue Hand", "Geste", 16, "Eis", "Erde", "7", "10 sec",
+                "Berührung", "Körper", "1 Wesen", "0", "sm", "", 10, 40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(72, "Hagel", "Geste", 13, "Eis", "Eis", "12", "30 sec",
+                "100 m", "Umgebung", "30 m Umkreis", "2 min, k", "el", "Wasser und Diamantsplitter (50 GS)", 12, 90,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(73, "Hauch der Betäubung", "Geste", 13, "Eis", "Holz", "3",
+                "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dä",
+                "getrocknetes Vampirmoos (10 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(74, "Hauch der Verwesung", "Geste", 13, "Eis", "Erde", "2",
+                "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dä", "Stinkmorschelasche (2 GS)", 4,
+                3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(75, "Hauch des Winters", "Geste", 14, "Eis", "Luft", "1",
+                "Augenblick", "0 m", "Umgebung", "12 m Umkreis", "10 min", "el", "Schneewolfhaare (20 GS)", 1, 1, 20,
+                true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(76, "Heimfeder", "Geste", 12, "Wasser", "Luft", "2", "1 min",
+                "3 m", "Umgebung", "1 Objekt", "30 min", "dr", "Taubenschwungfeder (5 SS) und Wasser", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(77, "Heranholen", "Geste", 11, "Luft", "Metall", "1",
+                "10 sec", "30 m", "Umgebung", "1 Objekt", "10 sec", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(78, "Hexenstreich", "Geste", 15, "Magan", "Erde", "2",
+                "10 sec", "15 m", "Körper", "1 Wesen", "?", "dä", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(79, "Himmelsleiter", "Geste", 13, "Metall", "Feuer", "6",
+                "1 min", "50 m", "Umgebung", "-", "10 min", "gö", "", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(80, "Hitzeschutz", "Gedanke", 15, "Wasser", "Erde", "1",
+                "Augenblick", "-", "Körper", "Zauberer", "2 min", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(81, "Höhenblick", "Geste", 11, "Luft", "Feuer", "2",
+                "10 sec", "50 m", "Umgebung", "-", "1 min, k", "dä", "Auge eines Greifvogels (50 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(82, "Hören der Geister", "Gedanke", 12, "Eis", "Luft",
+                "1 je 10 sec Dauer", "10 sec", "0 m", "Körper", "6 m Umkreis", "10 sec je Grad", "dä", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(83, "Hören von Fernem", "Gedanke", 15, "Magan", "Wasser",
+                "1", "1 min", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(84, "Hörnerklang", "Wort", 14, "Magan", "Luft", "1",
+                "Augenblick", "0 m", "Umgebung", "2 km Umkreis", "10 sec", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(85, "Juwelenauge", "Geste", 11, "Erde", "Feuer", "2",
+                "10 sec", "500 m", "Umgebung", "1 Objekt", "30 min", "dä", "2 Greifenaugenhälften", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(86, "Kälteschutz", "Gedanke", 15, "Feuer", "Erde", "1",
+                "Augenblick", "-", "Körper", "Zauberer", "2 min", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(87, "Kraft entziehen", "Geste", 16, "Eis", "Feuer", "1",
+                "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(88, "Kraftraub", "Geste", 16, "Magan", "Feuer", "2",
+                "10 sec", "30 m", "Umgebung", "1 m²", "2 min, k", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(89, "Lähmung", "Geste", 15, "Metall", "Erde", "8", "20 sec",
+                "30 m", "Körper", "1 Wesen", "24 h", "dä", "Basiliskenschuppe (100 GS)", 10, 40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(90, "Lauschen", "Gedanke", 14, "Magan", "Metall", "1",
+                "1 min", "30 cm", "Umgebung", "-", "10 min, k", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(91, "Lichtbrücke", "Geste", 13, "Metall", "Feuer", "4",
+                "1 min", "50 m", "Umgebung", "-", "10 min", "gö", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(92, "Lichtrunen", "Geste", 14, "Feuer", "Metall", "1",
+                "10 min", "Berührung", "Umgebung", "1 m²", "?", "dä", "Nachtmarderhaarpinsel (50 GS)", 2, 1, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(93, "Liebeszauber", "Geste", 10, "Wasser", "Wasser", "4",
+                "1 h", "-", "Geist", "1 Wesen", "?", "dä", "Liebestrank oder Locke", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(94, "Liniensicht", "Gedanke", 12, "Magan", "Holz", "1",
+                "Augenblick", "bis zu 5 km", "Geist", "Zauberer", "10 sec", "dr", "", 1, 1, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(95, "Luftlauf", "Gedanke", 11, "Luft", "Erde", "4", "20 sec",
+                "-", "Körper", "Zauberer", "2 min, k", "el", "", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(96, "Luftsphäre", "Geste", 13, "Luft", "Luft", "4", "20 sec",
+                "0 m", "Umgebung", "3 m Umkreis", "1 h", "el", "Perle (100 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(97, "Macht über das Selbst", "Gedanke", 10, "Metall",
+                "Feuer", "1", "10 sec", "-", "Körper", "Zauberer", "24 h, k", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(98, "Macht über die belebte Natur", "Wort", 10, "Magan",
+                "Wasser", "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen je Grad", "mind. 2 h", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(99, "Macht über die Sinne", "Geste", 10, "Magan", "Feuer",
+                "1 je Variation", "10 sec", "50 m", "Geist", "Zauberer", "2-10 min", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(100, "Macht über Leben", "Geste", 16, "Eis", "Erde",
+                "mind. 8", "10 sec", "6 m", "Körper", "1 Wesen", "2 min", "dä", "", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(101, "Macht über magische Wesen", "Wort", 10, "Magan",
+                "Magan", "3 je Grad", "20 sec", "30 m", "Geist", "1 Wesen je Grad", "var", "dä", "", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(102, "Macht über Menschen", "Wort", 10, "Magan", "Luft",
+                "3 je Grad", "20 sec", "30 m", "Geist", "1 Wesen je Grad", "var", "dä", "", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(103, "Macht über Unbelebtes", "Geste", 11, "Feuer", "Metall",
+                "2", "Augenblick", "30 m", "Umgebung", "-", "10 sec", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(104, "Mag. Kreis des Bewachens", "Geste", 12, "Magan",
+                "Magan", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(105, "Mag. Kreis des Verschleierns", "Geste", 16, "Magan",
+                "Magan", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(106, "Mag. Kreis des Widerstehens", "Geste", 14, "Magan",
+                "Wasser", "6", "30 min", "0 m", "Umgebung", "10 m Umkreis", "?", "dä", "Wächterwürfel", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(107, "Magischer Kreis, klein", "Geste", 12, "Magan", "Magan",
+                "6", "10 min", "0 m", "Umgebung", "6 m Umkreis", "8 h", "dr",
+                "mit Eisendraht umwickelte Zweige von Eiche, Esche und Weißdorn (10 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(108, "Marmorhaut", "Geste", 15, "Erde", "Erde", "3",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "10 min", "el", "Marmorstaub (1 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(109, "Mitfühlen", "Gedanke", 12, "Wasser", "Wasser", "1",
+                "Augenblick", "500 m", "Geist", "1 Wesen", "30 min, k", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(110, "Namenloses Grauen", "Geste", 10, "Eis", "Wasser",
+                "4 je Wesen", "20 sec", "30 m", "Geist", "1-3 Wesen", "2 min", "dä",
+                "Schweiß von Albträumenden (20 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(111, "Nebel schaffen", "Geste", 13, "Wasser", "Wasser", "4",
+                "20 sec", "0 m", "Umgebung", "50 m Umkreis", "30 min", "el",
+                "versiegeltes Fläschchen voll Nebel (10 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(112, "Nebel wecken", "Geste", 14, "Wasser", "Luft", "2",
+                "10 sec", "0 m", "Umgebung", "500 m Umkreis", "-", "el", "Staub (1 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(113, "Person wiederfinden", "Gedanke", 12, "Magan", "Luft",
+                "2", "10 min", "unbegrenzt", "Geist", "1 Wesen", "10 min", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(114, "Pestklaue", "Geste", 16, "Eis", "Erde", "5",
+                "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "Pestkrötenklaue (50 GS)", 10, 40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(115, "Pflanzenfessel", "Geste", 11, "Feuer", "Holz", "4",
+                "20 sec", "50 m", "Umgebung", "10 m Umkreis", "2 min", "dr", "Samenmischung (10 GS)", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(116, "Rauchwolke", "Geste", 14, "Feuer", "Luft", "2",
+                "10 sec", "30 m", "Umgebung", "9 m Umkreis", "10 min", "el", "Asche und Zunder (1 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(117, "Reaktionsschnelle", "Geste", 15, "Magan", "Feuer", "1",
+                "30 sec", "30 m", "Geist", "1 Wesen", "10 min", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(118, "Reise der Seele", "Gedanke", 11, "Luft", "Feuer", "6",
+                "30 min", "-", "Geist", "Zauberer", "var", "dr", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(119, "Rost", "Geste", 14, "Eis", "Metall", "2", "Augenblick",
+                "Berührung", "Umgebung", "1 Objekt", "0", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(120, "Schallwächter", "Geste", 12, "Magan", "Luft", "2",
+                "10 sec", "15 m", "Geist", "Zauberer", "10 min", "el", "Golddrahtreif (10 GS)", 3, 2, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(121, "Scharfblick", "Gedanke", 15, "Magan", "Feuer", "1",
+                "1 min", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(122, "Schattenrobe", "Wort", 14, "Magan", "Feuer", "2",
+                "10 sec", "-", "Umgebung", "Zauberer", "10 min", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(123, "Schattenschrecken", "Geste", 11, "Eis", "Feuer", "4",
+                "20 sec", "0 m", "Umgebung", "100 m Umkreis", "30 min", "dä", "", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(124, "Schatten verstärken", "Geste", 14, "Eis", "Feuer", "1",
+                "Augenblick", "0 m", "Umgebung", "15 m Umkreis", "10 min", "dä", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(125, "Schlaf", "Geste", 10, "Magan", "Wasser", "4 je Wesen",
+                "10 sec", "30 m", "Körper", "bis zu 6 Wesen", "8 h", "dä", "Lotusblütenstaub (10 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(126, "Schlangenbiss", "Wort", 15, "Eis", "Holz", "4",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "2 min", "dä", "Schlangengift (20 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(127, "Schlummer", "Geste", 10, "Magan", "Wasser",
+                "2 je Wesen", "10 sec", "30 m", "Körper", "bis zu 6 Wesen", "30 min", "dä", "Baldrianwurzel (5 GS)", 1,
+                1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(128, "Schmerzen", "Geste", 16, "Magan", "Feuer", "2",
+                "10 sec", "30 m", "Körper", "1 Wesen", "1 min", "dä", "Silber- oder Knochennadel (5 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(129, "Schrumpfen", "Geste", 15, "Holz", "Erde", "6",
+                "20 sec", "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(130, "Schutzgeste", "Geste", 15, "Metall", "Erde", "2",
+                "Augenblick", "-", "Körper", "Zauberer", "0", "gö", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(131, "Schwäche", "Geste", 15, "Magan", "Erde", "1 je Wesen",
+                "Augenblick", "30 m", "Körper", "1-10 Wesen", "2 min", "dä", "Eschenrinde (1 GS)", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(132, "Schwarze Sphäre", "Gedanke", 16, "Magan", "Wasser",
+                "var", "20 sec", "0 m", "Umgebung", "5 m Umkreis", "10 min", "dä", "", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(133, "Schwarze Zone", "Gedanke", 16, "Magan", "Magan", "var",
+                "Augenblick", "0 m", "Umgebung", "5 m Umkreis", "10 min", "dä", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(134, "Schweben", "Geste", 11, "Luft", "Erde", "6", "20 sec",
+                "-", "Körper", "Zauberer", "1 min", "dä", "Kolibriflügel (100 GS)", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(135, "Schwerelosigkeit", "Geste", 11, "Luft", "Metall", "4",
+                "1 min", "Berührung", "Umgebung", "1 Objekt", "0", "el", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(136, "Seelenkompass", "Geste", 12, "Feuer", "Luft", "2",
+                "1 min", "6 km", "Geist", "1 Wesen", "10 min", "dä", "Silbernadel (10 GS) und Haar der Zielperson", 3,
+                2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(137, "Sehen in Dunkelheit", "Gedanke", 15, "Feuer", "Feuer",
+                "2", "1 min", "50 m", "Körper", "Zauberer", "30 min", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(138, "Sehen von Verborgenem", "Gedanke", 14, "Magan",
+                "Metall", "1", "1 min", "30 cm", "Umgebung", "-", "10 min, k", "dä", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(139, "Silberne Bannsphäre", "Geste", 10, "Luft", "Feuer",
+                "2", "20 sec", "0 m", "Geist", "3 m Umkreis", "2 min", "gö", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(140, "Silberner Zwingkreis", "Geste", 10, "Luft", "Feuer",
+                "4", "20 sec", "30 m", "Geist", "6 m Umkreis", "10 min", "gö", "Silberreif (50 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(141, "Silberstaub", "Geste", 13, "Magan", "Metall", "1",
+                "Augenblick", "Berührung", "Umgebung", "1 Wesen", "2 min", "dä", "Silberstaub (2 GS)", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(142, "Spruch intensivieren", "Gedanke", 15, "Magan", "Magan",
+                "6", "10 sec", "-", "Geist", "Zauberer", "30 sec", "dä", "", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(143, "Stärke", "Geste", 15, "Magan", "Erde", "1 je Wesen",
+                "Augenblick", "30 m", "Körper", "1-10 Wesen", "2 min", "dä", "getrockneter Fliegenpilz (1 GS)", 2, 1,
+                20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(144, "Steinkugel", "Geste", 13, "Erde", "Erde", "3",
+                "10 sec", "50 m", "Umgebung", "3 m Umkreis", "2 min, k", "el", "Diamant (50 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(145, "Steinwand", "Geste", 13, "Erde", "Erde", "1 je m",
+                "10 sec", "15 m", "Umgebung", "-", "10 min", "el", "Bernstein (50 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(146, "Stille", "Geste", 14, "Metall", "Luft", "2",
+                "Augenblick", "0 m", "Umgebung", "3 m Umkreis", "1 min", "dä", "pulverisierte Eulenfedern (2 GS)", 3, 2,
+                20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(147, "Stimmenwerfen", "Gedanke", 11, "Magan", "Luft", "1",
+                "Augenblick", "15 m", "Umgebung", "-", "2 min", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(148, "Sturmhand", "Geste", 11, "Luft", "Erde", "4", "10 sec",
+                "Berührung", "Körper", "1 Wesen", "0", "el", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(149, "Sturmwind", "Geste", 11, "Luft", "Luft", "6", "20 sec",
+                "0 m", "Umgebung", "30 m Kegel", "2 min, k", "el", "", 10, 40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(150, "Sumpfboden", "Geste", 14, "Wasser", "Erde", "1",
+                "10 sec", "50 m", "Umgebung", "15 m Umkreis", "2 min", "el", "Wasserlinsen (1 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(151, "Thursenstein", "Geste", 14, "Erde", "Erde", "6",
+                "10 sec", "Berührung", "Umgebung", "1 Objekt", "10 sec", "dr", "Zauberkiesel", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(152, "Tierisches Handeln", "Geste", 10, "Wasser", "Luft",
+                "6 je Wesen", "20 sec", "30 m", "Geist", "1-3 Wesen", "var", "dä", "Tierblutmischung (50 GS)", 9, 30,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(153, "Tiersprache", "Wort", 12, "Wasser", "Luft", "4",
+                "20 sec", "15 m", "Körper", "Zauberer", "2 min", "dr", "", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(154, "Todeshauch", "Geste", 13, "Eis", "Wasser", "3",
+                "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dä", "Fliegenpilzasche (1 GS)", 5, 5,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(155, "Todeskeule", "Geste", 14, "Eis", "Erde", "3", "10 sec",
+                "Berührung", "Umgebung", "1 Objekt", "2 min", "dä", "Oberschenkelknochen", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(156, "Todeszauber", "Wort", 16, "Eis", "Holz",
+                "1 je Schadenspunkt", "20 sec", "30 m", "Körper", "1 Wesen", "0", "dä", "", 11, 60, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(157, "Torwandeln", "Geste", 14, "Magan", "Holz", "4",
+                "10 min", "Berührung", "Umgebung", "30 cm", "1 min", "el", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(158, "Umkehrschild", "Geste", 13, "Metall", "Magan",
+                "6 je Seite", "30 sec", "-", "Umgebung", "Zauberer", "2 min", "dä",
+                "versilberte Drachenschuppe (100 GS)", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(159, "Ungezieferplage", "Wort", 10, "Magan", "Wasser", "2",
+                "30 sec", "0 m", "Geist", "1 Schwarm", "2 min", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(160, "Unsichtbarkeit", "Wort", 15, "Luft", "Metall", "4",
+                "10 sec", "-", "Körper", "Zauberer", "10 min, k", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(161, "Verdorren", "Geste", 15, "Eis", "Erde", "5", "10 sec",
+                "Berührung", "Körper", "1 Wesen", "?", "sm", "", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(162, "Vereisen", "Geste", 15, "Eis", "Erde", "7", "10 sec",
+                "Berührung", "Körper", "1 Wesen", "?", "dä", "", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(163, "Vergiften", "Wort", 16, "Eis", "Erde", "2", "30 sec",
+                "3 m", "Körper", "1 Wesen", "0", "sm", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(164, "Vergrößern", "Geste", 14, "Magan", "Metall", "6",
+                "20 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dä", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(165, "Verkleinern", "Geste", 14, "Magan", "Metall", "6",
+                "20 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dä", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(166, "Verlangsamen", "Geste", 15, "Metall", "Erde", "2",
+                "10 sec", "15 m", "Körper", "1 Wesen", "1 min", "dä", "Blei (20 GS)", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(167, "Vermehren", "Geste", 14, "Magan", "Metall", "2",
+                "10 sec", "15 m", "Umgebung", "1 Objekt", "30 min", "dr", "", 1, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(168, "Verschmutzen", "Geste", 14, "Magan", "Metall", "2",
+                "10 sec", "15 m", "Umgebung", "1 Objekt", "0", "dr", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(169, "Versetzen", "Geste", 11, "Magan", "Metall",
+                "2 je Wesen", "20 sec", "500 m", "Umgebung", "1-6 Wesen", "24 h", "dä", "Phosphorkreide (200 GS)", 8,
+                20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(170, "Versteinern", "Geste", 15, "Erde", "Erde", "8",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "?", "sm", "", 10, 40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(171, "Vertieren", "Geste", 10, "Wasser", "Luft", "3",
+                "10 sec", "30 m", "Geist", "1 Wesen", "10 min", "dä", "Tierspeichelmischung (20 GS)", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(172, "Verursachen von Krankheit", "Geste", 15, "Eis", "Erde",
+                "2", "Augenblick", "Berührung", "Körper", "1 Wesen", "3W6 Tage", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(173, "Verursachen schw. Wunden", "Geste", 16, "Eis", "Erde",
+                "3", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(174, "Verursachen von Wunden", "Geste", 16, "Eis", "Erde",
+                "1", "Augenblick", "Berührung", "Körper", "1 Wesen", "0", "sm", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(175, "Verwandlung", "Geste", 15, "Holz", "Erde", "mind. 9",
+                "30 sec", "Berührung", "Körper", "1 Wesen", "?", "dä", "Kern des Großen Kürbis (100 GS)", 11, 60, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(176, "Verwirren", "Geste", 10, "Magan", "Feuer", "1 je Grad",
+                "Augenblick", "30 m", "Geist", "1 Wesen", "10 sec", "dä", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(177, "Verwünschen", "Wort", 15, "Luft", "Wasser",
+                "2 je Wesen", "10 sec", "15 m", "Körper", "bis zu 6 Wesen", "30 min", "dä", "", 4, 3, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(178, "Verzweiflung", "Geste", 15, "Magan", "Luft", "5",
+                "10 sec", "Berührung", "Geist", "1 Wesen", "1 h", "dä", "in Alkohol gelöste Kräutermischung (50 GS)", 8,
+                20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(179, "Wachsen", "Geste", 15, "Holz", "Erde", "6", "20 sec",
+                "Berührung", "Körper", "1 Wesen", "10 min", "dä", "", 6, 10, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(180, "Wahnsinn", "Geste", 16, "Magan", "Luft", "7", "20 sec",
+                "15 m", "Geist", "1 Wesen", "?", "dä", "Birkenrinde und Blüten des Wahnsinnkrautes (50 GS)", 9, 30,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(181, "Wahrsehen", "Geste", 12, "Magan", "Magan", "6",
+                "20 sec", "15 m", "Geist", "3 m Umkreis", "10 min", "gö", "vierblättriger Klee (10 GS)", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(182, "Wandwandeln", "Geste", 14, "Magan", "Erde", "6",
+                "10 min", "Berührung", "Umgebung", "-", "1 min", "el", "", 9, 30, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(183, "Warnung", "Geste", 12, "Luft", "Eis", "2", "10 sec",
+                "0 m", "Geist", "15 m Umkreis", "10 min", "dä", "Einhornhaar und Espenholz (50 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(184, "Wasseratmen", "Geste", 15, "Luft", "Wasser", "2",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "8 h", "el", "", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(185, "Wasserlauf", "Gedanke", 11, "Wasser", "Erde", "3",
+                "20 sec", "-", "Körper", "Zauberer", "10 min", "el", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(186, "Wassermeisterschaft", "Geste", 11, "Wasser", "Wasser",
+                "6", "20 sec", "-", "Umgebung", "1 Wesen/Objekt", "1 h", "el", "Perle (100 GS)", 10, 40, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(187, "Wasserstrahl", "Geste", 13, "Wasser", "Wasser", "4",
+                "20 sec", "5 m", "Umgebung", "Strahl", "1 min, k", "el", "Riesenkrakentrichter (100 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(188, "Wasserwandlung", "Geste", 14, "Eis", "Wasser", "4",
+                "20 sec", "200 m", "Umgebung", "bis zu 10 m²", "var", "el", "reines Eis (50 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(189, "Windmeisterschaft", "Geste", 11, "Luft", "Luft", "4",
+                "20 sec", "0 m", "Umgebung", "1 km Umkreis", "1 h", "el", "Sturmvogelfedern (10 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(190, "Windstoß", "Geste", 11, "Luft", "Luft", "1",
+                "Augenblick", "0 m", "Umgebung", "30 m Kegel", "10 sec", "el", "", 2, 1, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(191, "Wirbelwind", "Geste", 11, "Luft", "Luft", "9",
+                "30 sec", "0 m", "Umgebung", "3-6 m Umkreis", "2 min, k", "el", "", 12, 90, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(192, "Zauberauge", "Geste", 11, "Luft", "Feuer", "4",
+                "20 sec", "500 m", "Umgebung", "-", "30 min, k", "dä", "Auge eines Toten (50 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(193, "Zauberhand", "Geste", 14, "Erde", "Luft", "4",
+                "20 sec", "50 m", "Umgebung", "1 Wesen", "1 min, k", "dä", "Wachspuppe (20 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(194, "Zauberschild", "Geste", 13, "Metall", "Magan",
+                "4 je Seite", "20 sec", "-", "Umgebung", "Zauberer", "2 min", "dä", "Drachenschuppe (100 GS)", 7, 15,
+                20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(195, "Zauberschlaf", "Geste", 10, "Magan", "Wasser",
+                "6 je Wesen", "10 sec", "30 m", "Körper", "bis zu 6 Wesen", "24 h", "dä",
+                "Lotusblütenstaub und Blutrosendorn (20 GS)", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(196, "Zauberschloss", "Geste", 11, "Metall", "Holz", "1",
+                "10 sec", "Berührung", "Umgebung", "1 Objekt", "12 h", "dä", "Silberschlüssel (50 GS)", 2, 1, 20,
+                true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(197, "Zauberschlüssel", "Geste", 11, "Magan", "Holz", "2",
+                "10 sec", "Berührung", "Umgebung", "1 Objekt", "0", "dä", "Springwurzspan (50 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(198, "Zauberschmiede", "Geste", 14, "Magan", "Metall",
+                "03. Sep", "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "dä", "Waffe aus Alchimistenmetall",
+                5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(199, "Zauberstimme", "Geste", 13, "Magan", "Luft", "2",
+                "10 min", "50 m", "Umgebung", "-", "12 h", "dä", "Papageienzunge (20 GS)", 3, 2, 20, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(200, "Zauberwirklichkeit", "Geste", 10, "Magan", "Feuer",
+                "9", "3 h", "50 m", "Geist", "6 m Umkreis", "30 min", "dä",
+                "Blütenstaub, Essenzen, Edelmetallsplitter (200 GS)", 12, 90, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(201, "Zauberzunge", "Geste", 12, "Luft", "Luft", "4",
+                "1 min", "-", "Geist", "Zauberer", "30 min", "dä", "Papageienhirn und -zunge (50 GS)", 7, 15, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(202, "Zielsuche", "Geste", 14, "Luft", "Holz", "2", "10 sec",
+                "Berührung", "Umgebung", "1 Objekt", "10 min", "dr", "", 5, 5, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(203, "Zweite Haut", "Gedanke", 16, "Erde", "Magan", "var",
+                "Augenblick", "-", "Körper", "Zauberer", "10 min", "dä", "", 8, 20, 20));
+            modelBuilder.Entity<Spell>().HasData(new Spell(204, "Zwiesprache", "Wort", 12, "Feuer", "Luft", "1",
+                "Augenblick", "500 m", "Körper", "Zauberer", "10 min, k", "dä", "", 2, 1, 20, true));
             // Wundertaten
-            modelBuilder.Entity<Spell>().HasData(new Spell(205, "Allheilung", "Geste", 13, "Holz", "Erde", "6", "30 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 9, 30, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(206, "Arm der götter", "Geste", 15, "Metall", "Holz", "2", "10 sec", "-", "Körper", "Zauberer", "2 min", "gö", "", 3, 2, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(207, "Austreibung des Bösen", "Wort", 11, "Magan", "Feuer", "5", "10 min", "15 m", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(208, "Bannen von Dunkelheit", "Wort", 13, "Feuer", "Feuer", "1", "Augenblick", "0 m", "Umgebung", "9 m Umkreis", "10 min", "gö", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(209, "Bannen von Finsterwerk", "Wort", 16, "Magan", "Magan", "4", "10 sec", "15 m", "Umgebung", "1 Wesen/Objekt", "0", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(210, "Bannen von Gift", "Wort", 16, "Holz", "Eis", "4", "10 sec", "3m", "Körper", "1 Wesen", "0", "dr", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(211, "Beruhigen", "Wort", 10, "Luft", "Wasser", "1 je Grad", "10 sec", "0 m", "Geist", "15 m Umkreis", "0", "gö", "", 5, 5, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(212, "Blutmeisterschaft", "Gedanke", 15, "Erde", "Holz", "1 + 1 je Wunde", "10 sec", "-", "Körper", "Zauberer", "60 min", "gö", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(213, "Erheben der Toten", "Wort", 13, "Luft", "Holz", "alle", "6 h", "1 m", "Körper", "1 Wesen", "0", "gö", "", 12, 90, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(214, "Erholung", "Geste", 13, "Luft", "Feuer", "4", "20 sec", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(215, "Erkennen der Aura", "Gedanke", 12, "Luft", "Luft", "1", "Augenblick", "0 m", "Geist", "30 m Kegel", "0", "gö", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(216, "Erkennen von Besessenheit", "Gedanke", 12, "Luft", "Feuer", "2", "10 sec", "0 m", "Geist", "30 m Kegel", "10 sec", "gö", "", 3, 2, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(217, "Erkennen von Krankheit", "Gedanke", 12, "Luft", "Eis", "1", "10 min", "Berührung", "Geist", "1 Wesen", "0", "dr", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(218, "Goldene Wehr", "Geste", 14, "Luft", "Metall", "3", "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "gö", "geweihte Waffe", 5, 5, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(219, "Gottesgabe", "Geste", 15, "Luft", "Wasser", "4", "1 min", "0 m", "Körper", "Zauberer", "10 min", "gö", "", 5, 5, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(220, "Göttliche Eingebung", "Gedanke", 12, "Luft", "Luft", "4", "30 min", "-", "Geist", "Zauberer", "10 min", "gö", "", 8, 20, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(221, "Göttlicher Blitz", "Geste", 13, "Luft", "Feuer", "3", "10 sec", "30 m", "Umgebung", "Strahl", "2 min, k", "gö", "", 5, 5, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(222, "Göttlicher Schirm", "Geste", 16, "Metall", "Magan", "2", "10 sec", "0 m", "Umgebung", "3 m Umkreis", "2 min, k", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(223, "Göttlicher Schutz v. d. Bösen", "Wort", 15, "Luft", "Wasser", "2", "10 min", "-", "Körper", "Zauberer", "1 h", "gö", "", 1, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(224, "Göttlicher Schutz vor Magie", "Wort", 15, "Metall", "Wasser", "3 je Person", "5 min", "0 m", "Körper", "6 m Umkreis", "1 h", "gö", "", 5, 5, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(225, "Handauflegen", "Geste", 13, "Luft", "Feuer", "1", "10 sec", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(226, "Heilen schwerer Wunden", "Geste", 13, "Holz", "Erde", "4", "10 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 6, 10, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(227, "Heilen von Krankheit", "Geste", 16, "Holz", "Eis", "2", "10 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(228, "Heilen von Wunden", "Geste", 13, "Luft", "Erde", "3", "1 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(229, "Heiliger Zorn", "Gedanke", 15, "Luft", "Erde", "2", "Augenblick", "-", "Körper", "Zauberer", "2 min", "gö", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(230, "Heiliges Wort", "Wort", 16, "Metall", "Magan", "6", "10 sec", "0 m", "Körper", "9 m Umkreis", "var", "gö", "", 7, 15, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(231, "Himmlicher Beschützer", "Geste", 11, "Luft", "Erde", "3", "1 min", "Berührung", "Umgebung", "1 Wesen", "bis zu 10 min", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(232, "Himmlicher Helfer", "Wort", 10, "Magan", "Wasser", "3-9", "10 sec", "2 km", "Geist", "1-10 Wesen", "10 min", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(233, "Reinigen", "Geste", 16, "Holz", "Eis", "1", "10 min", "1 m", "Umgebung", "1 kg", "0", "gö", "", 1, 1, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(234, "Rüstung der Rechtschaffenen", "Geste", 15, "Luft", "Erde", "5", "20 sec", "Berührung", "Körper", "Zauberer", "2 min", "gö", "", 8, 20, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(235, "Schützende Hülle", "Wort", 13, "Feuer", "Holz", "1 + 1 je 10 sec", "10 sec", "-", "Körper", "Zauberer", "var, k", "gö", "", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(236, "Schwingenkeule", "Geste", 14, "Luft", "Holz", "1", "10 sec", "Berührung", "Umgebung", "1 Objekt", "2 min", "gö", "Wurfkeule aus Holz", 2, 1, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(237, "Seelenheilung", "Wort", 15, "Holz", "Luft", "2", "10 min", "3 m", "Geist", "1 Wesen", "0", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(238, "Segnen", "Geste", 15, "Luft", "Wasser", "2", "1 min", "Berührung", "Körper", "1 Wesen", "10 min", "gö", "", 3, 2, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(239, "Strahlender Panzer", "Geste", 14, "Feuer", "Metall", "2", "1 sec", "Berührung", "Umgebung", "Zauberer", "2 min", "gö", "", 4, 3, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(240, "Verfluchen", "Wort", 15, "Luft", "Wasser", "2", "10 sec", "15 m", "Körper", "1 Wesen", "10 min", "gö", "", 3, 2, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(241, "Vision", "Geste", 12, "Wasser", "Luft", "alle (mind. 3)", "6 h", "-", "Geist", "Zauberer", "1 h", "gö", "Lebensmittel, Kräute, Pulver (20 GS)", 6, 10, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(242, "Waffensegen", "Geste", 14, "Luft", "Metall", "3-9", "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "gö", "", 5, 5, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(243, "Waffenwirbel", "Wort", 15, "Luft", "Erde", "6", "10 sec", "15 m", "Körper", "Zauberer", "1 min", "gö", "", 6, 10, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(244, "Wagemut", "Geste", 15, "Luft", "Feuer", "2", "10 sec", "15 m", "Geist", "1 Wesen", "2 min", "gö", "", 3, 2, 17, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(245, "Wort des Lebens", "Wort", 16, "Holz", "Eis", "6", "10 sec", "0 m", "Körper", "9 m Umkreis", "var", "gö", "", 8, 20, 17));
-            modelBuilder.Entity<Spell>().HasData(new Spell(246, "Wort der Trauer", "Wort", 16, "Luft", "Eis", "6", "10 sec", "0 m", "Geist", "9 m Umkreis", "var", "gö", "", 8, 20, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(205, "Allheilung", "Geste", 13, "Holz", "Erde", "6",
+                "30 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 9, 30, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(206, "Arm der götter", "Geste", 15, "Metall", "Holz", "2",
+                "10 sec", "-", "Körper", "Zauberer", "2 min", "gö", "", 3, 2, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(207, "Austreibung des Bösen", "Wort", 11, "Magan", "Feuer",
+                "5", "10 min", "15 m", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(208, "Bannen von Dunkelheit", "Wort", 13, "Feuer", "Feuer",
+                "1", "Augenblick", "0 m", "Umgebung", "9 m Umkreis", "10 min", "gö", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(209, "Bannen von Finsterwerk", "Wort", 16, "Magan", "Magan",
+                "4", "10 sec", "15 m", "Umgebung", "1 Wesen/Objekt", "0", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(210, "Bannen von Gift", "Wort", 16, "Holz", "Eis", "4",
+                "10 sec", "3m", "Körper", "1 Wesen", "0", "dr", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(211, "Beruhigen", "Wort", 10, "Luft", "Wasser", "1 je Grad",
+                "10 sec", "0 m", "Geist", "15 m Umkreis", "0", "gö", "", 5, 5, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(212, "Blutmeisterschaft", "Gedanke", 15, "Erde", "Holz",
+                "1 + 1 je Wunde", "10 sec", "-", "Körper", "Zauberer", "60 min", "gö", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(213, "Erheben der Toten", "Wort", 13, "Luft", "Holz", "alle",
+                "6 h", "1 m", "Körper", "1 Wesen", "0", "gö", "", 12, 90, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(214, "Erholung", "Geste", 13, "Luft", "Feuer", "4", "20 sec",
+                "Berührung", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(215, "Erkennen der Aura", "Gedanke", 12, "Luft", "Luft", "1",
+                "Augenblick", "0 m", "Geist", "30 m Kegel", "0", "gö", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(216, "Erkennen von Besessenheit", "Gedanke", 12, "Luft",
+                "Feuer", "2", "10 sec", "0 m", "Geist", "30 m Kegel", "10 sec", "gö", "", 3, 2, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(217, "Erkennen von Krankheit", "Gedanke", 12, "Luft", "Eis",
+                "1", "10 min", "Berührung", "Geist", "1 Wesen", "0", "dr", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(218, "Goldene Wehr", "Geste", 14, "Luft", "Metall", "3",
+                "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "gö", "geweihte Waffe", 5, 5, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(219, "Gottesgabe", "Geste", 15, "Luft", "Wasser", "4",
+                "1 min", "0 m", "Körper", "Zauberer", "10 min", "gö", "", 5, 5, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(220, "Göttliche Eingebung", "Gedanke", 12, "Luft", "Luft",
+                "4", "30 min", "-", "Geist", "Zauberer", "10 min", "gö", "", 8, 20, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(221, "Göttlicher Blitz", "Geste", 13, "Luft", "Feuer", "3",
+                "10 sec", "30 m", "Umgebung", "Strahl", "2 min, k", "gö", "", 5, 5, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(222, "Göttlicher Schirm", "Geste", 16, "Metall", "Magan",
+                "2", "10 sec", "0 m", "Umgebung", "3 m Umkreis", "2 min, k", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(223, "Göttlicher Schutz v. d. Bösen", "Wort", 15, "Luft",
+                "Wasser", "2", "10 min", "-", "Körper", "Zauberer", "1 h", "gö", "", 1, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(224, "Göttlicher Schutz vor Magie", "Wort", 15, "Metall",
+                "Wasser", "3 je Person", "5 min", "0 m", "Körper", "6 m Umkreis", "1 h", "gö", "", 5, 5, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(225, "Handauflegen", "Geste", 13, "Luft", "Feuer", "1",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(226, "Heilen schwerer Wunden", "Geste", 13, "Holz", "Erde",
+                "4", "10 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 6, 10, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(227, "Heilen von Krankheit", "Geste", 16, "Holz", "Eis", "2",
+                "10 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(228, "Heilen von Wunden", "Geste", 13, "Luft", "Erde", "3",
+                "1 min", "Berührung", "Körper", "1 Wesen", "0", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(229, "Heiliger Zorn", "Gedanke", 15, "Luft", "Erde", "2",
+                "Augenblick", "-", "Körper", "Zauberer", "2 min", "gö", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(230, "Heiliges Wort", "Wort", 16, "Metall", "Magan", "6",
+                "10 sec", "0 m", "Körper", "9 m Umkreis", "var", "gö", "", 7, 15, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(231, "Himmlicher Beschützer", "Geste", 11, "Luft", "Erde",
+                "3", "1 min", "Berührung", "Umgebung", "1 Wesen", "bis zu 10 min", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(232, "Himmlicher Helfer", "Wort", 10, "Magan", "Wasser",
+                "3-9", "10 sec", "2 km", "Geist", "1-10 Wesen", "10 min", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(233, "Reinigen", "Geste", 16, "Holz", "Eis", "1", "10 min",
+                "1 m", "Umgebung", "1 kg", "0", "gö", "", 1, 1, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(234, "Rüstung der Rechtschaffenen", "Geste", 15, "Luft",
+                "Erde", "5", "20 sec", "Berührung", "Körper", "Zauberer", "2 min", "gö", "", 8, 20, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(235, "Schützende Hülle", "Wort", 13, "Feuer", "Holz",
+                "1 + 1 je 10 sec", "10 sec", "-", "Körper", "Zauberer", "var, k", "gö", "", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(236, "Schwingenkeule", "Geste", 14, "Luft", "Holz", "1",
+                "10 sec", "Berührung", "Umgebung", "1 Objekt", "2 min", "gö", "Wurfkeule aus Holz", 2, 1, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(237, "Seelenheilung", "Wort", 15, "Holz", "Luft", "2",
+                "10 min", "3 m", "Geist", "1 Wesen", "0", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(238, "Segnen", "Geste", 15, "Luft", "Wasser", "2", "1 min",
+                "Berührung", "Körper", "1 Wesen", "10 min", "gö", "", 3, 2, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(239, "Strahlender Panzer", "Geste", 14, "Feuer", "Metall",
+                "2", "1 sec", "Berührung", "Umgebung", "Zauberer", "2 min", "gö", "", 4, 3, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(240, "Verfluchen", "Wort", 15, "Luft", "Wasser", "2",
+                "10 sec", "15 m", "Körper", "1 Wesen", "10 min", "gö", "", 3, 2, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(241, "Vision", "Geste", 12, "Wasser", "Luft",
+                "alle (mind. 3)", "6 h", "-", "Geist", "Zauberer", "1 h", "gö", "Lebensmittel, Kräute, Pulver (20 GS)",
+                6, 10, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(242, "Waffensegen", "Geste", 14, "Luft", "Metall", "3-9",
+                "1 min", "Berührung", "Umgebung", "1 Objekt", "10 min", "gö", "", 5, 5, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(243, "Waffenwirbel", "Wort", 15, "Luft", "Erde", "6",
+                "10 sec", "15 m", "Körper", "Zauberer", "1 min", "gö", "", 6, 10, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(244, "Wagemut", "Geste", 15, "Luft", "Feuer", "2", "10 sec",
+                "15 m", "Geist", "1 Wesen", "2 min", "gö", "", 3, 2, 17, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(245, "Wort des Lebens", "Wort", 16, "Holz", "Eis", "6",
+                "10 sec", "0 m", "Körper", "9 m Umkreis", "var", "gö", "", 8, 20, 17));
+            modelBuilder.Entity<Spell>().HasData(new Spell(246, "Wort der Trauer", "Wort", 16, "Luft", "Eis", "6",
+                "10 sec", "0 m", "Geist", "9 m Umkreis", "var", "gö", "", 8, 20, 17));
             // Dweomer
-            modelBuilder.Entity<Spell>().HasData(new Spell(247, "Bärenwut", "Geste", 15, "Holz", "Erde", "2", "Augenblick", "-", "Körper", "Zauberer", "2 min", "dr", "eigenes Blut", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(248, "Bannen von Gift", "Wort", 16, "Holz", "Eis", "4", "10 sec", "3 m", "Körper", "1 Wesen", "0", "dr", "-", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(249, "Baum", "Gedanke", 15, "Holz", "Erde", "1", "Augenblick", "-", "Körper", "Zauberer", "90 min", "dr", "-", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(250, "Elfenfeuer", "Geste", 13, "Holz", "Holz", "3", "10 sec", "30 m", "Umgebung", "Strahl", "2 min, k", "dr", "Turmalin (50 GS)", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(251, "Elfenklinge", "Geste", 14, "Holz", "Metall", "2", "10 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dr", "Waffe mit Elfenstahlklinge", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(252, "Entgiften", "Wort", 16, "Holz", "Eis", "2", "30 sec", "3 m", "Umgebung", "1 Objekt", "0", "dr", "-", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(253, "Erkennen von Gift", "Gedanke", 12, "Holz", "Eis", "2", "Augenblick", "15 m", "Geist", "1 m²", "0", "dr", "-", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(254, "Erkennen von Krankheit", "Gedanke", 12, "Holz", "Eis", "1", "10 min", "Berührung", "Geist", "1 Wesen", "0", "dr", "-", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(255, "Fährtendurft", "Geste", 15, "Holz", "Erde", "1 je Wesen", "1 min", "Berührung", "Körper", "1-6 Wesen", "30 min", "dr", "Tierkot (1 GS)", 3, 2, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(256, "Feenfluch", "Geste", 15, "Holz", "Erde", "2", "10 sec", "15 m", "Körper", "1 Wesen", "?", "dr", "-", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(257, "Feenschutz", "Geste", 15, "Holz", "Luft", "6", "10 min", "30 m", "Geist", "bis zu 7 Wesen", "8 h", "dr", "Zweige von Eiche, Esche und Weißdorn (2 GS), Stück Kaltes Eisen", 6, 10, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(258, "Feenschwert", "Geste", 13, "Holz", "Holz", "4", "10 sec", "0 m", "Umgebung", "-", "2 min", "dr", "Turmalin (50 GS)", 6, 10, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(259, "Feuerbienen", "Geste", 13, "Holz", "Holz", "4", "10 sec", "50 m", "Umgebung", "Strahl", "2 min, k", "dr", "Turmalin (50 GS)", 6, 10, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(260, "Grüne Hand", "Geste", 14, "Holz", "Holz", "6", "20 sec", "Berührung", "Umgebung", "Pflanzen", "2 min", "dr", "pulverisierte Wurzeln, Frühlingsregen (20 GS)", 9, 30, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(261, "Kraftspende", "Geste", 11, "Holz", "Feuer", "1", "Augenblick", "30 m", "Körper", "1 Wesen", "0", "dr", "-", 1, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(262, "Laufen wie der Wind", "Geste", 15, "Holz", "Erde", "3", "10 sec", "-", "Körper", "Zauberer", "10 min", "dr", "-", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(263, "Lebensflammen", "Geste", 13, "Holz", "Holz", "1 je Wesen", "10 sec", "Berührung", "Umgebung", "bis zu 6 Wesen", "2 min", "dr", "Zunder (1 SS)", 3, 2, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(264, "Lebenskeule", "Geste", 14, "Holz", "Holz", "2", "10 sec", "Berührung", "Umgebung", "1 Objekt", "2 min", "dr", "Waffe aus Holz", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(265, "Lebensrettung", "Geste", 13, "Holz", "Erde", "3", "1 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(266, "Lebensstärkung", "Geste", 13, "Holz", "Feuer", "4", "20 sec", "Berührung", "Körper", "1 Wesen", "30 min", "dr", "-", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(267, "Lindern von Entkräftung", "Geste", 13, "Holz", "Feuer", "5", "10 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 7, 15, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(268, "Lindern von Krankheit", "Geste", 16, "Holz", "Eis", "2", "10 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 3, 2, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(269, "Linienlesen", "Gedanke", 12, "Holz", "Holz", "1", "Augenblick", "bis zu 5 km", "Geist", "Zauberer", "10 sec", "dr", "-", 1, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(270, "Linienwanderung", "Gedanke", 11, "Luft", "Feuer", "4", "20 sec", "-", "Körper", "Zauberer", "1 h", "dr", "-", 8, 20, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(271, "Mutlosigkeit", "Wort", 10, "Holz", "Wasser", "2 je Wesen", "Augenblick", "30 m", "Geist", "bis zu 10 Wesen", "10 min", "dr", "-", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(272, "Naturgeist rufen", "Geste", 10, "Holz", "Holz", "3", "5 min", "500 m", "Geist", "-", "2 min", "dr", "Weißdornpfeife bzw. Schamanentrommel", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(273, "Rindenhaut", "Geste", 15, "Holz", "Erde", "2", "10 sec", "Berührung", "Körper", "1 Wesen", "10 min", "dr", "Eichenrinde (2 SS)", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(274, "Ring des Lebens", "Geste", 16, "Holz", "Eis", "4", "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dr", "Samen des Lebenskrautes (5 GS)", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(275, "Schlachtenwahnsinn", "Geste", 15, "Holz", "Erde", "6", "10 sec", "-", "Körper", "Zauberer", "1 min", "dr", "-", 8, 20, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(276, "Schnellheilung", "Geste", 13, "Holz", "Erde", "4", "10 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 6, 10, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(277, "Schutzgeist", "Geste", 11, "Luft", "Erde", "3", "10 sec", "Berührung", "Umgebung", "Zauberer", "bis zu 30 min", "dr", "-", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(278, "Schwarm", "Wort", 11, "Holz", "Erde", "2", "10 sec", "50 m", "Umgebung", "-", "1 min, k", "dr", "-", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(279, "Tiere rufen", "Wort", 10, "Holz", "Wasser", "3-9", "10 sec", "2 km", "Geist", "1-10 Wesen", "10 min", "dr", "-", 5, 5, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(280, "Tiergestalt", "Geste", 15, "Wasser", "Erde", "6", "20 sec", "-", "Körper", "Zauberer", "?", "dr", "Fellstück, Feder usw. (1 GS)", 9, 30, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(281, "Tierischer Helfer", "Wort", 10, "Holz", "Wasser", "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen je Grad", "mind. 2 h", "dr", "-", 4, 3, 18));
-            modelBuilder.Entity<Spell>().HasData(new Spell(282, "Wandeln wie der Wind", "Geste", 14, "Holz", "Erde", "1", "Augenblick", "0 m", "Umgebung", "1 m Umkreis", "10 min", "dr", "Flugsamen verschiedener Pflanzen (5 SS)", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(283, "Wittern", "Geste", 15, "Holz", "Erde", "2", "10 sec", "-", "Körper", "Zauberer", "30 min", "dr", "Spürhundhaare (5 GS)", 3, 2, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(284, "Wundersame Tarnung", "Gedanke", 14, "Holz", "Erde", "1", "Augenblick", "-", "Umgebung", "Zauberer", "30 min", "dr", "-", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(285, "Zähmen", "Wort", 10, "Holz", "Wasser", "1 je Grad", "10 sec", "30 m", "Geist", "1 Wesen je Grad", "2 h", "dr", "-", 2, 1, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(286, "Zaubersprung", "Geste", 15, "Holz", "Erde", "2", "10 sec", "-", "Körper", "Zauberer", "10 sec", "dr", "-", 3, 2, 18, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(287, "Zeichen des Lebens", "Geste", 16, "Holz", "Eis", "6", "20 sec", "0", "Körper", "9 m Umkreis", "10 min", "dr", "-", 8, 20, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(247, "Bärenwut", "Geste", 15, "Holz", "Erde", "2",
+                "Augenblick", "-", "Körper", "Zauberer", "2 min", "dr", "eigenes Blut", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(248, "Bannen von Gift", "Wort", 16, "Holz", "Eis", "4",
+                "10 sec", "3 m", "Körper", "1 Wesen", "0", "dr", "-", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(249, "Baum", "Gedanke", 15, "Holz", "Erde", "1",
+                "Augenblick", "-", "Körper", "Zauberer", "90 min", "dr", "-", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(250, "Elfenfeuer", "Geste", 13, "Holz", "Holz", "3",
+                "10 sec", "30 m", "Umgebung", "Strahl", "2 min, k", "dr", "Turmalin (50 GS)", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(251, "Elfenklinge", "Geste", 14, "Holz", "Metall", "2",
+                "10 sec", "Berührung", "Umgebung", "1 Objekt", "10 min", "dr", "Waffe mit Elfenstahlklinge", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(252, "Entgiften", "Wort", 16, "Holz", "Eis", "2", "30 sec",
+                "3 m", "Umgebung", "1 Objekt", "0", "dr", "-", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(253, "Erkennen von Gift", "Gedanke", 12, "Holz", "Eis", "2",
+                "Augenblick", "15 m", "Geist", "1 m²", "0", "dr", "-", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(254, "Erkennen von Krankheit", "Gedanke", 12, "Holz", "Eis",
+                "1", "10 min", "Berührung", "Geist", "1 Wesen", "0", "dr", "-", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(255, "Fährtendurft", "Geste", 15, "Holz", "Erde",
+                "1 je Wesen", "1 min", "Berührung", "Körper", "1-6 Wesen", "30 min", "dr", "Tierkot (1 GS)", 3, 2, 18,
+                true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(256, "Feenfluch", "Geste", 15, "Holz", "Erde", "2", "10 sec",
+                "15 m", "Körper", "1 Wesen", "?", "dr", "-", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(257, "Feenschutz", "Geste", 15, "Holz", "Luft", "6",
+                "10 min", "30 m", "Geist", "bis zu 7 Wesen", "8 h", "dr",
+                "Zweige von Eiche, Esche und Weißdorn (2 GS), Stück Kaltes Eisen", 6, 10, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(258, "Feenschwert", "Geste", 13, "Holz", "Holz", "4",
+                "10 sec", "0 m", "Umgebung", "-", "2 min", "dr", "Turmalin (50 GS)", 6, 10, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(259, "Feuerbienen", "Geste", 13, "Holz", "Holz", "4",
+                "10 sec", "50 m", "Umgebung", "Strahl", "2 min, k", "dr", "Turmalin (50 GS)", 6, 10, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(260, "Grüne Hand", "Geste", 14, "Holz", "Holz", "6",
+                "20 sec", "Berührung", "Umgebung", "Pflanzen", "2 min", "dr",
+                "pulverisierte Wurzeln, Frühlingsregen (20 GS)", 9, 30, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(261, "Kraftspende", "Geste", 11, "Holz", "Feuer", "1",
+                "Augenblick", "30 m", "Körper", "1 Wesen", "0", "dr", "-", 1, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(262, "Laufen wie der Wind", "Geste", 15, "Holz", "Erde", "3",
+                "10 sec", "-", "Körper", "Zauberer", "10 min", "dr", "-", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(263, "Lebensflammen", "Geste", 13, "Holz", "Holz",
+                "1 je Wesen", "10 sec", "Berührung", "Umgebung", "bis zu 6 Wesen", "2 min", "dr", "Zunder (1 SS)", 3, 2,
+                18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(264, "Lebenskeule", "Geste", 14, "Holz", "Holz", "2",
+                "10 sec", "Berührung", "Umgebung", "1 Objekt", "2 min", "dr", "Waffe aus Holz", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(265, "Lebensrettung", "Geste", 13, "Holz", "Erde", "3",
+                "1 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(266, "Lebensstärkung", "Geste", 13, "Holz", "Feuer", "4",
+                "20 sec", "Berührung", "Körper", "1 Wesen", "30 min", "dr", "-", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(267, "Lindern von Entkräftung", "Geste", 13, "Holz", "Feuer",
+                "5", "10 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 7, 15, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(268, "Lindern von Krankheit", "Geste", 16, "Holz", "Eis",
+                "2", "10 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 3, 2, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(269, "Linienlesen", "Gedanke", 12, "Holz", "Holz", "1",
+                "Augenblick", "bis zu 5 km", "Geist", "Zauberer", "10 sec", "dr", "-", 1, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(270, "Linienwanderung", "Gedanke", 11, "Luft", "Feuer", "4",
+                "20 sec", "-", "Körper", "Zauberer", "1 h", "dr", "-", 8, 20, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(271, "Mutlosigkeit", "Wort", 10, "Holz", "Wasser",
+                "2 je Wesen", "Augenblick", "30 m", "Geist", "bis zu 10 Wesen", "10 min", "dr", "-", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(272, "Naturgeist rufen", "Geste", 10, "Holz", "Holz", "3",
+                "5 min", "500 m", "Geist", "-", "2 min", "dr", "Weißdornpfeife bzw. Schamanentrommel", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(273, "Rindenhaut", "Geste", 15, "Holz", "Erde", "2",
+                "10 sec", "Berührung", "Körper", "1 Wesen", "10 min", "dr", "Eichenrinde (2 SS)", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(274, "Ring des Lebens", "Geste", 16, "Holz", "Eis", "4",
+                "Augenblick", "0 m", "Umgebung", "bis zu 18 m Umkreis", "1 min", "dr", "Samen des Lebenskrautes (5 GS)",
+                5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(275, "Schlachtenwahnsinn", "Geste", 15, "Holz", "Erde", "6",
+                "10 sec", "-", "Körper", "Zauberer", "1 min", "dr", "-", 8, 20, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(276, "Schnellheilung", "Geste", 13, "Holz", "Erde", "4",
+                "10 min", "Berührung", "Körper", "1 Wesen", "0", "dr", "-", 6, 10, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(277, "Schutzgeist", "Geste", 11, "Luft", "Erde", "3",
+                "10 sec", "Berührung", "Umgebung", "Zauberer", "bis zu 30 min", "dr", "-", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(278, "Schwarm", "Wort", 11, "Holz", "Erde", "2", "10 sec",
+                "50 m", "Umgebung", "-", "1 min, k", "dr", "-", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(279, "Tiere rufen", "Wort", 10, "Holz", "Wasser", "3-9",
+                "10 sec", "2 km", "Geist", "1-10 Wesen", "10 min", "dr", "-", 5, 5, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(280, "Tiergestalt", "Geste", 15, "Wasser", "Erde", "6",
+                "20 sec", "-", "Körper", "Zauberer", "?", "dr", "Fellstück, Feder usw. (1 GS)", 9, 30, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(281, "Tierischer Helfer", "Wort", 10, "Holz", "Wasser",
+                "2 je Grad", "10 sec", "30 m", "Geist", "1 Wesen je Grad", "mind. 2 h", "dr", "-", 4, 3, 18));
+            modelBuilder.Entity<Spell>().HasData(new Spell(282, "Wandeln wie der Wind", "Geste", 14, "Holz", "Erde",
+                "1", "Augenblick", "0 m", "Umgebung", "1 m Umkreis", "10 min", "dr",
+                "Flugsamen verschiedener Pflanzen (5 SS)", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(283, "Wittern", "Geste", 15, "Holz", "Erde", "2", "10 sec",
+                "-", "Körper", "Zauberer", "30 min", "dr", "Spürhundhaare (5 GS)", 3, 2, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(284, "Wundersame Tarnung", "Gedanke", 14, "Holz", "Erde",
+                "1", "Augenblick", "-", "Umgebung", "Zauberer", "30 min", "dr", "-", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(285, "Zähmen", "Wort", 10, "Holz", "Wasser", "1 je Grad",
+                "10 sec", "30 m", "Geist", "1 Wesen je Grad", "2 h", "dr", "-", 2, 1, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(286, "Zaubersprung", "Geste", 15, "Holz", "Erde", "2",
+                "10 sec", "-", "Körper", "Zauberer", "10 sec", "dr", "-", 3, 2, 18, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(287, "Zeichen des Lebens", "Geste", 16, "Holz", "Eis", "6",
+                "20 sec", "0", "Körper", "9 m Umkreis", "10 min", "dr", "-", 8, 20, 18));
             // Zauberlieder
-            modelBuilder.Entity<Spell>().HasData(new Spell(288, "Das Lied des Erinnerns", "-", 15, "Magan", "Luft", "2", "1 min", "-", "Geist", "15 m Umkreis", "0", "-", "Harfe oder Laute, Stimme", 7, 15, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(289, "Das Lied der Feier", "-", 15, "Luft", "Luft", "0", "1 min", "-", "Geist", "30 m Umkreis", "30 min", "-", "Flöte, Harfe oder Laute", 1, 1, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(290, "Das Lied des Fesselns", "-", 10, "Luft", "Luft", "2", "Augenblick", "-", "Geist", "30 m Umkreis", "3 min", "-", "Flöte, Harfe oder Laute", 3, 2, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(291, "Das Lied des Friedens", "-", 10, "Metall", "Wasser", "2", "1 min", "-", "Geist", "15 m Umkreis", "10 min", "-", "Harfe oder Laute, Stimme", 10, 40, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(292, "Das Lied des Grauens", "-", 10, "Eis", "Wasser", "4", "1 min", "-", "Geist", "200 m Kegel", "1 min", "-", "Flöte, Stimme", 9, 30, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(293, "Das Lied der Liebe", "-", 10, "Wasser", "Wasser", "0", "1 min", "15 m", "Geist", "1 Wesen", "?", "-", "Harfe oder Laute, Stimme", 7, 15, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(294, "Das Lied der Lockung", "-", 10, "Magan", "Wasser", "2", "1 min", "-", "Geist", "200 m Kegel", "1 min", "-", "Flöte", 8, 20, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(295, "Das Lied der Ruhe", "-", 10, "Wasser", "Wasser", "2", "1 min", "-", "Geist", "30 m Umkreis", "2 h", "-", "Flöte, Harfe oder Laute", 3, 2, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(296, "Das Lied des Spottes", "-", 15, "Luft", "Luft", "2", "3 min", "-", "Geist", "30 m Umkreis", "?", "-", "Harfe oder Laute, Stimme", 3, 2, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(297, "Das Lied der Tanzlust", "-", 10, "Magan", "Erde", "2", "1 min", "-", "Geist", "30 m Umkreis", "1 min", "-", "Flöte", 5, 5, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(298, "Das Lied der Tapferkeit", "-", 15, "Luft", "Luft", "0", "10 min", "-", "Geist", "15 m Umkreis", "30 min", "-", "Flöte, Harfe oder Laute, Stimme", 1, 1, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(299, "Das Lied der verborgenen Kraft", "-", 15, "Magan", "Feuer", "2", "1 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Stimme", 6, 10, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(300, "Das Lied der Verführung", "-", 10, "Wasser", "Wasser", "2", "1 min", "5 m", "Geist", "1 Wesen", "6 h", "-", "Harfe oder Laute, Stimme", 3, 2, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(301, "Das Lied des Vergessens", "-", 15, "Magan", "Luft", "2", "1 min", "-", "Geist", "15 m Umkreis", "?", "-", "Harfe oder Laute, Stimme", 7, 15, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(302, "Das Lied der Verzweiflung", "-", 15, "Magan", "Luft", "4", "3 min", "15 m", "Geist", "1 Wesen", "30 min", "-", "Flöte, Harfe oder Laute, Stimme", 7, 15, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(303, "Das Lied des Wagemuts", "-", 15, "Luft", "Feuer", "2", "1 min", "-", "Geist", "15 m Umkreis", "30 min", "-", "Flöte, Harfe oder Laute, Stimme", 3, 2, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(304, "Das Lied des Wahnsinns", "-", 16, "Magan", "Luft", "4", "3 min", "-", "Geist", "30 m Umkreis", "?", "-", "Flöte, Stimme", 9, 30, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(305, "Das Lied des Zorns", "-", 10, "Wasser", "Wasser", "2", "1 min", "-", "Geist", "30 m Umkreis", "2 min", "-", "Flöte, Stimme", 11, 60, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(306, "Das Lied der Zwietracht", "-", 10, "Magan", "Wasser", "2", "1 min", "-", "Geist", "15 m Umkreis", "10 min", "-", "Harfe oder Laute, Stimme", 10, 40, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(307, "Das Loblied", "-", 15, "Luft", "Luft", "2", "1 min", "-", "Geist", "30 m Umkreis", "1-3 Tage", "-", "Harfe oder Laute, Stimme", 3, 2, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(308, "Der betäubende Gesang", "-", 10, "Magan", "Wasser", "4", "3 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 6, 10, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(309, "Der einschläfernde Gesang", "-", 10, "Magan", "Wasser", "2", "3 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 4, 3, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(310, "Der frohlockende Gesang", "-", 15, "Luft", "Luft", "2", "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 4, 3, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(311, "Der traurige Gesang", "-", 15, "Magan", "Luft", "2", "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 4, 3, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(312, "Der verunsichernde Gesang", "-", 10, "Feuer", "Luft", "2", "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Flöte, Harfe oder Laute, Stimme", 3, 2, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(313, "Die anfeuernde Ballade", "-", 15, "Magan", "Luft", "2", "1 min", "50 m", "Körper", "1 Wesen", "1 min", "-", "Flöte", 2, 1, 19, true));
-            modelBuilder.Entity<Spell>().HasData(new Spell(314, "Die stählende Ballade", "-", 15, "Metall", "Luft", "2", "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Flöte, Harfe oder Laute, Stimme", 2, 1, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(315, "Die Hymne der Ordnung", "-", 16, "Metall", "Magan", "2", "Augenblick", "-", "Umgebung", "15 m Umkreis", "1 min", "-", "Flöte, Harfe oder Laute, Stimme", 6, 10, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(316, "Die Klänge der Genesung", "-", 15, "Magan", "Erde", "2", "1 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Harfe oder Laute, Stimme", 6, 10, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(317, "Die Klänge der Linderung", "-", 15, "Metall", "Luft", "1", "5 min", "15 m", "Geist", "1 Wesen", "0", "-", "Harfe oder Laute, Stimme", 5, 5, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(318, "Die Klänge des Zusammenwachsens", "-", 15, "Magan", "Erde", "2", "3 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Harfe oder Laute, Stimme", 5, 5, 19));
-            modelBuilder.Entity<Spell>().HasData(new Spell(319, "Die überzeugende Stimme", "-", 10, "Feuer", "Luft", "2", "1 min", "15 m", "Geist", "1 Wesen", "2 min", "-", "Stimme", 5, 5, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(288, "Das Lied des Erinnerns", "-", 15, "Magan", "Luft", "2",
+                "1 min", "-", "Geist", "15 m Umkreis", "0", "-", "Harfe oder Laute, Stimme", 7, 15, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(289, "Das Lied der Feier", "-", 15, "Luft", "Luft", "0",
+                "1 min", "-", "Geist", "30 m Umkreis", "30 min", "-", "Flöte, Harfe oder Laute", 1, 1, 19, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(290, "Das Lied des Fesselns", "-", 10, "Luft", "Luft", "2",
+                "Augenblick", "-", "Geist", "30 m Umkreis", "3 min", "-", "Flöte, Harfe oder Laute", 3, 2, 19, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(291, "Das Lied des Friedens", "-", 10, "Metall", "Wasser",
+                "2", "1 min", "-", "Geist", "15 m Umkreis", "10 min", "-", "Harfe oder Laute, Stimme", 10, 40, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(292, "Das Lied des Grauens", "-", 10, "Eis", "Wasser", "4",
+                "1 min", "-", "Geist", "200 m Kegel", "1 min", "-", "Flöte, Stimme", 9, 30, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(293, "Das Lied der Liebe", "-", 10, "Wasser", "Wasser", "0",
+                "1 min", "15 m", "Geist", "1 Wesen", "?", "-", "Harfe oder Laute, Stimme", 7, 15, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(294, "Das Lied der Lockung", "-", 10, "Magan", "Wasser", "2",
+                "1 min", "-", "Geist", "200 m Kegel", "1 min", "-", "Flöte", 8, 20, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(295, "Das Lied der Ruhe", "-", 10, "Wasser", "Wasser", "2",
+                "1 min", "-", "Geist", "30 m Umkreis", "2 h", "-", "Flöte, Harfe oder Laute", 3, 2, 19, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(296, "Das Lied des Spottes", "-", 15, "Luft", "Luft", "2",
+                "3 min", "-", "Geist", "30 m Umkreis", "?", "-", "Harfe oder Laute, Stimme", 3, 2, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(297, "Das Lied der Tanzlust", "-", 10, "Magan", "Erde", "2",
+                "1 min", "-", "Geist", "30 m Umkreis", "1 min", "-", "Flöte", 5, 5, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(298, "Das Lied der Tapferkeit", "-", 15, "Luft", "Luft", "0",
+                "10 min", "-", "Geist", "15 m Umkreis", "30 min", "-", "Flöte, Harfe oder Laute, Stimme", 1, 1, 19,
+                true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(299, "Das Lied der verborgenen Kraft", "-", 15, "Magan",
+                "Feuer", "2", "1 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Stimme", 6, 10, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(300, "Das Lied der Verführung", "-", 10, "Wasser", "Wasser",
+                "2", "1 min", "5 m", "Geist", "1 Wesen", "6 h", "-", "Harfe oder Laute, Stimme", 3, 2, 19, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(301, "Das Lied des Vergessens", "-", 15, "Magan", "Luft",
+                "2", "1 min", "-", "Geist", "15 m Umkreis", "?", "-", "Harfe oder Laute, Stimme", 7, 15, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(302, "Das Lied der Verzweiflung", "-", 15, "Magan", "Luft",
+                "4", "3 min", "15 m", "Geist", "1 Wesen", "30 min", "-", "Flöte, Harfe oder Laute, Stimme", 7, 15, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(303, "Das Lied des Wagemuts", "-", 15, "Luft", "Feuer", "2",
+                "1 min", "-", "Geist", "15 m Umkreis", "30 min", "-", "Flöte, Harfe oder Laute, Stimme", 3, 2, 19,
+                true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(304, "Das Lied des Wahnsinns", "-", 16, "Magan", "Luft", "4",
+                "3 min", "-", "Geist", "30 m Umkreis", "?", "-", "Flöte, Stimme", 9, 30, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(305, "Das Lied des Zorns", "-", 10, "Wasser", "Wasser", "2",
+                "1 min", "-", "Geist", "30 m Umkreis", "2 min", "-", "Flöte, Stimme", 11, 60, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(306, "Das Lied der Zwietracht", "-", 10, "Magan", "Wasser",
+                "2", "1 min", "-", "Geist", "15 m Umkreis", "10 min", "-", "Harfe oder Laute, Stimme", 10, 40, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(307, "Das Loblied", "-", 15, "Luft", "Luft", "2", "1 min",
+                "-", "Geist", "30 m Umkreis", "1-3 Tage", "-", "Harfe oder Laute, Stimme", 3, 2, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(308, "Der betäubende Gesang", "-", 10, "Magan", "Wasser",
+                "4", "3 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 6, 10, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(309, "Der einschläfernde Gesang", "-", 10, "Magan", "Wasser",
+                "2", "3 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 4, 3, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(310, "Der frohlockende Gesang", "-", 15, "Luft", "Luft", "2",
+                "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 4, 3, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(311, "Der traurige Gesang", "-", 15, "Magan", "Luft", "2",
+                "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Harfe oder Laute, Stimme", 4, 3, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(312, "Der verunsichernde Gesang", "-", 10, "Feuer", "Luft",
+                "2", "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Flöte, Harfe oder Laute, Stimme", 3, 2, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(313, "Die anfeuernde Ballade", "-", 15, "Magan", "Luft", "2",
+                "1 min", "50 m", "Körper", "1 Wesen", "1 min", "-", "Flöte", 2, 1, 19, true));
+            modelBuilder.Entity<Spell>().HasData(new Spell(314, "Die stählende Ballade", "-", 15, "Metall", "Luft", "2",
+                "1 min", "-", "Geist", "15 m Umkreis", "1 min", "-", "Flöte, Harfe oder Laute, Stimme", 2, 1, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(315, "Die Hymne der Ordnung", "-", 16, "Metall", "Magan",
+                "2", "Augenblick", "-", "Umgebung", "15 m Umkreis", "1 min", "-", "Flöte, Harfe oder Laute, Stimme", 6,
+                10, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(316, "Die Klänge der Genesung", "-", 15, "Magan", "Erde",
+                "2", "1 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Harfe oder Laute, Stimme", 6, 10, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(317, "Die Klänge der Linderung", "-", 15, "Metall", "Luft",
+                "1", "5 min", "15 m", "Geist", "1 Wesen", "0", "-", "Harfe oder Laute, Stimme", 5, 5, 19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(318, "Die Klänge des Zusammenwachsens", "-", 15, "Magan",
+                "Erde", "2", "3 min", "-", "Körper", "15 m Umkreis", "0", "-", "Flöte, Harfe oder Laute, Stimme", 5, 5,
+                19));
+            modelBuilder.Entity<Spell>().HasData(new Spell(319, "Die überzeugende Stimme", "-", 10, "Feuer", "Luft",
+                "2", "1 min", "15 m", "Geist", "1 Wesen", "2 min", "-", "Stimme", 5, 5, 19));
         }
 
         /// <summary>
@@ -968,70 +1335,130 @@ namespace MidgardCharakterEditor.Database
             // Nahkampf
             modelBuilder.Entity<Weapon>().HasData(new Weapon(1, "Handaxt", "1W6", "", "", 11, 0, 0, "", "nah", 60));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(2, "Keule", "1W6-1", "", "", 0, 0, 0, "", "nah", 60));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(3, "Kriegshammer", "1W6", "", "", 61, 11, 0, "", "nah", 60));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(4, "Schlachtbeil", "1W6+1", "", "", 91, 21, 0, "", "nah", 60));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(5, "Streitaxt", "1W6-1", "", "", 61, 11, 0, "", "nah", 60));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(6, "Streitkolben", "1W6", "", "", 31, 0, 0, "", "nah", 60));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(7, "Anderthalbhänder", "1W6+1", "", "", 81, 21, 0, "", "nah", 61));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(8, "Krummschwert", "1W6", "", "", 31, 11, 0, "", "nah", 61));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(9, "Langschwert", "1W6+1", "", "", 31, 21, 0, "", "nah", 61));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(3, "Kriegshammer", "1W6", "", "", 61, 11, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(4, "Schlachtbeil", "1W6+1", "", "", 91, 21, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(5, "Streitaxt", "1W6-1", "", "", 61, 11, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(6, "Streitkolben", "1W6", "", "", 31, 0, 0, "", "nah", 60));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(7, "Anderthalbhänder", "1W6+1", "", "", 81, 21, 0, "", "nah", 61));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(8, "Krummschwert", "1W6", "", "", 31, 11, 0, "", "nah", 61));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(9, "Langschwert", "1W6+1", "", "", 31, 21, 0, "", "nah", 61));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(10, "Florett", "", "", "", 0, 81, 0, "", "nah", 62));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(11, "Fuchtel", "", "", "", 61, 31, 0, "nur Parade", "nah", 62));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(11, "Fuchtel", "", "", "", 61, 31, 0, "nur Parade", "nah", 62));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(12, "Rapier", "", "", "", 11, 51, 0, "", "nah", 62));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(13, "Kriegsflegel", "2W6-1", "", "", 61, 31, 0, "zweihändig", "nah", 63));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(14, "Morgenstern", "1W6+2", "", "", 61, 61, 0, "", "nah", 63));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(15, "NunChaku", "1W6-1", "", "", 31, 61, 0, "entwaffnen", "nah", 63));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(16, "Glefe", "1W6", "1W6+2", "", 11, 61, 0, "", "nah", 64));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(17, "Hellebarde", "1W6", "1W6+2", "", 61, 61, 0, "", "nah", 64));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(18, "Speer, leichter", "", "1W6+1", "", 0, 0, 0, "", "nah", 64));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(19, "Stielhammer", "1W6", "1W6-1", "", 81, 31, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(13, "Kriegsflegel", "2W6-1", "", "", 61, 31, 0, "zweihändig", "nah", 63));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(14, "Morgenstern", "1W6+2", "", "", 61, 61, 0, "", "nah", 63));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(15, "NunChaku", "1W6-1", "", "", 31, 61, 0, "entwaffnen", "nah", 63));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(16, "Glefe", "1W6", "1W6+2", "", 11, 61, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(17, "Hellebarde", "1W6", "1W6+2", "", 61, 61, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(18, "Speer, leichter", "", "1W6+1", "", 0, 0, 0, "", "nah", 64));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(19, "Stielhammer", "1W6", "1W6-1", "", 81, 31, 0, "", "nah", 64));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(20, "Stoßspeer", "", "2W6", "", 31, 11, 0, "", "nah", 64));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(21, "Dolch", "1W6-1", "", "", 0, 0, 0, "", "nah", 65));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(22, "Kurzschwert", "1W6", "", "", 0, 0, 0, "", "nah", 65));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(23, "Ochsenzunge", "", "", "", 0, 31, 0, "", "nah", 65));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(24, "Bo-Stab", "1W6", "", "", 21, 61, 0, "Abwehr, Entwaffnen", "nah", 66));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(25, "Kampfstab", "1W6", "", "", 31, 61, 0, "Abwehr, Entwaffnen", "nah", 66));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(26, "Magierstab", "1W6", "", "", 0, 31, 0, "bei Kämpfer wie Keule", "nah", 67));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(27, "Magierstecken", "", "", "", 31, 31, 0, "Abwehr, Entwaffnen", "nah", 67));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(28, "Barbarenstreitaxt", "2W6", "", "", 81, 31, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(29, "Glefe", "1W6+2", "1W6+2", "", 11, 61, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(30, "Hellebarde", "2W6-1", "1W6+2", "", 61, 61, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(31, "Ogerhammer", "4W6-4", "", "", 91, 61, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(32, "Schlachtbeil", "1W6+3", "", "", 91, 21, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(33, "Stabkeule", "2W6-2", "", "", 81, 0, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(34, "Stielhammer", "2W6", "1W6+1", "", 81, 31, 0, "", "nah", 68));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(35, "Anderthalbhänder", "1W6+2", "", "", 81, 21, 0, "", "nah", 69));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(24, "Bo-Stab", "1W6", "", "", 21, 61, 0, "Abwehr, Entwaffnen", "nah", 66));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(25, "Kampfstab", "1W6", "", "", 31, 61, 0,
+                "Abwehr, Entwaffnen", "nah", 66));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(26, "Magierstab", "1W6", "", "", 0, 31, 0,
+                "bei Kämpfer wie Keule", "nah", 67));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(27, "Magierstecken", "", "", "", 31, 31, 0,
+                "Abwehr, Entwaffnen", "nah", 67));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(28, "Barbarenstreitaxt", "2W6", "", "", 81, 31, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(29, "Glefe", "1W6+2", "1W6+2", "", 11, 61, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(30, "Hellebarde", "2W6-1", "1W6+2", "", 61, 61, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(31, "Ogerhammer", "4W6-4", "", "", 91, 61, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(32, "Schlachtbeil", "1W6+3", "", "", 91, 21, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(33, "Stabkeule", "2W6-2", "", "", 81, 0, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(34, "Stielhammer", "2W6", "1W6+1", "", 81, 31, 0, "", "nah", 68));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(35, "Anderthalbhänder", "1W6+2", "", "", 81, 21, 0, "", "nah", 69));
             modelBuilder.Entity<Weapon>().HasData(new Weapon(36, "Bihänder", "2W6", "", "", 61, 31, 0, "", "nah", 69));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(37, "Faustkampf", "1W6-4", "", "", 31, 21, 21, "betäuben", "nah", 70));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(38, "Ringen", "1W6-4", "", "", 21, 31, 31, "erstetzt Raufen", "nah", 70));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(39, "Buckler", "", "2 AP", "", 0, 61, 0, "gegen Einhandschwert, Zauberstab, Stich-, Stock- , Spießwaffe, Fecht-, Parierwaffe oder Buckler", "nah", 71));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(40, "Schild, großer", "", "0 AP", "", 61, 0, 0, "gegen alle Angriffe, auch Schuss- und Wurfwaffen sowie zweihändige Hiebwaffen", "nah", 71));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(41, "Schild, kleiner", "", "1 AP", "", 31, 11, 0, "gegen alle Nahkampfangriffe ausgenommen zweihändige Hiebwaffen sowie Schuss und Wurfwaffen", "nah", 71));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(42, "Kampfgabeln", "(1W6-3)/(1W6-4)", "2 AP", "", 31, 61, 0, "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "nah", 72));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(43, "Parierdolch", "", "1 AP", "", 0, 61, 0, "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "nah", 72));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(37, "Faustkampf", "1W6-4", "", "", 31, 21, 21, "betäuben", "nah", 70));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(38, "Ringen", "1W6-4", "", "", 21, 31, 31, "erstetzt Raufen", "nah", 70));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(39, "Buckler", "", "2 AP", "", 0, 61, 0,
+                "gegen Einhandschwert, Zauberstab, Stich-, Stock- , Spießwaffe, Fecht-, Parierwaffe oder Buckler",
+                "nah", 71));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(40, "Schild, großer", "", "0 AP", "", 61, 0, 0,
+                "gegen alle Angriffe, auch Schuss- und Wurfwaffen sowie zweihändige Hiebwaffen", "nah", 71));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(41, "Schild, kleiner", "", "1 AP", "", 31, 11, 0,
+                "gegen alle Nahkampfangriffe ausgenommen zweihändige Hiebwaffen sowie Schuss und Wurfwaffen", "nah",
+                71));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(42, "Kampfgabeln", "(1W6-3)/(1W6-4)", "2 AP", "", 31, 61,
+                0, "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe",
+                "nah", 72));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(43, "Parierdolch", "", "1 AP", "", 0, 61, 0,
+                "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "nah",
+                72));
             // Fernkampf
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(44, "Wurfaxt", "1W6", "", "", 31, 31, 0, "Nahkampf wie Handaxt", "10/20/30", 73));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(45, "Wurfeisen", "1W6", "", "", 61, 61, 0, "", "10/20/50", 73));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(46, "Wurfhammer", "1W6", "", "", 61, 31, 0, "Nahkampf w. Kriegshammer", "10/20/30", 73));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(47, "Wurfkeule", "1W6-1", "", "", 31, 31, 0, "Nahkampf wie Keule", "10/20/50", 73));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(48, "Wurfmesser", "1W6-1", "", "", 0, 61, 0, "Nahkampf wie Dolch", "10/15/20", 74));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(49, "Wurfpfeil", "1W6-2", "", "", 11, 31, 0, "", "10/20/30", 74));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(50, "Wurfscheibe", "1W6-2", "", "", 61, 61, 0, "pro Runde 2 Angriffe", "10/20/30", 75));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(51, "Wurfstern", "1W6-3", "", "", 0, 61, 0, "pro Runde 3 Angriffe", "5/10/15", 75));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(52, "Speerschleuder", "1W6", "", "", 31, 61, 0, "", "20/40/70", 76));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(53, "Wurfspeer", "1W6-1", "", "", 31, 21, 0, "Nahkampf wie Speer, leicht", "10/30/50", 76));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(54, "Wurfspie?", "1W6", "", "", 61, 21, 0, "Nahkampf wie Speer, leicht", "10/20/30", 76));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(55, "Armbrust, leichte", "1W6", "", "", 0, 61, 0, "", "30/120/220", 77));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(56, "Armbrust, schwere", "2W6-1", "", "", 61, 31, 0, "Schuss jede 2. Runde", "30/120/240", 77));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(57, "Handarmbrust", "1W6-1", "", "", 0, 31, 0, "", "20/40/70", 77));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(58, "Blasrohr, lang", "(Gift)", "", "", 0, 61, 0, "(Gift 3W6-5W6 Schaden)", "10/15/20", 78));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(59, "Blasrohr, kurz", "(Gift)", "", "", 0, 61, 0, "(Gift 3W6-5W6 Schaden)", "5/7/10", 78));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(60, "Bogen", "1W6", "", "", 31, 31, 0, "", "30/100/180", 79));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(61, "Kompositbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(62, "Kurzbogen", "1W6-1", "", "", 11, 31, 0, "", "30/80/120", 79));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(63, "Langbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(64, "Schleuder", "1W6", "", "", 0, 61, 0, "", "30/60/90", 80));
-            modelBuilder.Entity<Weapon>().HasData(new Weapon(65, "Stockschleuder", "2W6-2", "", "", 31, 81, 0, "", "50/100/180", 80));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(44, "Wurfaxt", "1W6", "", "", 31, 31, 0,
+                "Nahkampf wie Handaxt", "10/20/30", 73));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(45, "Wurfeisen", "1W6", "", "", 61, 61, 0, "", "10/20/50", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(46, "Wurfhammer", "1W6", "", "", 61, 31, 0,
+                "Nahkampf w. Kriegshammer", "10/20/30", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(47, "Wurfkeule", "1W6-1", "", "", 31, 31, 0,
+                "Nahkampf wie Keule", "10/20/50", 73));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(48, "Wurfmesser", "1W6-1", "", "", 0, 61, 0,
+                "Nahkampf wie Dolch", "10/15/20", 74));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(49, "Wurfpfeil", "1W6-2", "", "", 11, 31, 0, "", "10/20/30", 74));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(50, "Wurfscheibe", "1W6-2", "", "", 61, 61, 0,
+                "pro Runde 2 Angriffe", "10/20/30", 75));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(51, "Wurfstern", "1W6-3", "", "", 0, 61, 0,
+                "pro Runde 3 Angriffe", "5/10/15", 75));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(52, "Speerschleuder", "1W6", "", "", 31, 61, 0, "", "20/40/70", 76));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(53, "Wurfspeer", "1W6-1", "", "", 31, 21, 0,
+                "Nahkampf wie Speer, leicht", "10/30/50", 76));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(54, "Wurfspie?", "1W6", "", "", 61, 21, 0,
+                "Nahkampf wie Speer, leicht", "10/20/30", 76));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(55, "Armbrust, leichte", "1W6", "", "", 0, 61, 0, "", "30/120/220", 77));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(56, "Armbrust, schwere", "2W6-1", "", "", 61, 31, 0,
+                "Schuss jede 2. Runde", "30/120/240", 77));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(57, "Handarmbrust", "1W6-1", "", "", 0, 31, 0, "", "20/40/70", 77));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(58, "Blasrohr, lang", "(Gift)", "", "", 0, 61, 0,
+                "(Gift 3W6-5W6 Schaden)", "10/15/20", 78));
+            modelBuilder.Entity<Weapon>().HasData(new Weapon(59, "Blasrohr, kurz", "(Gift)", "", "", 0, 61, 0,
+                "(Gift 3W6-5W6 Schaden)", "5/7/10", 78));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(60, "Bogen", "1W6", "", "", 31, 31, 0, "", "30/100/180", 79));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(61, "Kompositbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(62, "Kurzbogen", "1W6-1", "", "", 11, 31, 0, "", "30/80/120", 79));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(63, "Langbogen", "1W6+1", "", "", 61, 61, 0, "", "30/120/200", 79));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(64, "Schleuder", "1W6", "", "", 0, 61, 0, "", "30/60/90", 80));
+            modelBuilder.Entity<Weapon>()
+                        .HasData(new Weapon(65, "Stockschleuder", "2W6-2", "", "", 31, 81, 0, "", "50/100/180", 80));
         }
 
         /// <summary>

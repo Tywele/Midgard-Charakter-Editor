@@ -11,12 +11,12 @@ namespace MidgardCharakterEditor.Database
     /// </summary>
     public class Language
     {
-        public int Id { get; set; }
+        public int    Id   { get; set; }
         public string Name { get; set; }
 
         public Language(int id, string name)
         {
-            Id = id;
+            Id   = id;
             Name = name;
         }
     }

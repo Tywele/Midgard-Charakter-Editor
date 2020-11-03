@@ -2,23 +2,23 @@
 using MidgardCharakterEditor.Database;
 using System;
 using System.Linq;
+using ReactiveUI;
+using Splat;
 
 namespace MidgardCharakterEditor
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : IEnableLogger
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            using (ILifetimeScope scope = AppWide.LifetimeScope.BeginLifetimeScope())
-            {
-                IMidgardContext context = scope.Resolve<IMidgardContext>();
-                Console.WriteLine(context.Lands.Count());
-            }
+            var context = Locator.Current.GetService<IMidgardContext>();
+            var output  = $"{context.Lands.Count()}";
+            this.Log().Info(output);
         }
     }
 }

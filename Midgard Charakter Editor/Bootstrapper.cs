@@ -18,12 +18,13 @@ namespace MidgardCharakterEditor
             builder.RegisterType<Seeder>().As<ISeeder>();
             builder.RegisterType<MidgardContext>().As<IMidgardContext>();
 
-            // builder.RegisterType<MainWindow>().As<IViewFor<MainViewModel>>();
+            builder.RegisterType<MainWindow>().As<IViewFor<MainViewModel>>();
+            builder.RegisterType<MainViewModel>().AsSelf();
 
             var autofacResolver = builder.UseAutofacDependencyResolver();
             builder.RegisterInstance(autofacResolver);
             autofacResolver.InitializeReactiveUI();
-            
+
             var container = builder.Build();
 
             var autofacDependencyResolver = container.Resolve<AutofacDependencyResolver>();

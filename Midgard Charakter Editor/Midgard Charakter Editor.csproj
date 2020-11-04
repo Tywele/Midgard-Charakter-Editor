@@ -116,6 +116,7 @@
     <Compile Include="Database\Spell.cs" />
     <Compile Include="Database\Weapon.cs" />
     <Compile Include="Utilities\Die.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
     </Compile>

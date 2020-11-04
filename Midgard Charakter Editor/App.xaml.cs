@@ -14,7 +14,7 @@ namespace MidgardCharakterEditor
             this.Log().Info($"Starting up Application: {Assembly.GetExecutingAssembly().FullName}");
 
             base.OnStartup(e);
-            new Bootstrapper().Startup();
+            var bootstrapper = new Bootstrapper();
         }
     }
 }

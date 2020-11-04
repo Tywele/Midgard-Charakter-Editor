@@ -3,14 +3,11 @@ using Splat;
 
 namespace MidgardCharakterEditor.ViewModel
 {
-    public class FirstViewModel : ReactiveObject, IRoutableViewModel
+    public class FirstViewModel : ViewModelBase
     {
-        public string  UrlPathSegment => "first";
-        public IScreen HostScreen     { get; }
-
-        public FirstViewModel(IScreen screen = null)
+        public FirstViewModel() : base("first")
         {
-            HostScreen = screen ?? Locator.Current.GetService<IScreen>();
+            
         }
     }
 }

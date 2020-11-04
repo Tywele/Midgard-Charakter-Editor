@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
+using Splat;
 
 namespace MidgardCharakterEditor.Database
 {
@@ -8,9 +9,9 @@ namespace MidgardCharakterEditor.Database
     {
         private readonly ISeeder _seeder;
 
-        public MidgardContext(ISeeder seeder)
+        public MidgardContext()
         {
-            _seeder = seeder;
+            _seeder = Locator.Current.GetService<ISeeder>();
             Database.Migrate();
         }
 

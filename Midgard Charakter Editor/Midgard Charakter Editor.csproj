@@ -85,6 +85,7 @@
     <Compile Include="Database\IMidgardContext.cs" />
     <Compile Include="Database\ISeeder.cs" />
     <Compile Include="Utilities\IDie.cs" />
+    <Compile Include="ViewModel\FirstViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -115,6 +116,9 @@
     <Compile Include="Database\Spell.cs" />
     <Compile Include="Database\Weapon.cs" />
     <Compile Include="Utilities\Die.cs" />
+    <Compile Include="View\FirstView.xaml.cs">
+      <DependentUpon>FirstView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -228,10 +232,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\FirstView.xaml" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="FodyWeavers.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

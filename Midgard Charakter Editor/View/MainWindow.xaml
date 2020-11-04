@@ -11,7 +11,18 @@
                            Height="450" 
                            Width="800" ResizeMode="CanResizeWithGrip">
     <Grid>
-        <TextBlock x:Name="TheTextBlock"></TextBlock>
-        <TextBlock x:Name="TheTextBlock2">Hello Galaxy</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <reactiveUi:RoutedViewHost 
+            Grid.Row="0" 
+            x:Name="RoutedViewHost"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="15">
+            <Button x:Name="GoNextButton" Content="Go to first" />
+            <Button x:Name="GoBackButton" Content="Go back" Margin="5 0 0 0" />
+        </StackPanel>
     </Grid>
 </reactiveUi:ReactiveWindow>

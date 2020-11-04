@@ -1,17 +1,25 @@
-﻿using MidgardCharakterEditor.Database;
+﻿using System.Reactive;
+using MidgardCharakterEditor.Database;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using Splat;
 
 namespace MidgardCharakterEditor.ViewModel
 {
-    public class MainViewModel : ReactiveObject
+    public class MainViewModel : ReactiveObject, IScreen
     {
-        [Reactive]
-        public string Text { get; set; }
-        
-        public MainViewModel(IMidgardContext context)
+        private readonly IMidgardContext                           _context;
+        public           RoutingState                              Router { get; }
+        public           ReactiveCommand<Unit, IRoutableViewModel> GoNext { get; set; }
+        public           ReactiveCommand<Unit, Unit>               GoBack { get; set; }
+
+        public MainViewModel()
         {
-            Text = "Hello World";
+            // _context = Locator.Current.GetService<IMidgardContext>();
+            Router = new RoutingState();
+            GoNext = ReactiveCommand.CreateFromObservable(() =>
+                Router.Navigate.Execute(new FirstViewModel()));
+            GoBack = Router.NavigateBack;
         }
     }
 }

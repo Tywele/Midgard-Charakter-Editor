@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Reactive;
 using System.Reactive.Disposables;
 using MidgardCharakterEditor.Database;
 using MidgardCharakterEditor.ViewModel;
@@ -7,23 +8,25 @@ using Splat;
 
 namespace MidgardCharakterEditor.View
 {
-    /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : ReactiveWindow<MainViewModel>, IEnableLogger
     {
         public MainWindow()
         {
             InitializeComponent();
 
-            ViewModel = Locator.Current.GetService<MainViewModel>();
-            
+            ViewModel = new MainViewModel();
+
             this.WhenActivated(disposable =>
             {
-                this.OneWayBind(this.ViewModel, x => x.Text, x => x.TheTextBlock.Text)
+                // Bind the view model router to RoutedViewHost.Router property.
+                this.OneWayBind(ViewModel, x => x.Router, x => x.RoutedViewHost.Router)
+                    .DisposeWith(disposable);
+                this.BindCommand(ViewModel!, x => x.GoNext, x => x.GoNextButton)
+                    .DisposeWith(disposable);
+                this.BindCommand(ViewModel, x => x.GoBack, x => x.GoBackButton)
                     .DisposeWith(disposable);
             });
-            
+
             var context = Locator.Current.GetService<IMidgardContext>();
             var output  = $"{context.Lands.Count()}";
             this.Log().Info(output);

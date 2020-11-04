@@ -1,12 +1,11 @@
-﻿using Autofac;
-using MidgardCharakterEditor.Database;
-using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Reactive.Disposables;
+using MidgardCharakterEditor.Database;
+using MidgardCharakterEditor.ViewModel;
 using ReactiveUI;
 using Splat;
 
-namespace MidgardCharakterEditor
+namespace MidgardCharakterEditor.View
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml

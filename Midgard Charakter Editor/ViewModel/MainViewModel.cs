@@ -2,7 +2,7 @@
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
-namespace MidgardCharakterEditor
+namespace MidgardCharakterEditor.ViewModel
 {
     public class MainViewModel : ReactiveObject
     {

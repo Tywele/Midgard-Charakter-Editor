@@ -1,17 +1,13 @@
 ﻿using MidgardCharakterEditor.Database;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 
 namespace MidgardCharakterEditor
 {
     public class MainViewModel : ReactiveObject
     {
-        private string _text;
-
-        public string Text
-        {
-            get => _text;
-            set => this.RaiseAndSetIfChanged(ref this._text, value);
-        }
+        [Reactive]
+        public string Text { get; set; }
         
         public MainViewModel(IMidgardContext context)
         {

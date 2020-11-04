@@ -12,5 +12,6 @@
                            Width="800" ResizeMode="CanResizeWithGrip">
     <Grid>
         <TextBlock x:Name="TheTextBlock"></TextBlock>
+        <TextBlock x:Name="TheTextBlock2">Hello Galaxy</TextBlock>
     </Grid>
 </reactiveUi:ReactiveWindow>

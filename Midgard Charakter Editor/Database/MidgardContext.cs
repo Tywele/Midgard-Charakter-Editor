@@ -9,15 +9,14 @@ namespace MidgardCharakterEditor.Database
     {
         private readonly ISeeder _seeder;
 
-        public MidgardContext()
+        public MidgardContext(ISeeder seeder = null)
         {
-            _seeder = Locator.Current.GetService<ISeeder>();
+            _seeder = seeder ?? Locator.Current.GetService<ISeeder>();
             Database.Migrate();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=M5Editor;Trusted_Connection=True;");
             optionsBuilder.UseSqlite($"Data Source={Path.Combine(Environment.CurrentDirectory, "m5editor.db")}");
         }
 

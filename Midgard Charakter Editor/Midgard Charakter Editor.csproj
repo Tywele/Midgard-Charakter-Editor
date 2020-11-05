@@ -85,6 +85,7 @@
     <Compile Include="Database\IMidgardContext.cs" />
     <Compile Include="Database\ISeeder.cs" />
     <Compile Include="Utilities\IDie.cs" />
+    <Compile Include="ViewModel\DatabaseViewModel.cs" />
     <Compile Include="ViewModel\FirstViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -117,6 +118,9 @@
     <Compile Include="Database\Weapon.cs" />
     <Compile Include="Utilities\Die.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\DatabaseView.xaml.cs">
+      <DependentUpon>DatabaseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
     </Compile>
@@ -233,6 +237,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\DatabaseView.xaml" />
     <Page Include="View\FirstView.xaml" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

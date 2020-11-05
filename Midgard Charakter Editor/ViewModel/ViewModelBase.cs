@@ -4,7 +4,7 @@ using Splat;
 
 namespace MidgardCharakterEditor.ViewModel
 {
-    public class ViewModelBase : ReactiveObject, IRoutableViewModel
+    public class ViewModelBase : ReactiveObject, IRoutableViewModel, IEnableLogger
     {
         public string  UrlPathSegment { get; }
         public IScreen HostScreen     { get; }

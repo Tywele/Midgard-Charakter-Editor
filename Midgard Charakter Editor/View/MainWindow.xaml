@@ -12,17 +12,19 @@
                            Width="800" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <reactiveUi:RoutedViewHost 
-            Grid.Row="0" 
+            Grid.Row="1" 
             x:Name="RoutedViewHost"
             HorizontalContentAlignment="Stretch"
             VerticalContentAlignment="Stretch" />
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="15">
-            <Button x:Name="GoNextButton" Content="Go to first" />
-            <Button x:Name="GoBackButton" Content="Go back" Margin="5 0 0 0" />
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+            <Button x:Name="CharacterButton" Content="Charakter" />
+            <Button x:Name="SkillsButton" Content="Fertigkeiten" Margin="5 0 0 0" />
+            <Button x:Name="SpellsButton" Content="Zauber" Margin="5 0 0 0" />
+            <Button x:Name="DatabaseButton" Content="Datenbank" Margin="5 0 0 0" />
         </StackPanel>
     </Grid>
 </reactiveUi:ReactiveWindow>

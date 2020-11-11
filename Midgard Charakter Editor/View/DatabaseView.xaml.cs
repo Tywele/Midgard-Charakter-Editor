@@ -12,7 +12,10 @@ namespace MidgardCharakterEditor.View
             InitializeComponent();
             this.WhenActivated(disposables =>
             {
-                this.OneWayBind(ViewModel, viewModel => viewModel.Spells, view => view.SpellListView.ItemsSource).DisposeWith(disposables);
+                this.OneWayBind(ViewModel, viewModel => viewModel.SpellSearchResultList, view => view.SpellListView.ItemsSource)
+                    .DisposeWith(disposables);
+                this.Bind(ViewModel, viewModel => viewModel.SpellSearchTerm, view => view.SpellSearchBox.Text)
+                    .DisposeWith(disposables);
             });
         }
     }

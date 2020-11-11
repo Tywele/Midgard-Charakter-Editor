@@ -15,8 +15,8 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Orientation="Vertical">
-            <TextBox x:Name="SpellSearchBox"></TextBox>
-            <ListBox x:Name="SpellListView" Margin="10">
+            <TextBox x:Name="SpellSearchBox" Margin="10 10 10 0"></TextBox>
+            <ListBox x:Name="SpellListView" Margin="10" Height="200">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}" />

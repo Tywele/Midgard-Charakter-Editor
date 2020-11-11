@@ -17,8 +17,8 @@ namespace MidgardCharakterEditor.ViewModel
 
         [Reactive] public string SpellSearchTerm { get; set; }
 
-        private readonly ObservableAsPropertyHelper<IEnumerable<Spell>> _searchResultList;
-        public           IEnumerable<Spell> SpellSearchResultList => _searchResultList.Value;
+        private readonly ObservableAsPropertyHelper<IEnumerable<Spell>> _spellSearchResultList;
+        public           IEnumerable<Spell> SpellSearchResultList => _spellSearchResultList.Value;
 
         public DatabaseViewModel(IMidgardContext context = null) : base("Database")
         {
@@ -26,7 +26,7 @@ namespace MidgardCharakterEditor.ViewModel
 
             SpellList = _context.Spells.ToList();
 
-            _searchResultList = this.WhenAnyValue(viewModel => viewModel.SpellSearchTerm)
+            _spellSearchResultList = this.WhenAnyValue(viewModel => viewModel.SpellSearchTerm)
                                     .Throttle(TimeSpan.FromSeconds(0.8))
                                     .Select(searchTerm => searchTerm?.Trim())
                                     .DistinctUntilChanged()

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Reflection;
-using Autofac;
 using MidgardCharakterEditor.Database;
 using ReactiveUI;
 using Splat;
-using Splat.Autofac;
 
 namespace MidgardCharakterEditor
 {

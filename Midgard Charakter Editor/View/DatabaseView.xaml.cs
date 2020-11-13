@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Windows.Controls;
+using System.Windows.Markup;
 using MidgardCharakterEditor.ViewModel;
 using ReactiveUI;
 
@@ -24,11 +27,11 @@ namespace MidgardCharakterEditor.View
                     .DisposeWith(disposables);
                 this.BindCommand(ViewModel!, viewModel => viewModel.SetTestLabelCommand, view => view.TestButton)
                     .DisposeWith(disposables);
-                this.BindCommand(ViewModel, viewModel => viewModel.SetSpellNameCommand, view => view.SpellSearchBox, SpellSearchBox.Text.ToObservable(), nameof(SpellSearchBox.PreviewTextInput))
+                this.BindCommand(ViewModel, viewModel => viewModel.SetSpellNameCommand, view => view.SpellSearchBox, viewModel => viewModel.SpellSearchTerm, nameof(SpellSearchBox.TextChanged))
                     .DisposeWith(disposables);
 
-                // SpellSearchBox.Events().KeyUp.Select(args => SpellSearchBox.Text)
-                //           .InvokeCommand(this, x => x.ViewModel.SetLabelCommand).DisposeWith(disposables);
+                // SpellSearchBox.Events().KeyUp.Select(args => Unit.Default)
+                //           .InvokeCommand(this, x => x.ViewModel.SetSpellNameCommand).DisposeWith(disposables);
             });
         }
     }

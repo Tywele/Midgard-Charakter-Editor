@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Security.Cryptography;
 using MidgardCharakterEditor.Database;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
@@ -16,9 +18,9 @@ namespace MidgardCharakterEditor.ViewModel
 
         public List<Spell> SpellList { get; set; }
 
-        [Reactive] public string SpellSearchTerm { get; set; }
-        [Reactive] public string SpellNameLabel  { get; set; }
-        [Reactive] public string TestLabel       { get; set; }
+        [Reactive] public string SpellSearchTerm    { get; set; }
+        [Reactive] public string SpellNameLabel     { get; set; }
+        [Reactive] public string TestLabel          { get; set; }
 
         private readonly ObservableAsPropertyHelper<IEnumerable<Spell>> _spellSearchResultList;
         public           IEnumerable<Spell> SpellSearchResultList => _spellSearchResultList.Value;
@@ -36,12 +38,12 @@ namespace MidgardCharakterEditor.ViewModel
 
             _spellSearchResultList = this.WhenAnyValue(viewModel => viewModel.SpellSearchTerm)
                                          .Throttle(TimeSpan.FromSeconds(0.8))
-                                         .Select(searchTerm => searchTerm?.Trim())
+                                         .Select(searchTerm => searchTerm?.ToUpperInvariant().Trim())
                                          .DistinctUntilChanged()
                                          .Where(searchTerm => !string.IsNullOrWhiteSpace(searchTerm))
                                          .Select(searchTerm =>
                                              SpellList.Where(spell =>
-                                                 spell.Name.ToLower().Contains(searchTerm.ToLower())).ToList())
+                                                 spell.Name.ToUpperInvariant().Contains(searchTerm)).ToList())
                                          .ObserveOn(RxApp.MainThreadScheduler)
                                          .ToProperty(this, viewModel => viewModel.SpellSearchResultList);
 

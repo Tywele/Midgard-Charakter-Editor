@@ -54,6 +54,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ReactiveUI.Events.WPF, Version=12.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Users\binge\.nuget\packages\reactiveui.events.wpf\12.1.5\lib\net472\ReactiveUI.Events.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />

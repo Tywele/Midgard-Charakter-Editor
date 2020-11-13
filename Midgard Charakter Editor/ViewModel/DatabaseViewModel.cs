@@ -17,12 +17,14 @@ namespace MidgardCharakterEditor.ViewModel
         public List<Spell> SpellList { get; set; }
 
         [Reactive] public string SpellSearchTerm { get; set; }
-        [Reactive] public string Label { get; set; }
+        [Reactive] public string SpellNameLabel  { get; set; }
+        [Reactive] public string TestLabel       { get; set; }
 
         private readonly ObservableAsPropertyHelper<IEnumerable<Spell>> _spellSearchResultList;
         public           IEnumerable<Spell> SpellSearchResultList => _spellSearchResultList.Value;
-        
-        public ReactiveCommand<Unit, Unit> SetLabelCommand { get; }
+
+        public ReactiveCommand<string, Unit> SetSpellNameCommand { get; }
+        public ReactiveCommand<Unit, Unit>   SetTestLabelCommand { get; }
 
         public DatabaseViewModel(IMidgardContext context = null) : base("Database")
         {
@@ -30,23 +32,31 @@ namespace MidgardCharakterEditor.ViewModel
 
             SpellList = _context.Spells.ToList();
 
+            SpellNameLabel = "This is a spell name";
+
             _spellSearchResultList = this.WhenAnyValue(viewModel => viewModel.SpellSearchTerm)
                                          .Throttle(TimeSpan.FromSeconds(0.8))
                                          .Select(searchTerm => searchTerm?.Trim())
                                          .DistinctUntilChanged()
                                          .Where(searchTerm => !string.IsNullOrWhiteSpace(searchTerm))
                                          .Select(searchTerm =>
-                                             SpellList.Where(spell => spell.Name.Contains(searchTerm)).ToList())
+                                             SpellList.Where(spell =>
+                                                 spell.Name.ToLower().Contains(searchTerm.ToLower())).ToList())
                                          .ObserveOn(RxApp.MainThreadScheduler)
                                          .ToProperty(this, viewModel => viewModel.SpellSearchResultList);
 
-            SetLabelCommand = ReactiveCommand.Create<Unit, Unit>(SetLabel);
+            SetSpellNameCommand = ReactiveCommand.Create<string>(SetSpellName);
+            SetTestLabelCommand = ReactiveCommand.Create(SetTestLabel);
         }
 
-        private Unit SetLabel(Unit unit)
+        private void SetTestLabel()
         {
-            Label = "Button Clicked";
-            return Unit.Default;
+            TestLabel = "BindCommand fired!";
+        }
+
+        private void SetSpellName(string text)
+        {
+            SpellNameLabel = text;
         }
     }
 }

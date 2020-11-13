@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Orientation="Vertical">
             <TextBox x:Name="SpellSearchBox" Margin="10 10 10 0" />
-            <ListBox x:Name="SpellListView" Margin="10" Height="220">
+            <ListBox x:Name="SpellListBox" Margin="10" Height="220">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}" />
@@ -25,8 +25,9 @@
             </ListBox>
         </StackPanel>
         <StackPanel Grid.Column="1" Orientation="Vertical">
-            <TextBlock Width="auto" Height="auto" x:Name="SpellName" Text="Placeholder" Margin="10">Placeholder</TextBlock>
-            <Button x:Name="TestButton" Margin="10 0 10 0" Content="Placeholder Button"></Button>
+            <TextBlock Width="auto" Height="auto" x:Name="SpellName" Text="Placeholder" Margin="10" />
+            <TextBlock Width="auto" Height="auto" x:Name="TestLabel" Text="Placeholder" Margin="10 0 10 0" />
+            <Button x:Name="TestButton" Margin="10 10 10 0" Content="Placeholder Button"></Button>
         </StackPanel>
     </Grid>
 </reactiveUi:ReactiveUserControl>

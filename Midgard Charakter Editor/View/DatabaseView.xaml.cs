@@ -1,8 +1,6 @@
-﻿using System.Net.Mime;
-using System.Reactive;
+﻿using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Windows.Controls;
 using MidgardCharakterEditor.ViewModel;
 using ReactiveUI;
 
@@ -16,15 +14,21 @@ namespace MidgardCharakterEditor.View
             this.WhenActivated(disposables =>
             {
                 this.OneWayBind(ViewModel, viewModel => viewModel.SpellSearchResultList,
-                        view => view.SpellListView.ItemsSource)
+                        view => view.SpellListBox.ItemsSource)
                     .DisposeWith(disposables);
                 this.Bind(ViewModel, viewModel => viewModel.SpellSearchTerm, view => view.SpellSearchBox.Text)
                     .DisposeWith(disposables);
-                this.Bind(ViewModel, viewModel => viewModel.Label, view => view.SpellName.Text)
+                this.Bind(ViewModel, viewModel => viewModel.SpellNameLabel, view => view.SpellName.Text)
+                    .DisposeWith(disposables);
+                this.Bind(ViewModel, viewModel => viewModel.TestLabel, view => view.TestLabel.Text)
+                    .DisposeWith(disposables);
+                this.BindCommand(ViewModel!, viewModel => viewModel.SetTestLabelCommand, view => view.TestButton)
+                    .DisposeWith(disposables);
+                this.BindCommand(ViewModel, viewModel => viewModel.SetSpellNameCommand, view => view.SpellSearchBox, SpellSearchBox.Text.ToObservable(), nameof(SpellSearchBox.PreviewTextInput))
                     .DisposeWith(disposables);
 
-                TestButton.Events().MouseDoubleClick.Select(args => Unit.Default)
-                              .InvokeCommand(this, x => x.ViewModel.SetLabelCommand).DisposeWith(disposables);
+                // SpellSearchBox.Events().KeyUp.Select(args => SpellSearchBox.Text)
+                //           .InvokeCommand(this, x => x.ViewModel.SetLabelCommand).DisposeWith(disposables);
             });
         }
     }

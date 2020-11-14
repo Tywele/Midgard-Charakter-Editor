@@ -23,6 +23,8 @@ namespace MidgardCharakterEditor.View
                     .DisposeWith(disposable);
                 this.BindCommand(ViewModel!, x => x.GoToDatabase, x => x.DatabaseButton)
                     .DisposeWith(disposable);
+                this.BindCommand(ViewModel!, x => x.GoToCharacter, x => x.CharacterButton)
+                    .DisposeWith(disposable);
             });
         }
     }

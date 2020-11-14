@@ -25,9 +25,14 @@
             </ListBox>
         </StackPanel>
         <StackPanel Grid.Column="1" Orientation="Vertical">
-            <TextBlock Width="auto" Height="auto" x:Name="SpellName" Text="Placeholder" Margin="10" />
-            <TextBlock Width="auto" Height="auto" x:Name="TestLabel" Text="Placeholder" Margin="10 0 10 0" />
-            <Button Width="125" HorizontalAlignment="Left" x:Name="TestButton" Margin="10 10 10 0" Content="Placeholder Button"></Button>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="auto" Height="auto" x:Name="SpellNameLabel" Text="Name: " Margin="0 10 0 0 " />
+                <TextBlock Width="auto" Height="auto" x:Name="SpellName" Text="Name" Margin="0 10 10 0" />
+                <TextBlock Width="auto" Height="auto" x:Name="SpellTypeLabel" Text="Art: " Margin="0 10 0 0" />
+                <TextBlock Width="auto" Height="auto" x:Name="SpellType" Text="Type" Margin="0 10 10 0" />
+                <TextBlock Width="auto" Height="auto" x:Name="SpellProcessLabel" Text="Prozess: " Margin="0 10 0 0" />
+                <TextBlock Width="auto" Height="auto" x:Name="SpellProcess" Text="Process" Margin="0 10 10 0" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </reactiveUi:ReactiveUserControl>

@@ -17,8 +17,8 @@ namespace MidgardCharakterEditor.ViewModel
         public MainViewModel()
         {
             Router = new RoutingState();
-            // GoToCharacter =
-            //     ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new CharacterViewModel()));
+            GoToCharacter =
+                ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new CharacterViewModel()));
             // GoToSkills = ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new SkillsViewModel()));
             // GoToSpells = ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new SpellsViewModel()));
             GoToDatabase =

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Security.Cryptography;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MidgardCharakterEditor.Database;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
@@ -16,49 +17,33 @@ namespace MidgardCharakterEditor.ViewModel
     {
         private readonly IMidgardContext _context;
 
-        public List<Spell> SpellList { get; set; }
+        // public List<Spell> SpellList { get; set; }
 
-        [Reactive] public string SpellSearchTerm    { get; set; }
-        [Reactive] public string SpellNameLabel     { get; set; }
-        [Reactive] public string TestLabel          { get; set; }
+        [Reactive] public string   SpellSearchTerm        { get; set; }
+        [Reactive] public Spell    SelectedSpell          { get; set; }
 
         private readonly ObservableAsPropertyHelper<IEnumerable<Spell>> _spellSearchResultList;
         public           IEnumerable<Spell> SpellSearchResultList => _spellSearchResultList.Value;
-
-        public ReactiveCommand<string, Unit> SetSpellNameCommand { get; }
-        public ReactiveCommand<Unit, Unit>   SetTestLabelCommand { get; }
 
         public DatabaseViewModel(IMidgardContext context = null) : base("Database")
         {
             _context = context ?? Locator.Current.GetService<IMidgardContext>();
 
-            SpellList = _context.Spells.ToList();
-
-            SpellNameLabel = "This is a spell name";
-
             _spellSearchResultList = this.WhenAnyValue(viewModel => viewModel.SpellSearchTerm)
                                          .Throttle(TimeSpan.FromSeconds(0.8))
                                          .Select(searchTerm => searchTerm?.ToUpperInvariant().Trim())
                                          .DistinctUntilChanged()
-                                         .Where(searchTerm => !string.IsNullOrWhiteSpace(searchTerm))
-                                         .Select(searchTerm =>
-                                             SpellList.Where(spell =>
-                                                 spell.Name.ToUpperInvariant().Contains(searchTerm)).ToList())
+                                         .SelectMany(GetSpellSearchResult)
                                          .ObserveOn(RxApp.MainThreadScheduler)
                                          .ToProperty(this, viewModel => viewModel.SpellSearchResultList);
-
-            SetSpellNameCommand = ReactiveCommand.Create<string>(SetSpellName);
-            SetTestLabelCommand = ReactiveCommand.Create(SetTestLabel);
         }
 
-        private void SetTestLabel()
+        private async Task<List<Spell>> GetSpellSearchResult(string searchTerm, CancellationToken token)
         {
-            TestLabel = "BindCommand fired!";
-        }
-
-        private void SetSpellName(string text)
-        {
-            SpellNameLabel = text;
+            if (string.IsNullOrWhiteSpace(searchTerm))
+                return await _context.Spells.Include(spell => spell.Process).ToListAsync(token).ConfigureAwait(false);
+            return _context.Spells.Include(spell => spell.Process).AsEnumerable()!.Where(spell =>
+                spell.Name.ToUpperInvariant().Contains(searchTerm)).ToList();
         }
     }
 }

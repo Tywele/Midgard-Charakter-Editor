@@ -13,6 +13,7 @@ namespace MidgardCharakterEditor.ViewModel
         public ReactiveCommand<Unit, IRoutableViewModel> GoToSkills    { get; set; }
         public ReactiveCommand<Unit, IRoutableViewModel> GoToSpells    { get; set; }
         public ReactiveCommand<Unit, IRoutableViewModel> GoToDatabase  { get; set; }
+        public ReactiveCommand<Unit, IRoutableViewModel> GoToImport  { get; set; }
 
         public MainViewModel()
         {
@@ -23,6 +24,8 @@ namespace MidgardCharakterEditor.ViewModel
             // GoToSpells = ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new SpellsViewModel()));
             GoToDatabase =
                 ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new DatabaseViewModel()));
+            GoToImport =
+                ReactiveCommand.CreateFromObservable(() => Router.Navigate.Execute(new ImportCharacterViewModel()));
         }
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="ViewModel\CharacterViewModel.cs" />
     <Compile Include="ViewModel\DatabaseViewModel.cs" />
     <Compile Include="ViewModel\FirstViewModel.cs" />
+    <Compile Include="ViewModel\ImportCharacterViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -130,6 +131,9 @@
     </Compile>
     <Compile Include="View\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportCharacterView.xaml.cs">
+      <DependentUpon>ImportCharacterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -256,6 +260,7 @@
     <Page Include="View\CharacterView.xaml" />
     <Page Include="View\DatabaseView.xaml" />
     <Page Include="View\FirstView.xaml" />
+    <Page Include="View\ImportCharacterView.xaml" />
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

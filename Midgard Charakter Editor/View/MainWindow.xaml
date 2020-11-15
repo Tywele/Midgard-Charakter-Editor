@@ -7,24 +7,28 @@
                            xmlns:reactiveUi="http://reactiveui.net"
                            xmlns:viewModel="clr-namespace:MidgardCharakterEditor.ViewModel"
                            mc:Ignorable="d"
-                           Title="Midgard Charakter Editor" 
-                           Height="450" 
+                           Title="Midgard Charakter Editor"
+                           Height="450"
                            Width="800" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <reactiveUi:RoutedViewHost 
-            Grid.Row="1" 
-            x:Name="RoutedViewHost"
-            HorizontalContentAlignment="Stretch"
-            VerticalContentAlignment="Stretch" />
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+        <Menu Grid.Row="0">
+            <MenuItem Header="_Import" x:Name="ImportMenuItem" />
+        </Menu>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
             <Button x:Name="CharacterButton" Content="Charakter" />
             <Button x:Name="SkillsButton" Content="Fertigkeiten" Margin="5 0 0 0" />
             <Button x:Name="SpellsButton" Content="Zauber" Margin="5 0 0 0" />
             <Button x:Name="DatabaseButton" Content="Datenbank" Margin="5 0 0 0" />
         </StackPanel>
+        <reactiveUi:RoutedViewHost
+            Grid.Row="2"
+            x:Name="RoutedViewHost"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch" />
     </Grid>
 </reactiveUi:ReactiveWindow>

@@ -18,5 +18,10 @@
             Name            = name;
             BonusCategoryId = bonusCategoryId;
         }
+        
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

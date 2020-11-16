@@ -231,6 +231,9 @@
     <PackageReference Include="ReactiveUI.Fody">
       <Version>12.1.5</Version>
     </PackageReference>
+    <PackageReference Include="ReactiveUI.Validation">
+      <Version>1.8.6</Version>
+    </PackageReference>
     <PackageReference Include="ReactiveUI.WPF">
       <Version>12.1.5</Version>
     </PackageReference>

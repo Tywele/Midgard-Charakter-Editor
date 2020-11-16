@@ -17,5 +17,10 @@
             Abbreviation = abbreviation;
             Type         = type;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

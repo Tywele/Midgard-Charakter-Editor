@@ -9,7 +9,7 @@
                            mc:Ignorable="d"
                            Title="Midgard Charakter Editor"
                            Height="450"
-                           Width="800" ResizeMode="CanResizeWithGrip">
+                           Width="1100" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

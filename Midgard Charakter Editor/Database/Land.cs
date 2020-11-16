@@ -19,5 +19,10 @@ namespace MidgardCharakterEditor.Database
             Id   = id;
             Name = name;
         }
+        
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

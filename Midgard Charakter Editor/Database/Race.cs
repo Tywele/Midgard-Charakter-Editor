@@ -17,5 +17,10 @@
             ResistanceBonus = resistanceBonus;
             HealthBonus = healthBonus;
         }
+        
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

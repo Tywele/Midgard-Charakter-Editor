@@ -11,21 +11,21 @@
                                 d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="0 0 5 0"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="0 0 5 0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="0"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Height" Value="20" />
         </Style>
         <Style TargetType="ComboBox">
-            <Setter Property="Margin" Value="0"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Height" Value="20" />
         </Style>
         <Style TargetType="Grid">
-            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Margin" Value="5" />
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -140,6 +140,132 @@
                     <TextBox Grid.Column="1" Grid.Row="4" />
                 </Grid>
                 <Image Grid.Column="2" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <TextBlock Text="Kurzbeschreibung des Charakters" />
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="150" />
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Basiseigenschaft"
+                               TextAlignment="Center" />
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="Bonus" TextAlignment="Center" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="ST" />
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="StrengthTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="1" IsReadOnly="True" x:Name="StrengthBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="GS" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="DexterityTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="2" IsReadOnly="True" x:Name="DexterityBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="GW" />
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="AgilityTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="3" IsReadOnly="True" x:Name="AgilityBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="KO" />
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="ConstitutionTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="4" IsReadOnly="True" x:Name="ConstitutionBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="IN" />
+                    <TextBox Grid.Column="1" Grid.Row="5" x:Name="IntelligenceTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="5" IsReadOnly="True" x:Name="IntelligenceBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="ZT" />
+                    <TextBox Grid.Column="1" Grid.Row="6" x:Name="MagicTalentTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="6" IsReadOnly="True" x:Name="MagicTalentBonusTextBox" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Abgl. Eigenschaft"
+                               TextAlignment="Center" />
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="Bonus" TextAlignment="Center" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Au" />
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="AppearanceTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="1" IsReadOnly="True" x:Name="AppearanceBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="pA" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="CharismaTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="2" IsReadOnly="True" x:Name="CharismaBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Wk" />
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="WillpowerTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="3" IsReadOnly="True" x:Name="WillpowerBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="GiT" />
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="PoisonToleranceTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="4" IsReadOnly="True" x:Name="PoisonToleranceBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Traglast" />
+                    <TextBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" x:Name="EncumbranceTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="B" />
+                    <TextBox Grid.Column="1" Grid.Row="6" x:Name="MovementTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="6" IsReadOnly="True" x:Name="MovementBonusTextBox" />
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Grundwert"
+                               TextAlignment="Center" />
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="Bonus" TextAlignment="Center" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="LP" />
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="HealthTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="1" IsReadOnly="True" x:Name="HealthBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="AP" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="StaminaTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="2" IsReadOnly="True" x:Name="StaminaBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Abwehr" />
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="DefenseTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="3" IsReadOnly="True" x:Name="DefenseBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Zaubern" />
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="CastingTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="4" IsReadOnly="True" x:Name="CastingBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Geist-Resistenz" />
+                    <TextBox Grid.Column="1" Grid.Row="5" x:Name="MindResistanceTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="5" IsReadOnly="True" x:Name="MindResistanceBonusTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Körper-Resistenz" />
+                    <TextBox Grid.Column="1" Grid.Row="6" x:Name="BodyResistanceTextBox" />
+                    <TextBox Grid.Column="2" Grid.Row="6" IsReadOnly="True" x:Name="BodyResistanceBonusTextBox" />
+                </Grid>
             </Grid>
         </StackPanel>
     </Grid>

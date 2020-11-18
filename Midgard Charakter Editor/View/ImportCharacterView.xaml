@@ -8,7 +8,7 @@
                                 xmlns:reactiveUi="http://reactiveui.net"
                                 xmlns:viewModel="clr-namespace:MidgardCharakterEditor.ViewModel"
                                 mc:Ignorable="d"
-                                d:DesignHeight="300" d:DesignWidth="300">
+                                d:DesignHeight="1080" d:DesignWidth="1920">
     <UserControl.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="0 0 5 0" />
@@ -91,15 +91,15 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Alter" />
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Alter" x:Name="AgeTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="0" />
-                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Größe" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Größe" x:Name="SizeTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="1" />
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Gewicht" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Gewicht" x:Name="WeightTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="2" />
-                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Gestalt" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Gestalt" x:Name="BuildTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="3" />
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Händigkeit" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Händigkeit" x:Name="HandednessTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="4" />
                 </Grid>
                 <Grid Grid.Column="1">
@@ -132,11 +132,11 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Glaube" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Glaube" x:Name="ReligionTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="2" />
-                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Schicksalsgunst" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Schicksalsgunst" x:Name="SmilingFateTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="3" />
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Göttliche Gnade" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Göttliche Gnade" x:Name="DivineMercyTextBox" />
                     <TextBox Grid.Column="1" Grid.Row="4" />
                 </Grid>
                 <Image Grid.Column="2" />
@@ -147,7 +147,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
                     <TextBlock Text="Kurzbeschreibung des Charakters" />
-                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="150" />
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Height="150" x:Name="StoryTextBox" />
                 </StackPanel>
             </Grid>
             <Grid>
@@ -266,6 +266,32 @@
                     <TextBox Grid.Column="1" Grid.Row="6" x:Name="BodyResistanceTextBox" />
                     <TextBox Grid.Column="2" Grid.Row="6" IsReadOnly="True" x:Name="BodyResistanceBonusTextBox" />
                 </Grid>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <TextBlock Text="Sprache" />
+                    <TextBlock Text="Sprechen" />
+                    <TextBlock Text="Schreiben" />
+                    <Button x:Name="AddLanguageButton" Content="+ Sprache hinzufügen"></Button>
+                </StackPanel>
+                <ListView Grid.Row="1" x:Name="LanguageListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Language.Name}" />
+                                <TextBlock Text="{Binding SpeakingValue}"></TextBlock>
+                                <TextBlock Text="{Binding WritingValue}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </StackPanel>
     </Grid>

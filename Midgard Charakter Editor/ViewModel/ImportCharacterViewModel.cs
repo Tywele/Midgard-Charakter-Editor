@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reactive;
 using MidgardCharakterEditor.Database;
+using MidgardCharakterEditor.View;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using ReactiveUI.Validation.Abstractions;
@@ -24,6 +26,8 @@ namespace MidgardCharakterEditor.ViewModel
         public List<Land>        Lands             { get; set; }
         public List<SocialClass> SocialClasses     { get; set; }
 
+        public ReactiveCommand<Unit, Unit> OpenLanguageSelectionCommand { get; }
+
         public ImportCharacterViewModel(IMidgardContext context = null) : base("Import")
         {
             _context = context ?? Locator.Current.GetService<IMidgardContext>();
@@ -34,10 +38,19 @@ namespace MidgardCharakterEditor.ViewModel
             Lands         = _context.Lands.ToList();
             SocialClasses = _context.SocialClasses.ToList();
 
+            OpenLanguageSelectionCommand = ReactiveCommand.Create(OpenLanguageSelection);
+
             // this.ValidationRule(
             //     viewModel => viewModel.Character.Level,
             //     level => level > 0, 
             //     "Grad muss eine Zahl sein");
+        }
+
+        private void OpenLanguageSelection()
+        {
+            var viewModel = new LanguageSelectionViewModel(_context);
+            var view      = viewModel.GetView();
+            view.Show();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Reactive;
+﻿using System;
+using System.Reactive;
+using System.Windows;
 using MidgardCharakterEditor.Database;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;

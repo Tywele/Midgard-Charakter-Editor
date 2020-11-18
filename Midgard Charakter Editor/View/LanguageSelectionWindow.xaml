@@ -1,0 +1,26 @@
+﻿<reactiveUi:ReactiveWindow x:TypeArguments="viewModel:LanguageSelectionViewModel"
+                           x:Class="MidgardCharakterEditor.View.LanguageSelectionWindow"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                           xmlns:local="clr-namespace:MidgardCharakterEditor"
+                           xmlns:reactiveUi="http://reactiveui.net"
+                           xmlns:viewModel="clr-namespace:MidgardCharakterEditor.ViewModel"
+                           mc:Ignorable="d"
+                           Title="Sprache auswählen"
+                           Height="300"
+                           Width="300" ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Column="0" x:Name="LanguageListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</reactiveUi:ReactiveWindow>

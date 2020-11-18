@@ -11,12 +11,16 @@ namespace MidgardCharakterEditor.Database
         public string      Name         { get; set; }
         public Race        Race         { get; set; }
         public Class       Class        { get; set; }
-        public string      Handedness   { get; set; }
-        public string      Build        { get; set; }
         public int         Age          { get; set; }
+        public string      Size         { get; set; }
+        public string      Weight       { get; set; }
+        public string      Build        { get; set; }
+        public string      Handedness   { get; set; }
         public SocialClass SocialClass  { get; set; }
         public Land        Origin       { get; set; }
         public string      Religion     { get; set; }
+        public int         SmilingFate  { get; set; }
+        public int         DivineMercy  { get; set; }
         public string      Story        { get; set; }
         public int         Strength     { get; set; }
         public int         Dexterity    { get; set; }
@@ -39,5 +43,6 @@ namespace MidgardCharakterEditor.Database
         public virtual ICollection<CharacterHasSkill>       CharacterHasSkills       { get; set; }
         public virtual ICollection<CharacterHasWeapon>      CharacterHasWeapons      { get; set; }
         public virtual ICollection<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; }
+        public virtual ICollection<CharacterHasLanguage>    CharacterHasLanguages    { get; set; }
     }
 }

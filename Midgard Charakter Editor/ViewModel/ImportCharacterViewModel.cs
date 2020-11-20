@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
+using System.Reactive.Linq;
 using MidgardCharakterEditor.Database;
-using MidgardCharakterEditor.View;
+using MidgardCharakterEditor.Extensions;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using ReactiveUI.Validation.Abstractions;
-using ReactiveUI.Validation.Extensions;
-using ReactiveUI.Validation.Helpers;
 using Splat;
 using ValidationContext = ReactiveUI.Validation.Contexts.ValidationContext;
 
@@ -27,6 +26,7 @@ namespace MidgardCharakterEditor.ViewModel
         public List<SocialClass> SocialClasses     { get; set; }
 
         public ReactiveCommand<Unit, Unit> OpenLanguageSelectionCommand { get; }
+        public Interaction<Unit, Language> AddLanguageFromDialog        { get; }
 
         public ImportCharacterViewModel(IMidgardContext context = null) : base("Import")
         {
@@ -44,13 +44,33 @@ namespace MidgardCharakterEditor.ViewModel
             //     viewModel => viewModel.Character.Level,
             //     level => level > 0, 
             //     "Grad muss eine Zahl sein");
+
+            AddLanguageFromDialog = new Interaction<Unit, Language>();
+            AddLanguageFromDialog.RegisterHandler(SelectLanguageHandler);
         }
 
         private void OpenLanguageSelection()
         {
+            AddLanguageFromDialog.Handle(Unit.Default).Where(language => language != null).Subscribe(language =>
+            {
+                Character.CharacterHasLanguages?.Add(new CharacterHasLanguage()
+                {
+                    Character = Character,
+                    Language  = language
+                });
+            });
+        }
+
+        private void SelectLanguageHandler(InteractionContext<Unit, Language> interaction)
+        {
             var viewModel = new LanguageSelectionViewModel(_context);
             var view      = viewModel.GetView();
-            view.Show();
+            var confirm   = view.ShowDialog();
+
+            if (confirm != null && confirm.Value)
+                interaction.SetOutput(viewModel.SelectedLanguage);
+            else
+                interaction.SetOutput(null);
         }
     }
 }

@@ -279,15 +279,15 @@
                     <TextBlock Text="Sprache" />
                     <TextBlock Text="Sprechen" />
                     <TextBlock Text="Schreiben" />
-                    <Button x:Name="AddLanguageButton" Content="+ Sprache hinzufügen"></Button>
+                    <Button x:Name="AddLanguageButton" Content="+ Sprache hinzufügen" />
                 </StackPanel>
-                <ListView Grid.Row="1" x:Name="LanguageListView">
+                <ListView Grid.Row="1" x:Name="LanguageListView" SelectionMode="Extended" Height="Auto">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Language.Name}" />
-                                <TextBlock Text="{Binding SpeakingValue}"></TextBlock>
-                                <TextBlock Text="{Binding WritingValue}"></TextBlock>
+                                <TextBox Text="{Binding SpeakingValue}" />
+                                <TextBox Text="{Binding WritingValue}" />
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

@@ -39,10 +39,10 @@ namespace MidgardCharakterEditor.Database
         public int         Level        { get; set; }
         public int         OpenXp       { get; set; }
 
-        public virtual ICollection<CharacterHasSpell>       CharacterHasSpells       { get; set; }
-        public virtual ICollection<CharacterHasSkill>       CharacterHasSkills       { get; set; }
-        public virtual ICollection<CharacterHasWeapon>      CharacterHasWeapons      { get; set; }
-        public virtual ICollection<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; }
-        public virtual ICollection<CharacterHasLanguage>    CharacterHasLanguages    { get; set; }
+        public virtual ICollection<CharacterHasSpell>       CharacterHasSpells       { get; set; } = new List<CharacterHasSpell>();
+        public virtual ICollection<CharacterHasSkill>       CharacterHasSkills       { get; set; } = new List<CharacterHasSkill>();
+        public virtual ICollection<CharacterHasWeapon>      CharacterHasWeapons      { get; set; } = new List<CharacterHasWeapon>();
+        public virtual ICollection<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; } = new List<CharacterHasInnateSkill>();
+        public virtual ICollection<CharacterHasLanguage>    CharacterHasLanguages    { get; set; } = new List<CharacterHasLanguage>();
     }
 }

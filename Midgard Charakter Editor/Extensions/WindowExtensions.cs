@@ -3,7 +3,7 @@ using System.Windows;
 using ReactiveUI;
 using Splat;
 
-namespace MidgardCharakterEditor
+namespace MidgardCharakterEditor.Extensions
 {
     public static class WindowExtensions
     {

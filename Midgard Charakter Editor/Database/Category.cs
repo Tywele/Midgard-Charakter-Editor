@@ -7,13 +7,13 @@ namespace MidgardCharakterEditor.Database
     /// </summary>
     public class Category
     {
-        public         int                           Id                 { get; set; }
-        public         string                        Name               { get; set; }
-        public virtual ICollection<SkillHasCategory> SkillHasCategories { get; set; }
+        public int                    Id                 { get; set; }
+        public string                 Name               { get; set; }
+        public List<SkillHasCategory> SkillHasCategories { get; set; } = new List<SkillHasCategory>();
 
         public Category(int id, string name)
         {
-            Id = id;
+            Id   = id;
             Name = name;
         }
     }

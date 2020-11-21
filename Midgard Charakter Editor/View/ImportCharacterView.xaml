@@ -91,16 +91,16 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Alter" x:Name="AgeTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="0" />
-                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Größe" x:Name="SizeTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="1" />
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Gewicht" x:Name="WeightTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="2" />
-                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Gestalt" x:Name="BuildTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="3" />
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Händigkeit" x:Name="HandednessTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="4" />
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Alter" />
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="AgeTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Größe" />
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="SizeTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Gewicht" />
+                    <TextBox Grid.Column="1" Grid.Row="2"  x:Name="WeightTextBox"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Gestalt" />
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="BuildTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Händigkeit" />
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="HandednessTextBox" />
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
@@ -132,12 +132,12 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Glaube" x:Name="ReligionTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="2" />
-                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Schicksalsgunst" x:Name="SmilingFateTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="3" />
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Göttliche Gnade" x:Name="DivineMercyTextBox" />
-                    <TextBox Grid.Column="1" Grid.Row="4" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Glaube" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="ReligionTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Schicksalsgunst" />
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="SmilingFateTextBox" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Göttliche Gnade" />
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="DivineMercyTextBox" />
                 </Grid>
                 <Image Grid.Column="2" />
             </Grid>
@@ -279,9 +279,10 @@
                     <TextBlock Text="Sprache" />
                     <TextBlock Text="Sprechen" />
                     <TextBlock Text="Schreiben" />
+                    <TextBlock x:Name="Test"></TextBlock>
                     <Button x:Name="AddLanguageButton" Content="+ Sprache hinzufügen" />
                 </StackPanel>
-                <ListView Grid.Row="1" x:Name="LanguageListView" SelectionMode="Extended" Height="Auto">
+                <ListView Grid.Row="1" x:Name="LanguageListView" SelectionMode="Extended" Height="200">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

@@ -33,7 +33,7 @@ namespace MidgardCharakterEditor.Database
 
         public bool PossibleStarter { get; set; }
 
-        public virtual ICollection<CharacterHasSpell> CharacterHasSpells { get; set; }
+        public List<CharacterHasSpell> CharacterHasSpells { get; set; } = new List<CharacterHasSpell>();
 
         public Spell(int id, string name, string type, int processId, string agent, string reagent, string castingCost,
                      string castingTime, string range, string target, string affectedArea, string duration,

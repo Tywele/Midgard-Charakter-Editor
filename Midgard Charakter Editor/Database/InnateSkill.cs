@@ -17,7 +17,7 @@ namespace MidgardCharakterEditor.Database
         public int    MinChance { get; set; }
         public int    MaxChance { get; set; }
 
-        public virtual ICollection<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; }
+        public List<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; } = new List<CharacterHasInnateSkill>();
 
         public InnateSkill(int id, string name, string value, int minChance, int maxChance)
         {

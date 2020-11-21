@@ -92,6 +92,7 @@
     <Compile Include="ViewModel\CharacterViewModel.cs" />
     <Compile Include="ViewModel\DatabaseViewModel.cs" />
     <Compile Include="ViewModel\FirstViewModel.cs" />
+    <Compile Include="ViewModel\IDialogWindow.cs" />
     <Compile Include="ViewModel\ImportCharacterViewModel.cs" />
     <Compile Include="ViewModel\LanguageSelectionViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

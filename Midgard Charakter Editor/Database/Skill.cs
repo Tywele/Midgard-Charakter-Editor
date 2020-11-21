@@ -16,8 +16,8 @@ namespace MidgardCharakterEditor.Database
         public int    InitialValue     { get; set; }
         public bool   PossibleStarter  { get; set; }
 
-        public virtual ICollection<SkillHasCategory>  SkillHasCategories { get; set; }
-        public virtual ICollection<CharacterHasSkill> CharacterHasSkills { get; set; }
+        public List<SkillHasCategory>  SkillHasCategories { get; set; } = new List<SkillHasCategory>();
+        public List<CharacterHasSkill> CharacterHasSkills { get; set; } = new List<CharacterHasSkill>();
 
         public Skill(int id, string name, string leadingAttribute, string field, int initialValue, bool possibleStarter,
                      int? untrained = null)

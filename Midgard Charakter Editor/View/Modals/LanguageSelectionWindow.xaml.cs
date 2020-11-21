@@ -12,19 +12,16 @@ namespace MidgardCharakterEditor.View.Modals
         {
             InitializeComponent();
 
-            IObservable<LanguageSelectionWindow> window = this;
-            
             this.WhenActivated(disposables =>
             {
                 this.OneWayBind(ViewModel, viewModel => viewModel.Languages, view => view.LanguageListView.ItemsSource)
                     .DisposeWith(disposables);
                 this.Bind(ViewModel, viewModel => viewModel.SelectedLanguage,
                     view => view.LanguageListView.SelectedItem).DisposeWith(disposables);
-                // this.Bind(ViewModel, viewModel => viewModel.Window, view => view).DisposeWith(disposables);
+                this.OneWayBind(ViewModel, viewModel => viewModel.DialogResult, view => view.DialogResult).DisposeWith(disposables);
                 this.BindCommand(ViewModel!, 
-                    viewModel => viewModel.SelectLanguage,
-                    view => view.SelectLanguageButton, 
-                    window)
+                    viewModel => viewModel.Confirm,
+                    view => view.SelectLanguageButton)
                     .DisposeWith(disposables);
             });
         }

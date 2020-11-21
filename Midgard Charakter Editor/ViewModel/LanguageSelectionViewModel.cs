@@ -11,18 +11,15 @@ using Splat;
 
 namespace MidgardCharakterEditor.ViewModel
 {
-    public class LanguageSelectionViewModel : ReactiveObject
+    public class LanguageSelectionViewModel : ReactiveObject, IDialogWindow
     {
         private readonly IMidgardContext _context;
 
-        [Reactive] public List<Language>          Languages        { get; set; }
-        [Reactive] public Language                SelectedLanguage { get; set; }
-        // [Reactive] public LanguageSelectionWindow Window           { get; set; }
+        [Reactive] public List<Language> Languages        { get; set; }
+        [Reactive] public Language       SelectedLanguage { get; set; }
+        [Reactive] public bool?          DialogResult     { get; set; }
 
-        // private readonly ObservableAsPropertyHelper<LanguageSelectionWindow> _window;
-        // public           LanguageSelectionWindow Window => _window.Value;
-        
-        public ReactiveCommand<LanguageSelectionWindow, Unit> SelectLanguage { get; set; }
+        public ReactiveCommand<Unit, Unit> Confirm { get; set; }
 
         public LanguageSelectionViewModel(IMidgardContext context = null)
         {
@@ -30,8 +27,7 @@ namespace MidgardCharakterEditor.ViewModel
 
             Languages = _context.Languages.ToList();
 
-            SelectLanguage = ReactiveCommand.Create<LanguageSelectionWindow>(
-                languageSelectionWindow => { languageSelectionWindow.DialogResult = true; });
+            Confirm = ReactiveCommand.Create(() => { DialogResult = true; });
         }
     }
 }

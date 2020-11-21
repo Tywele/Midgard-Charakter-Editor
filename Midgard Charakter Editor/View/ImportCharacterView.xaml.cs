@@ -75,10 +75,11 @@ namespace MidgardCharakterEditor.View
                     .DisposeWith(disposables);
                 this.Bind(ViewModel, viewModel => viewModel.Character.Defense, view => view.DefenseTextBox.Text)
                     .DisposeWith(disposables);
-                this.OneWayBind(ViewModel, viewModel => viewModel.Character.CharacterHasLanguages,
+                this.OneWayBind(ViewModel, viewModel => viewModel.CharacterHasLanguages,
                     view => view.LanguageListView.ItemsSource).DisposeWith(disposables);
-                this.BindCommand(ViewModel!, viewModel => viewModel.OpenLanguageSelectionCommand,
+                this.BindCommand(ViewModel!, viewModel => viewModel.OpenLanguageSelection,
                     view => view.AddLanguageButton).DisposeWith(disposables);
+                // this.Bind(ViewModel, viewModel => viewModel.Test, view => view.Test).DisposeWith(disposables);
             });
         }
     }

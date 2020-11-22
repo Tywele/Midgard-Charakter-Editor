@@ -126,6 +126,7 @@
     <Compile Include="Database\Weapon.cs" />
     <Compile Include="Utilities\Die.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WeaponSelectionViewModel.cs" />
     <Compile Include="View\CharacterView.xaml.cs">
       <DependentUpon>CharacterView.xaml</DependentUpon>
     </Compile>
@@ -144,6 +145,9 @@
     </Compile>
     <Compile Include="View\Modals\LanguageSelectionWindow.xaml.cs">
       <DependentUpon>LanguageSelectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Modals\WeaponSelectionWindow.xaml.cs">
+      <DependentUpon>WeaponSelectionWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +279,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Modals\LanguageSelectionWindow.xaml" />
+    <Page Include="View\Modals\WeaponSelectionWindow.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />

@@ -14,6 +14,7 @@
         public Weapon Weapon   { get; set; }
 
         public int  Value          { get; set; }
+        public int  PracticePoints { get; set; }
         public bool Specialization { get; set; }
     }
 }

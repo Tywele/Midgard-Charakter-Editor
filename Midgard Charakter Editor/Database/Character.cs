@@ -37,12 +37,16 @@ namespace MidgardCharakterEditor.Database
         public int         Movement     { get; set; }
         public int         Xp           { get; set; }
         public int         Level        { get; set; }
+        public string      ArmorClass   { get; set; }
         public int         OpenXp       { get; set; }
 
-        public List<CharacterHasSpell>       CharacterHasSpells       { get; set; } = new List<CharacterHasSpell>();
-        public List<CharacterHasSkill>       CharacterHasSkills       { get; set; } = new List<CharacterHasSkill>();
-        public List<CharacterHasWeapon>      CharacterHasWeapons      { get; set; } = new List<CharacterHasWeapon>();
-        public List<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; } = new List<CharacterHasInnateSkill>();
-        public List<CharacterHasLanguage>    CharacterHasLanguages    { get; set; } = new List<CharacterHasLanguage>();
+        public List<CharacterHasSpell>  CharacterHasSpells  { get; set; } = new List<CharacterHasSpell>();
+        public List<CharacterHasSkill>  CharacterHasSkills  { get; set; } = new List<CharacterHasSkill>();
+        public List<CharacterHasWeapon> CharacterHasWeapons { get; set; } = new List<CharacterHasWeapon>();
+
+        public List<CharacterHasInnateSkill> CharacterHasInnateSkills { get; set; } =
+            new List<CharacterHasInnateSkill>();
+
+        public List<CharacterHasLanguage> CharacterHasLanguages { get; set; } = new List<CharacterHasLanguage>();
     }
 }

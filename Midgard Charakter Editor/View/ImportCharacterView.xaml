@@ -18,6 +18,7 @@
             <Setter Property="Margin" Value="0" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Height" Value="20" />
+            <Setter Property="MinWidth" Value="50" />
         </Style>
         <Style TargetType="ComboBox">
             <Setter Property="Margin" Value="0" />
@@ -36,7 +37,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Orientation="Vertical">
+        <WrapPanel Grid.Column="0" Orientation="Horizontal">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*" />
@@ -96,7 +97,7 @@
                     <TextBlock Grid.Column="0" Grid.Row="1" Text="Größe" />
                     <TextBox Grid.Column="1" Grid.Row="1" x:Name="SizeTextBox" />
                     <TextBlock Grid.Column="0" Grid.Row="2" Text="Gewicht" />
-                    <TextBox Grid.Column="1" Grid.Row="2"  x:Name="WeightTextBox"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="WeightTextBox" />
                     <TextBlock Grid.Column="0" Grid.Row="3" Text="Gestalt" />
                     <TextBox Grid.Column="1" Grid.Row="3" x:Name="BuildTextBox" />
                     <TextBlock Grid.Column="0" Grid.Row="4" Text="Händigkeit" />
@@ -274,26 +275,40 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Orientation="Horizontal">
-                    <TextBlock Text="Sprache" />
-                    <TextBlock Text="Sprechen" />
-                    <TextBlock Text="Schreiben" />
-                    <TextBlock x:Name="Test"></TextBlock>
-                    <Button x:Name="AddLanguageButton" Content="+ Sprache hinzufügen" />
-                </StackPanel>
-                <ListView Grid.Row="1" x:Name="LanguageListView" SelectionMode="Extended" Height="200">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Sprache" />
+                    <TextBlock Grid.Column="1" Text="Sprechen" />
+                    <TextBlock Grid.Column="2" Text="Schreiben" />
+                </Grid>
+                <ListView Grid.Row="1" x:Name="LanguageListView" Height="Auto" MinHeight="50"
+                          HorizontalContentAlignment="Stretch">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Language.Name}" />
-                                <TextBox Text="{Binding SpeakingValue}" />
-                                <TextBox Text="{Binding WritingValue}" />
-                            </StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Language.Name}" />
+                                <TextBox Grid.Column="1" Text="{Binding SpeakingValue}" />
+                                <TextBox Grid.Column="2" Text="{Binding WritingValue}" />
+                            </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Button x:Name="AddLanguageButton" Content="+ Sprache hinzufügen" />
+                    <Button x:Name="RemoveLanguageButton" Content="- Sprache entfernen" />
+                </StackPanel>
             </Grid>
-        </StackPanel>
+        </WrapPanel>
     </Grid>
 </reactiveUi:ReactiveUserControl>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using DynamicData;
 using MidgardCharakterEditor.Database;
 using MidgardCharakterEditor.Extensions;
 using ReactiveUI;
@@ -26,13 +27,14 @@ namespace MidgardCharakterEditor.ViewModel
         public List<Land>        Lands             { get; set; }
         public List<SocialClass> SocialClasses     { get; set; }
 
-        public ObservableCollection<CharacterHasLanguage> CharacterHasLanguages { get; set; } = new ObservableCollection<CharacterHasLanguage>();
-        
-        private readonly ObservableAsPropertyHelper<bool> _test;
-        public           bool Test => _test.Value;
+        public ObservableCollection<CharacterHasLanguage> CharacterHasLanguages { get; set; } =
+            new ObservableCollection<CharacterHasLanguage>();
+
+        [Reactive] public CharacterHasLanguage SelectedLanguage { get; set; }
 
         public ReactiveCommand<Unit, Unit> OpenLanguageSelection { get; }
-        public Interaction<Unit, Language> AddLanguageFromDialog        { get; }
+        public ReactiveCommand<int, Unit>  RemoveLanguage        { get; }
+        public Interaction<Unit, Language> AddLanguageFromDialog { get; }
 
         public ImportCharacterViewModel(IMidgardContext context = null) : base("Import")
         {
@@ -44,24 +46,11 @@ namespace MidgardCharakterEditor.ViewModel
             Lands         = _context.Lands.ToList();
             SocialClasses = _context.SocialClasses.ToList();
 
-            var languages = _context.Languages.ToList();
-
             OpenLanguageSelection = ReactiveCommand.Create(OpenLanguageSelectionImpl);
-
-            // for (var i = 0; i < 10; i++)
-            // {
-            //     Character.CharacterHasLanguages.Add(new CharacterHasLanguage()
-            //     {
-            //         Language    = languages[i],
-            //         Character     = Character,
-            //         SpeakingValue = 0,
-            //         WritingValue  = 0
-            //     });
-            // }
-
-            _test = this.WhenAnyValue(viewModel => viewModel.Character.CharacterHasLanguages)
-                        .Select(lang => lang.Any())
-                        .ToProperty(this, viewModel => viewModel.Test);
+            RemoveLanguage = ReactiveCommand.Create<int>(id =>
+            {
+                CharacterHasLanguages.Remove(SelectedLanguage);
+            });
 
             // this.ValidationRule(
             //     viewModel => viewModel.Character.Level,

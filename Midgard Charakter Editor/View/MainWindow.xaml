@@ -8,8 +8,8 @@
                            xmlns:viewModel="clr-namespace:MidgardCharakterEditor.ViewModel"
                            mc:Ignorable="d"
                            Title="Midgard Charakter Editor"
-                           Height="1080"
-                           Width="1920" ResizeMode="CanResizeWithGrip">
+                           Height="720"
+                           Width="1280" ResizeMode="CanResizeWithGrip">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

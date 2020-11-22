@@ -1,5 +1,8 @@
-﻿using System.Reactive.Disposables;
+﻿using System;
+using System.Linq;
+using System.Reactive.Disposables;
 using System.Windows.Controls;
+using MidgardCharakterEditor.Database;
 using MidgardCharakterEditor.ViewModel;
 using ReactiveUI;
 
@@ -79,7 +82,10 @@ namespace MidgardCharakterEditor.View
                     view => view.LanguageListView.ItemsSource).DisposeWith(disposables);
                 this.BindCommand(ViewModel!, viewModel => viewModel.OpenLanguageSelection,
                     view => view.AddLanguageButton).DisposeWith(disposables);
-                // this.Bind(ViewModel, viewModel => viewModel.Test, view => view.Test).DisposeWith(disposables);
+                this.BindCommand(ViewModel, viewModel => viewModel.RemoveLanguage, view => view.RemoveLanguageButton)
+                    .DisposeWith(disposables);
+                this.Bind(ViewModel, viewModel => viewModel.SelectedLanguage,
+                    view => view.LanguageListView.SelectedItem);
             });
         }
     }

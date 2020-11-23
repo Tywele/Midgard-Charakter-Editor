@@ -86,14 +86,14 @@ namespace MidgardCharakterEditor.View
                     .DisposeWith(disposables);
                 this.Bind(ViewModel, viewModel => viewModel.SelectedLanguage,
                     view => view.LanguageListView.SelectedItem);
-                this.OneWayBind(ViewModel, viewModel => viewModel.CharacterHasWeapons,
-                    view => view.WeaponListView.ItemsSource).DisposeWith(disposables);
-                this.BindCommand(ViewModel!, viewModel => viewModel.OpenWeaponSelection,
-                    view => view.AddWeaponButton).DisposeWith(disposables);
-                this.BindCommand(ViewModel, viewModel => viewModel.RemoveWeapon, view => view.RemoveWeaponButton)
+                this.OneWayBind(ViewModel, viewModel => viewModel.CharacterHasSkills,
+                    view => view.WeaponGroupListView.ItemsSource).DisposeWith(disposables);
+                this.BindCommand(ViewModel!, viewModel => viewModel.OpenWeaponGroupSelection,
+                    view => view.AddWeaponGroupButton).DisposeWith(disposables);
+                this.BindCommand(ViewModel, viewModel => viewModel.RemoveWeaponGroup, view => view.RemoveWeaponGroupButton)
                     .DisposeWith(disposables);
-                this.Bind(ViewModel, viewModel => viewModel.SelectedWeapon,
-                    view => view.WeaponListView.SelectedItem);
+                this.Bind(ViewModel, viewModel => viewModel.SelectedSkill,
+                    view => view.WeaponGroupListView.SelectedItem);
             });
         }
     }

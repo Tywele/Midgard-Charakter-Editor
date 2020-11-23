@@ -1,16 +1,14 @@
-﻿<reactiveUi:ReactiveWindow x:TypeArguments="viewModel:WeaponSelectionViewModel"
-                           x:Class="MidgardCharakterEditor.View.Modals.WeaponSelectionWindow"
+﻿<reactiveUi:ReactiveWindow x:TypeArguments="viewModel:WeaponGroupSelectionViewModel"
+                           x:Class="MidgardCharakterEditor.View.Modals.WeaponGroupSelectionWindow"
                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                           xmlns:local="clr-namespace:MidgardCharakterEditor"
+                           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                           xmlns:local="clr-namespace:MidgardCharakterEditor.View.Modals"
                            xmlns:reactiveUi="http://reactiveui.net"
                            xmlns:viewModel="clr-namespace:MidgardCharakterEditor.ViewModel"
                            mc:Ignorable="d"
-                           Title="Waffen auswählen"
-                           Height="300"
-                           Width="300" ResizeMode="CanResizeWithGrip">
+                           Title="Waffengruppe auswählen" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -19,13 +17,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <ListView Grid.Column="0" Grid.Row="0" x:Name="WeaponListView">
+        <ListView Grid.Column="0" Grid.Row="0" x:Name="WeaponGroupListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Row="1" IsDefault="True" x:Name="SelectWeaponButton">Auswählen</Button>
+        <Button Grid.Row="1" IsDefault="True" x:Name="SelectWeaponGroupButton">Auswählen</Button>
     </Grid>
 </reactiveUi:ReactiveWindow>

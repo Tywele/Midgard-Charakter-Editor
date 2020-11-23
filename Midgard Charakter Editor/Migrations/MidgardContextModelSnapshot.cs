@@ -14,14 +14,16 @@ namespace MidgardCharakterEditor.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+                .HasAnnotation("ProductVersion", "3.1.5");
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.Category", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -133,59 +135,101 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Character", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Age");
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Agility");
+                    b.Property<int>("Agility")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Appearance");
+                    b.Property<int>("Appearance")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Build");
+                    b.Property<string>("ArmorClass")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("Charisma");
+                    b.Property<string>("Build")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int?>("ClassId");
+                    b.Property<int>("Charisma")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Constitution");
+                    b.Property<int?>("ClassId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Defense");
+                    b.Property<int>("Constitution")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Dexterity");
+                    b.Property<int>("Defense")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Handedness");
+                    b.Property<int>("Dexterity")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Health");
+                    b.Property<int>("DivineMercy")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Intelligence");
+                    b.Property<string>("Handedness")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("Level");
+                    b.Property<int>("Health")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("MagicTalent");
+                    b.Property<int>("Intelligence")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Movement");
+                    b.Property<int>("Level")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<int>("MagicTalent")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("OpenXp");
+                    b.Property<int>("Movement")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("OriginId");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int?>("RaceId");
+                    b.Property<int>("OpenXp")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Religion");
+                    b.Property<int?>("OriginId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Resistance");
+                    b.Property<int?>("RaceId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("SocialClassId");
+                    b.Property<string>("Religion")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("Stamina");
+                    b.Property<int>("Resistance")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Story");
+                    b.Property<string>("Size")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("Strength");
+                    b.Property<int>("SmilingFate")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Xp");
+                    b.Property<int?>("SocialClassId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Stamina")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Story")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Strength")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Weight")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Xp")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -203,11 +247,14 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasInnateSkill", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CharacterId");
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("InnateSkillId");
+                    b.Property<int>("InnateSkillId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -221,15 +268,20 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasLanguage", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CharacterId");
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("LanguageId");
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("SpeakingValue");
+                    b.Property<int>("SpeakingValue")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("WritingValue");
+                    b.Property<int>("WritingValue")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -243,15 +295,23 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSkill", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CharacterId");
+                    b.Property<int?>("CharacterId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Note");
+                    b.Property<string>("Note")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int?>("SkillId");
+                    b.Property<int>("PracticePoints")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Value");
+                    b.Property<int?>("SkillId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -265,11 +325,14 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSpell", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CharacterId");
+                    b.Property<int?>("CharacterId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("SpellId");
+                    b.Property<int?>("SpellId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -283,15 +346,23 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasWeapon", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CharacterId");
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Specialization");
+                    b.Property<int>("PracticePoints")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Value");
+                    b.Property<bool>("Specialization")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("WeaponId");
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("WeaponId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -305,13 +376,17 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Class", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Abbreviation");
+                    b.Property<string>("Abbreviation")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("Type");
+                    b.Property<int>("Type")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -428,15 +503,20 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCategoryAffinity", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("ClassId");
+                    b.Property<int>("ClassId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("SecondaryCategoryId");
+                    b.Property<int?>("SecondaryCategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Value");
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -939,13 +1019,17 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCost", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("ClassId");
+                    b.Property<int>("ClassId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Value");
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -2256,11 +2340,14 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.DefenseWeaponTrainingCost", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Cost");
+                    b.Property<int>("Cost")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Value");
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -2314,15 +2401,20 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.InnateSkill", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("MaxChance");
+                    b.Property<int>("MaxChance")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("MinChance");
+                    b.Property<int>("MinChance")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Value");
+                    b.Property<string>("Value")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -2494,9 +2586,11 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Land", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -2613,9 +2707,11 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Language", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -2772,13 +2868,17 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Race", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("HealthBonus");
+                    b.Property<int>("HealthBonus")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("ResistanceBonus");
+                    b.Property<int>("ResistanceBonus")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -2825,21 +2925,29 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Skill", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Field");
+                    b.Property<string>("Field")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("InitialValue");
+                    b.Property<int>("InitialValue")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("LeadingAttribute");
+                    b.Property<string>("LeadingAttribute")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<bool>("PossibleStarter");
+                    b.Property<bool>("PossibleStarter")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Untrained");
+                    b.Property<int?>("Untrained")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -3605,13 +3713,17 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.SkillHasCategory", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Difficulty");
+                    b.Property<int>("Difficulty")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("SkillId");
+                    b.Property<int>("SkillId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -4185,169 +4297,166 @@ namespace MidgardCharakterEditor.Migrations
                         new
                         {
                             Id = 85,
-                            CategoryId = 1,
-                            Difficulty = 4,
-                            SkillId = 3
+                            CategoryId = 8,
+                            Difficulty = 2,
+                            SkillId = 60
                         },
                         new
                         {
                             Id = 86,
                             CategoryId = 8,
                             Difficulty = 2,
-                            SkillId = 1
+                            SkillId = 61
                         },
                         new
                         {
                             Id = 87,
                             CategoryId = 8,
-                            Difficulty = 2,
-                            SkillId = 2
+                            Difficulty = 3,
+                            SkillId = 62
                         },
                         new
                         {
                             Id = 88,
                             CategoryId = 8,
-                            Difficulty = 3,
-                            SkillId = 3
+                            Difficulty = 4,
+                            SkillId = 63
                         },
                         new
                         {
                             Id = 89,
                             CategoryId = 8,
-                            Difficulty = 4,
-                            SkillId = 4
+                            Difficulty = 1,
+                            SkillId = 64
                         },
                         new
                         {
                             Id = 90,
                             CategoryId = 8,
                             Difficulty = 1,
-                            SkillId = 5
+                            SkillId = 65
                         },
                         new
                         {
                             Id = 91,
                             CategoryId = 8,
-                            Difficulty = 1,
-                            SkillId = 6
+                            Difficulty = 4,
+                            SkillId = 66
                         },
                         new
                         {
                             Id = 92,
                             CategoryId = 8,
-                            Difficulty = 4,
-                            SkillId = 7
+                            Difficulty = 1,
+                            SkillId = 67
                         },
                         new
                         {
                             Id = 93,
                             CategoryId = 8,
-                            Difficulty = 1,
-                            SkillId = 8
+                            Difficulty = 3,
+                            SkillId = 68
                         },
                         new
                         {
                             Id = 94,
                             CategoryId = 8,
                             Difficulty = 3,
-                            SkillId = 9
+                            SkillId = 69
                         },
                         new
                         {
                             Id = 95,
                             CategoryId = 8,
-                            Difficulty = 3,
-                            SkillId = 10
+                            Difficulty = 4,
+                            SkillId = 70
                         },
                         new
                         {
                             Id = 96,
                             CategoryId = 8,
-                            Difficulty = 4,
-                            SkillId = 11
+                            Difficulty = 1,
+                            SkillId = 71
                         },
                         new
                         {
                             Id = 97,
                             CategoryId = 8,
-                            Difficulty = 1,
-                            SkillId = 12
+                            Difficulty = 2,
+                            SkillId = 72
                         },
                         new
                         {
                             Id = 98,
                             CategoryId = 8,
                             Difficulty = 2,
-                            SkillId = 13
+                            SkillId = 73
                         },
                         new
                         {
                             Id = 99,
                             CategoryId = 8,
                             Difficulty = 2,
-                            SkillId = 14
+                            SkillId = 74
                         },
                         new
                         {
                             Id = 100,
                             CategoryId = 8,
-                            Difficulty = 2,
-                            SkillId = 15
+                            Difficulty = 3,
+                            SkillId = 75
                         },
                         new
                         {
                             Id = 101,
                             CategoryId = 8,
-                            Difficulty = 3,
-                            SkillId = 16
+                            Difficulty = 2,
+                            SkillId = 76
                         },
                         new
                         {
                             Id = 102,
                             CategoryId = 8,
-                            Difficulty = 2,
-                            SkillId = 17
+                            Difficulty = 3,
+                            SkillId = 77
                         },
                         new
                         {
                             Id = 103,
                             CategoryId = 8,
                             Difficulty = 3,
-                            SkillId = 18
+                            SkillId = 78
                         },
                         new
                         {
                             Id = 104,
                             CategoryId = 8,
                             Difficulty = 3,
-                            SkillId = 19
+                            SkillId = 79
                         },
                         new
                         {
                             Id = 105,
                             CategoryId = 8,
                             Difficulty = 3,
-                            SkillId = 20
-                        },
-                        new
-                        {
-                            Id = 106,
-                            CategoryId = 8,
-                            Difficulty = 3,
-                            SkillId = 21
+                            SkillId = 80
                         });
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.SkillLearningCost", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Cost");
+                    b.Property<int>("Cost")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Difficulty");
+                    b.Property<int>("Difficulty")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -4578,19 +4687,26 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.SkillTrainingCost", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Easy");
+                    b.Property<int>("Easy")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Hard");
+                    b.Property<int>("Hard")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Normal");
+                    b.Property<int>("Normal")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Value");
+                    b.Property<int>("Value")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("VeryHard");
+                    b.Property<int>("VeryHard")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -5564,11 +5680,14 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.SocialClass", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("BonusCategoryId");
+                    b.Property<int>("BonusCategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -5606,43 +5725,62 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Spell", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("AffectedArea");
+                    b.Property<string>("AffectedArea")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Agent");
+                    b.Property<string>("Agent")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("CastingCost");
+                    b.Property<string>("CastingCost")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("CastingTime");
+                    b.Property<string>("CastingTime")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("CategoryId");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Duration");
+                    b.Property<string>("Duration")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("LearningCost");
+                    b.Property<int>("LearningCost")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("Level");
+                    b.Property<int>("Level")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Material");
+                    b.Property<string>("Material")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Origin");
+                    b.Property<string>("Origin")
+                        .HasColumnType("TEXT");
 
-                    b.Property<bool>("PossibleStarter");
+                    b.Property<bool>("PossibleStarter")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("ProcessId");
+                    b.Property<int>("ProcessId")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Range");
+                    b.Property<string>("Range")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Reagent");
+                    b.Property<string>("Reagent")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Target");
+                    b.Property<string>("Target")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Type");
+                    b.Property<string>("Type")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -12357,29 +12495,41 @@ namespace MidgardCharakterEditor.Migrations
             modelBuilder.Entity("MidgardCharakterEditor.Database.Weapon", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Damage");
+                    b.Property<string>("Damage")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("MinAgility");
+                    b.Property<int>("MinAgility")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("MinDexterity");
+                    b.Property<int>("MinDexterity")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<int>("MinStrength");
+                    b.Property<int>("MinStrength")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Note");
+                    b.Property<string>("Note")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Protection");
+                    b.Property<string>("Protection")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Range");
+                    b.Property<string>("Range")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("StormDamage");
+                    b.Property<string>("StormDamage")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("WeaponGroupId");
+                    b.Property<int>("WeaponGroupId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -13324,25 +13474,29 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Character", "Character")
                         .WithMany("CharacterHasInnateSkills")
                         .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.InnateSkill", "InnateSkill")
                         .WithMany("CharacterHasInnateSkills")
                         .HasForeignKey("InnateSkillId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasLanguage", b =>
                 {
                     b.HasOne("MidgardCharakterEditor.Database.Character", "Character")
-                        .WithMany()
+                        .WithMany("CharacterHasLanguages")
                         .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Language", "Language")
                         .WithMany()
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.CharacterHasSkill", b =>
@@ -13372,12 +13526,14 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Character", "Character")
                         .WithMany("CharacterHasWeapons")
                         .HasForeignKey("CharacterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Weapon", "Weapon")
                         .WithMany("CharacterHasWeapons")
                         .HasForeignKey("WeaponId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.ClassCategoryAffinity", b =>
@@ -13385,12 +13541,14 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Class", "Class")
                         .WithMany()
                         .HasForeignKey("ClassId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Category", "SecondaryCategory")
                         .WithMany()
@@ -13402,12 +13560,14 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Class", "Class")
                         .WithMany()
                         .HasForeignKey("ClassId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.SkillHasCategory", b =>
@@ -13415,12 +13575,14 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany("SkillHasCategories")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Skill", "Skill")
                         .WithMany("SkillHasCategories")
                         .HasForeignKey("SkillId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.SkillLearningCost", b =>
@@ -13428,7 +13590,8 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.SkillTrainingCost", b =>
@@ -13436,7 +13599,8 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.SocialClass", b =>
@@ -13444,7 +13608,8 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "BonusCategory")
                         .WithMany()
                         .HasForeignKey("BonusCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.Spell", b =>
@@ -13452,12 +13617,14 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MidgardCharakterEditor.Database.Category", "Process")
                         .WithMany()
                         .HasForeignKey("ProcessId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MidgardCharakterEditor.Database.Weapon", b =>
@@ -13465,7 +13632,8 @@ namespace MidgardCharakterEditor.Migrations
                     b.HasOne("MidgardCharakterEditor.Database.Skill", "WeaponGroup")
                         .WithMany()
                         .HasForeignKey("WeaponGroupId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

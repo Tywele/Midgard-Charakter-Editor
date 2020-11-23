@@ -357,12 +357,16 @@ namespace MidgardCharakterEditor.Migrations
                     Name = table.Column<string>(nullable: true),
                     RaceId = table.Column<int>(nullable: true),
                     ClassId = table.Column<int>(nullable: true),
-                    Handedness = table.Column<string>(nullable: true),
-                    Build = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: false),
+                    Size = table.Column<string>(nullable: true),
+                    Weight = table.Column<string>(nullable: true),
+                    Build = table.Column<string>(nullable: true),
+                    Handedness = table.Column<string>(nullable: true),
                     SocialClassId = table.Column<int>(nullable: true),
                     OriginId = table.Column<int>(nullable: true),
                     Religion = table.Column<string>(nullable: true),
+                    SmilingFate = table.Column<int>(nullable: false),
+                    DivineMercy = table.Column<int>(nullable: false),
                     Story = table.Column<string>(nullable: true),
                     Strength = table.Column<int>(nullable: false),
                     Dexterity = table.Column<int>(nullable: false),
@@ -379,6 +383,7 @@ namespace MidgardCharakterEditor.Migrations
                     Movement = table.Column<int>(nullable: false),
                     Xp = table.Column<int>(nullable: false),
                     Level = table.Column<int>(nullable: false),
+                    ArmorClass = table.Column<string>(nullable: true),
                     OpenXp = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -473,6 +478,7 @@ namespace MidgardCharakterEditor.Migrations
                     CharacterId = table.Column<int>(nullable: true),
                     SkillId = table.Column<int>(nullable: true),
                     Value = table.Column<int>(nullable: false),
+                    PracticePoints = table.Column<int>(nullable: false),
                     Note = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -527,6 +533,7 @@ namespace MidgardCharakterEditor.Migrations
                     CharacterId = table.Column<int>(nullable: false),
                     WeaponId = table.Column<int>(nullable: false),
                     Value = table.Column<int>(nullable: false),
+                    PracticePoints = table.Column<int>(nullable: false),
                     Specialization = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -1534,17 +1541,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 46, 1, 11, null, 3 });
+                values: new object[] { 63, 8, 14, null, 8 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 39, 8, 9, null, 18 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 40, 17, 9, null, 3 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 54, 20, 12, null, 7 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1574,7 +1581,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 39, 8, 9, null, 18 });
+                values: new object[] { 38, 9, 9, null, 2 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1599,12 +1606,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 63, 8, 14, null, 8 });
+                values: new object[] { 33, 9, 8, null, 4 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 33, 9, 8, null, 4 });
+                values: new object[] { 64, 17, 14, null, 5 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1624,17 +1631,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 38, 9, 9, null, 2 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 37, 4, 9, null, 3 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 23, 1, 6, null, 2 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 24, 3, 6, null, 6 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1664,11 +1671,6 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 57, 9, 13, null, 3 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 30, 8, 7, null, 20 });
 
             migrationBuilder.InsertData(
@@ -1689,6 +1691,11 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 57, 9, 13, null, 3 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 58, 8, 13, null, 6 });
 
             migrationBuilder.InsertData(
@@ -1699,7 +1706,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 47, 6, 11, null, 2 });
+                values: new object[] { 54, 20, 12, null, 7 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 46, 1, 11, null, 3 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1719,11 +1731,6 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 24, 3, 6, null, 6 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 16, 6, 4, null, 8 });
 
             migrationBuilder.InsertData(
@@ -1734,7 +1741,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 64, 17, 14, null, 5 });
+                values: new object[] { 34, 8, 8, null, 16 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1745,11 +1752,6 @@ namespace MidgardCharakterEditor.Migrations
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 8, 4, 2, null, 1 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 9, 5, 2, null, 2 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1784,6 +1786,16 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 50, 10, 11, 15, 6 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 49, 8, 11, null, 2 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 11, 1, 3, null, 2 });
 
             migrationBuilder.InsertData(
@@ -1804,17 +1816,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 50, 10, 11, 15, 6 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 49, 8, 11, null, 2 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 48, 9, 11, null, 2 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 47, 6, 11, null, 2 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1829,12 +1836,27 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 34, 8, 8, null, 16 });
+                values: new object[] { 9, 5, 2, null, 2 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 4, 7, 1, null, 8 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 42, 2, 10, null, 4 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 43, 9, 10, null, 2 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 3, 6, 1, null, 4 });
 
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
@@ -1849,6 +1871,11 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCategoryAffinities",
                 columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
+                values: new object[] { 44, 8, 10, null, 6 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCategoryAffinities",
+                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
                 values: new object[] { 5, 8, 1, null, 24 });
 
             migrationBuilder.InsertData(
@@ -1857,44 +1884,19 @@ namespace MidgardCharakterEditor.Migrations
                 values: new object[] { 45, 18, 10, null, 5 });
 
             migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 44, 8, 10, null, 6 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 43, 9, 10, null, 2 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 42, 2, 10, null, 4 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCategoryAffinities",
-                columns: new[] { "Id", "CategoryId", "ClassId", "SecondaryCategoryId", "Value" },
-                values: new object[] { 3, 6, 1, null, 4 });
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 113, 13, 11, 90 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 125, 8, 12, 40 });
+                values: new object[] { 121, 4, 12, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 127, 10, 12, 60 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 124, 7, 12, 40 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 102, 2, 11, 20 });
+                values: new object[] { 122, 5, 12, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -1904,7 +1906,32 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 113, 13, 11, 90 });
+                values: new object[] { 124, 7, 12, 40 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 125, 8, 12, 40 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 126, 9, 12, 10 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 112, 12, 11, 90 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 101, 1, 11, 20 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 107, 7, 11, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -1915,36 +1942,6 @@ namespace MidgardCharakterEditor.Migrations
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
                 values: new object[] { 115, 15, 11, 30 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 101, 1, 11, 20 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 126, 9, 12, 10 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 107, 7, 11, 30 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 108, 8, 11, 40 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 122, 5, 12, 30 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 121, 4, 12, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -1964,17 +1961,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 116, 16, 11, 60 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 112, 12, 11, 90 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 111, 11, 11, 90 });
+                values: new object[] { 102, 2, 11, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -1984,7 +1971,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 117, 18, 11, 90 });
+                values: new object[] { 111, 11, 11, 90 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -1994,12 +1981,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 105, 5, 11, 30 });
+                values: new object[] { 116, 16, 11, 60 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 106, 6, 11, 20 });
+                values: new object[] { 117, 18, 11, 90 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2014,12 +2001,37 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 139, 6, 13, 10 });
+                values: new object[] { 105, 5, 11, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 129, 12, 12, 60 });
+                values: new object[] { 106, 6, 11, 20 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 108, 8, 11, 40 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 175, 8, 15, 40 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 138, 5, 13, 30 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 128, 11, 12, 60 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 154, 4, 14, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2114,16 +2126,6 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 173, 6, 15, 20 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 154, 4, 14, 30 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
                 values: new object[] { 153, 3, 14, 40 });
 
             migrationBuilder.InsertData(
@@ -2135,6 +2137,16 @@ namespace MidgardCharakterEditor.Migrations
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
                 values: new object[] { 151, 1, 14, 20 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 150, 17, 13, 30 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 129, 12, 12, 60 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2179,17 +2191,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 138, 5, 13, 30 });
+                values: new object[] { 127, 10, 12, 60 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 128, 11, 12, 60 });
+                values: new object[] { 139, 6, 13, 10 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 140, 7, 13, 40 });
+                values: new object[] { 141, 8, 13, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2234,27 +2246,22 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 150, 17, 13, 30 });
+                values: new object[] { 140, 7, 13, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 141, 8, 13, 40 });
+                values: new object[] { 100, 18, 10, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 175, 8, 15, 40 });
+                values: new object[] { 82, 9, 9, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 83, 17, 9, 30 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 99, 16, 10, 120 });
+                values: new object[] { 98, 15, 10, 90 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2304,12 +2311,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 37, 1, 5, 20 });
+                values: new object[] { 27, 9, 3, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 38, 2, 5, 30 });
+                values: new object[] { 37, 1, 5, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2359,17 +2366,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 48, 3, 6, 10 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 27, 9, 3, 20 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 49, 4, 6, 40 });
+                values: new object[] { 38, 2, 5, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2379,12 +2376,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 24, 6, 3, 10 });
+                values: new object[] { 25, 7, 3, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 21, 3, 3, 10 });
+                values: new object[] { 24, 6, 3, 10 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2489,12 +2486,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 25, 7, 3, 30 });
+                values: new object[] { 23, 5, 3, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 100, 18, 10, 30 });
+                values: new object[] { 48, 3, 6, 10 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 49, 4, 6, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2504,7 +2506,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 52, 7, 6, 10 });
+                values: new object[] { 51, 6, 6, 10 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 77, 4, 9, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2529,12 +2536,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 82, 9, 9, 30 });
+                values: new object[] { 173, 6, 15, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 174, 7, 15, 40 });
+                values: new object[] { 83, 17, 9, 30 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2609,27 +2616,27 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 98, 15, 10, 90 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 77, 4, 9, 20 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 51, 6, 6, 10 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
                 values: new object[] { 76, 3, 9, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 74, 1, 9, 20 });
+                values: new object[] { 99, 16, 10, 120 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 75, 2, 9, 20 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 73, 19, 8, 30 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 52, 7, 6, 10 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2734,12 +2741,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 73, 19, 8, 30 });
+                values: new object[] { 74, 1, 9, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 75, 2, 9, 20 });
+                values: new object[] { 174, 7, 15, 40 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2749,47 +2756,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 23, 5, 3, 30 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 177, 10, 15, 60 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 178, 11, 15, 90 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 179, 12, 15, 60 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 180, 13, 15, 120 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 181, 14, 15, 120 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 182, 15, 15, 60 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 183, 16, 15, 60 });
-
-            migrationBuilder.InsertData(
-                table: "ClassCosts",
-                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 184, 17, 15, 60 });
+                values: new object[] { 176, 9, 15, 20 });
 
             migrationBuilder.InsertData(
                 table: "ClassCosts",
@@ -2799,27 +2766,147 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "ClassCosts",
                 columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
-                values: new object[] { 176, 9, 15, 20 });
+                values: new object[] { 184, 17, 15, 60 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 183, 16, 15, 60 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 182, 15, 15, 60 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 21, 3, 3, 10 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 180, 13, 15, 120 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 179, 12, 15, 60 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 178, 11, 15, 90 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 177, 10, 15, 60 });
+
+            migrationBuilder.InsertData(
+                table: "ClassCosts",
+                columns: new[] { "Id", "CategoryId", "ClassId", "Value" },
+                values: new object[] { 181, 14, 15, 120 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 47, 2, 2, 33 });
+                values: new object[] { 70, 7, 1, 47 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 48, 9, 3, 33 });
+                values: new object[] { 78, 2, 1, 53 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 49, 2, 2, 34 });
+                values: new object[] { 77, 2, 1, 52 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 50, 9, 3, 34 });
+                values: new object[] { 76, 2, 1, 51 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 75, 9, 3, 50 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 74, 2, 2, 50 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 73, 5, 2, 49 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 72, 7, 2, 48 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 71, 2, 3, 48 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 69, 3, 3, 47 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 63, 5, 1, 43 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 67, 2, 3, 46 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 66, 9, 1, 45 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 65, 1, 2, 45 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 64, 1, 1, 44 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 79, 6, 1, 54 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 61, 9, 1, 42 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 60, 1, 2, 42 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 59, 7, 2, 41 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 58, 7, 2, 40 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -2829,12 +2916,112 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 52, 4, 1, 35 });
+                values: new object[] { 68, 7, 2, 46 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 53, 4, 1, 36 });
+                values: new object[] { 80, 6, 2, 55 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 87, 8, 3, 62 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 82, 1, 1, 57 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 105, 8, 3, 80 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 104, 8, 3, 79 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 103, 8, 3, 78 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 102, 8, 3, 77 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 101, 8, 2, 76 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 100, 8, 3, 75 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 99, 8, 2, 74 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 98, 8, 2, 73 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 97, 8, 2, 72 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 96, 8, 1, 71 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 81, 6, 1, 56 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 95, 8, 4, 70 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 93, 8, 3, 68 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 92, 8, 1, 67 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 91, 8, 4, 66 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 90, 8, 1, 65 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 89, 8, 1, 64 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 88, 8, 4, 63 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -2844,7 +3031,32 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 46, 1, 1, 32 });
+                values: new object[] { 86, 8, 2, 61 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 85, 8, 2, 60 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 83, 9, 3, 58 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 94, 8, 3, 69 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 53, 4, 1, 36 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 62, 1, 1, 43 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -2854,12 +3066,177 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 24, 3, 3, 17 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 23, 4, 4, 16 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 22, 7, 3, 15 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 21, 7, 2, 14 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 20, 3, 1, 13 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 19, 6, 1, 12 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 18, 1, 3, 12 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 17, 9, 2, 11 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 16, 1, 3, 11 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 15, 1, 1, 10 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 52, 4, 1, 35 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 13, 3, 4, 9 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 12, 6, 2, 8 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 11, 4, 4, 7 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 10, 3, 1, 6 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 9, 5, 1, 6 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 8, 5, 3, 5 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 7, 4, 2, 5 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 6, 6, 1, 4 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 5, 4, 2, 4 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 4, 9, 3, 3 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 3, 5, 3, 2 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 2, 3, 2, 2 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 25, 6, 2, 17 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 26, 7, 1, 17 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 14, 4, 3, 9 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 28, 4, 1, 19 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 27, 3, 1, 18 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 49, 2, 2, 34 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 48, 9, 3, 33 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 47, 2, 2, 33 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 46, 1, 1, 32 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
                 values: new object[] { 45, 7, 3, 31 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 40, 5, 3, 27 });
+                values: new object[] { 50, 9, 3, 34 });
+
+            migrationBuilder.InsertData(
+                table: "SkillHasCategories",
+                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
+                values: new object[] { 44, 6, 3, 30 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -2874,12 +3251,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 41, 9, 1, 28 });
+                values: new object[] { 40, 5, 3, 27 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 58, 7, 2, 40 });
+                values: new object[] { 41, 9, 1, 28 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -2914,202 +3291,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 44, 6, 3, 30 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 59, 7, 2, 41 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 64, 1, 1, 44 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 61, 9, 1, 42 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 83, 9, 3, 58 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 82, 1, 1, 57 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 81, 6, 1, 56 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 80, 6, 2, 55 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 79, 6, 1, 54 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 78, 2, 1, 53 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 77, 2, 1, 52 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 76, 2, 1, 51 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 75, 9, 3, 50 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 74, 2, 2, 50 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 60, 1, 2, 42 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 73, 5, 2, 49 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 71, 2, 3, 48 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 70, 7, 1, 47 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 69, 3, 3, 47 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 68, 7, 2, 46 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 67, 2, 3, 46 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 66, 9, 1, 45 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 65, 1, 2, 45 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
                 values: new object[] { 32, 1, 1, 22 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 63, 5, 1, 43 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 62, 1, 1, 43 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 72, 7, 2, 48 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 106, 8, 3, 21 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 39, 9, 3, 26 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 105, 8, 3, 20 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 94, 8, 3, 9 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 14, 4, 3, 9 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 13, 3, 4, 9 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 93, 8, 1, 8 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 12, 6, 2, 8 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 92, 8, 4, 7 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 11, 4, 4, 7 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 91, 8, 1, 6 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 10, 3, 1, 6 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 9, 5, 1, 6 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -3119,92 +3301,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 8, 5, 3, 5 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 7, 4, 2, 5 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 89, 8, 4, 4 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 6, 6, 1, 4 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 5, 4, 2, 4 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 88, 8, 3, 3 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 85, 1, 4, 3 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 4, 9, 3, 3 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 87, 8, 2, 2 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 3, 5, 3, 2 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 2, 3, 2, 2 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 86, 8, 2, 1 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 15, 1, 1, 10 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 95, 8, 3, 10 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 90, 8, 1, 5 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 17, 9, 2, 11 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 16, 1, 3, 11 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 104, 8, 3, 19 });
+                values: new object[] { 30, 1, 4, 20 });
 
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
@@ -3214,102 +3311,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "SkillHasCategories",
                 columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 28, 4, 1, 19 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 103, 8, 3, 18 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 27, 3, 1, 18 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 30, 1, 4, 20 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 102, 8, 2, 17 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 26, 7, 1, 17 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 25, 6, 2, 17 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 101, 8, 3, 16 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 24, 3, 3, 17 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 100, 8, 2, 15 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 22, 7, 3, 15 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 99, 8, 2, 14 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 21, 7, 2, 14 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 98, 8, 2, 13 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 20, 3, 1, 13 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 97, 8, 1, 12 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 19, 6, 1, 12 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 18, 1, 3, 12 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 96, 8, 4, 11 });
-
-            migrationBuilder.InsertData(
-                table: "SkillHasCategories",
-                columns: new[] { "Id", "CategoryId", "Difficulty", "SkillId" },
-                values: new object[] { 23, 4, 4, 16 });
+                values: new object[] { 39, 9, 3, 26 });
 
             migrationBuilder.InsertData(
                 table: "SkillLearningCost",
@@ -3969,7 +3971,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 190, "30 m Kegel", "Luft", "1", "Augenblick", 20, null, "10 sec", 1, 2, "", "Windstoß", "el", true, 11, "0 m", "Luft", "Umgebung", "Geste" });
+                values: new object[] { 189, "1 km Umkreis", "Luft", "4", "20 sec", 20, null, "1 h", 20, 8, "Sturmvogelfedern (10 GS)", "Windmeisterschaft", "el", false, 11, "0 m", "Luft", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -4994,7 +4996,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 189, "1 km Umkreis", "Luft", "4", "20 sec", 20, null, "1 h", 20, 8, "Sturmvogelfedern (10 GS)", "Windmeisterschaft", "el", false, 11, "0 m", "Luft", "Umgebung", "Geste" });
+                values: new object[] { 190, "30 m Kegel", "Luft", "1", "Augenblick", 20, null, "10 sec", 1, 2, "", "Windstoß", "el", true, 11, "0 m", "Luft", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5204,22 +5206,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 71, "1 Wesen", "Eis", "7", "10 sec", 20, null, "0", 40, 10, "", "Graue Hand", "sm", false, 16, "Berührung", "Erde", "Körper", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
                 values: new object[] { 72, "30 m Umkreis", "Eis", "12", "30 sec", 20, null, "2 min, k", 90, 12, "Wasser und Diamantsplitter (50 GS)", "Hagel", "el", false, 13, "100 m", "Eis", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 65, "100 m Umkreis", "Magan", "1", "10 sec", 20, null, "10 min", 1, 1, "Kristallpyramide (10 GS)", "Geisterhorn", "dä", false, 12, "0 m", "Eis", "Umgebung", "Geste" });
+                values: new object[] { 73, "bis zu 18 m Umkreis", "Eis", "3", "Augenblick", 20, null, "1 min", 5, 5, "getrocknetes Vampirmoos (10 GS)", "Hauch der Betäubung", "dä", false, 13, "0 m", "Holz", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 73, "bis zu 18 m Umkreis", "Eis", "3", "Augenblick", 20, null, "1 min", 5, 5, "getrocknetes Vampirmoos (10 GS)", "Hauch der Betäubung", "dä", false, 13, "0 m", "Holz", "Umgebung", "Geste" });
+                values: new object[] { 74, "bis zu 18 m Umkreis", "Eis", "2", "Augenblick", 20, null, "1 min", 3, 4, "Stinkmorschelasche (2 GS)", "Hauch der Verwesung", "dä", false, 13, "0 m", "Erde", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5259,22 +5256,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 74, "bis zu 18 m Umkreis", "Eis", "2", "Augenblick", 20, null, "1 min", 3, 4, "Stinkmorschelasche (2 GS)", "Hauch der Verwesung", "dä", false, 13, "0 m", "Erde", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 82, "6 m Umkreis", "Eis", "1 je 10 sec Dauer", "10 sec", 20, null, "10 sec je Grad", 5, 5, "", "Hören der Geister", "dä", false, 12, "0 m", "Luft", "Körper", "Gedanke" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 64, "1 Wesen", "Feuer", "2 je Grad", "10 sec", 20, null, "1 min", 15, 7, "Sternenstaub (20 GS)", "Funkenregen", "dä", false, 10, "30 m", "Feuer", "Geist", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 62, "1 Wesen", "Wasser", "4", "10 sec", 20, null, "30 min, k", 15, 7, "", "Freundesauge", "dä", false, 10, "500 m", "Feuer", "Geist", "Gedanke" });
+                values: new object[] { 65, "100 m Umkreis", "Magan", "1", "10 sec", 20, null, "10 min", 1, 1, "Kristallpyramide (10 GS)", "Geisterhorn", "dä", false, 12, "0 m", "Eis", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5289,12 +5271,52 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 48, "3 m Umkreis", "Feuer", "2", "10 sec", 20, null, "2 min, k", 2, 3, "Blutstein (30 GS)", "Feuerkugel", "el", true, 13, "50 m", "Feuer", "Umgebung", "Geste" });
+                values: new object[] { 64, "1 Wesen", "Feuer", "2 je Grad", "10 sec", 20, null, "1 min", 15, 7, "Sternenstaub (20 GS)", "Funkenregen", "dä", false, 10, "30 m", "Feuer", "Geist", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 49, "Strahl", "Feuer", "3", "10 sec", 20, null, "0", 10, 6, "Korallenstück (20 GS)", "Feuerlanze", "el", false, 13, "50 m", "Feuer", "Umgebung", "Geste" });
+                values: new object[] { 55, "-", "Feuer", "1 je m Breite", "10 sec", 20, null, "10 min", 3, 4, "Rubin (50 GS)", "Feuerwand", "el", false, 13, "15 m", "Feuer", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 57, "1 Objekt", "Feuer", "4", "1 min", 20, null, "10 min", 10, 6, "Klinge aus Alchimistenmetall", "Flammenklinge", "el", false, 14, "Berührung", "Metall", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 54, "-", "Eis", "3", "10 sec", 20, null, "2 min", 10, 6, "Diamantstaub (20 GS)", "Feuerschild", "el", false, 13, "15 m", "Eis", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 53, "6 m Umkreis", "Feuer", "4", "20 sec", 20, null, "30 min", 20, 8, "Zwergdrachenflügel und Zauberöl (100 GS)", "Feuerring", "el", false, 13, "0 m", "Feuer", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 58, "1 Wesen", "Holz", "1", "Augenblick", 20, null, "2 min", 1, 2, "Zunder (1 SS)", "Flammenkreis", "dr", true, 13, "Berührung", "Holz", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 52, "30 m Umkreis", "Feuer", "18", "30 sec", 20, null, "1 min, k", 90, 12, "Basaltstaub und Rubinsplitter (100 GS)", "Feuerregen", "el", false, 13, "100 m", "Feuer", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 59, "bis zu 10 m²", "Feuer", "1 je m²", "10 sec", 20, null, "1 min", 5, 5, "Feuertopas (20 GS)", "Flammenteppich", "el", false, 13, "50 m", "Feuer", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 82, "6 m Umkreis", "Eis", "1 je 10 sec Dauer", "10 sec", 20, null, "10 sec je Grad", 5, 5, "", "Hören der Geister", "dä", false, 12, "0 m", "Luft", "Körper", "Gedanke" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 51, "2 m Umkreis", "Feuer", "6", "20 sec", 20, null, "2 min", 30, 9, "Stück einer Drachenzunge (100 GS)", "Feuermeisterschaft", "el", false, 14, "30 m", "Feuer", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5304,7 +5326,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 51, "2 m Umkreis", "Feuer", "6", "20 sec", 20, null, "2 min", 30, 9, "Stück einer Drachenzunge (100 GS)", "Feuermeisterschaft", "el", false, 14, "30 m", "Feuer", "Umgebung", "Geste" });
+                values: new object[] { 61, "Zauberer", "Luft", "9", "30 sec", 20, null, "1 h, k", 60, 11, "Greifenschwungfeder (100 GS)", "Fliegen", "dä", false, 11, "-", "Erde", "Körper", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 49, "Strahl", "Feuer", "3", "10 sec", 20, null, "0", 10, 6, "Korallenstück (20 GS)", "Feuerlanze", "el", false, 13, "50 m", "Feuer", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 62, "1 Wesen", "Wasser", "4", "10 sec", 20, null, "30 min, k", 15, 7, "", "Freundesauge", "dä", false, 10, "500 m", "Feuer", "Geist", "Gedanke" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5319,32 +5351,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 53, "6 m Umkreis", "Feuer", "4", "20 sec", 20, null, "30 min", 20, 8, "Zwergdrachenflügel und Zauberöl (100 GS)", "Feuerring", "el", false, 13, "0 m", "Feuer", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 55, "-", "Feuer", "1 je m Breite", "10 sec", 20, null, "10 min", 3, 4, "Rubin (50 GS)", "Feuerwand", "el", false, 13, "15 m", "Feuer", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 56, "Zauberer", "Feuer", "2", "10 sec", 20, null, "2 min", 2, 3, "", "Flammende Hand", "el", true, 13, "0 m", "Feuer", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 57, "1 Objekt", "Feuer", "4", "1 min", 20, null, "10 min", 10, 6, "Klinge aus Alchimistenmetall", "Flammenklinge", "el", false, 14, "Berührung", "Metall", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 58, "1 Wesen", "Holz", "1", "Augenblick", 20, null, "2 min", 1, 2, "Zunder (1 SS)", "Flammenkreis", "dr", true, 13, "Berührung", "Holz", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 59, "bis zu 10 m²", "Feuer", "1 je m²", "10 sec", 20, null, "1 min", 5, 5, "Feuertopas (20 GS)", "Flammenteppich", "el", false, 13, "50 m", "Feuer", "Umgebung", "Geste" });
+                values: new object[] { 48, "3 m Umkreis", "Feuer", "2", "10 sec", 20, null, "2 min, k", 2, 3, "Blutstein (30 GS)", "Feuerkugel", "el", true, 13, "50 m", "Feuer", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5354,22 +5361,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 61, "Zauberer", "Luft", "9", "30 sec", 20, null, "1 h, k", 60, 11, "Greifenschwungfeder (100 GS)", "Fliegen", "dä", false, 11, "-", "Erde", "Körper", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 54, "-", "Eis", "3", "10 sec", 20, null, "2 min", 10, 6, "Diamantstaub (20 GS)", "Feuerschild", "el", false, 13, "15 m", "Eis", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
                 values: new object[] { 83, "1 Wesen", "Magan", "1", "1 min", 20, null, "10 min", 1, 1, "", "Hören von Fernem", "dä", true, 15, "Berührung", "Wasser", "Körper", "Gedanke" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 52, "30 m Umkreis", "Feuer", "18", "30 sec", 20, null, "1 min, k", 90, 12, "Basaltstaub und Rubinsplitter (100 GS)", "Feuerregen", "el", false, 13, "100 m", "Feuer", "Umgebung", "Geste" });
+                values: new object[] { 71, "1 Wesen", "Eis", "7", "10 sec", 20, null, "0", 40, 10, "", "Graue Hand", "sm", false, 16, "Berührung", "Erde", "Körper", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5389,7 +5386,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 108, "1 Wesen", "Erde", "3", "10 sec", 20, null, "10 min", 5, 5, "Marmorstaub (1 GS)", "Marmorhaut", "el", false, 15, "Berührung", "Erde", "Körper", "Geste" });
+                values: new object[] { 84, "2 km Umkreis", "Magan", "1", "Augenblick", 20, null, "10 sec", 1, 2, "", "Hörnerklang", "dä", true, 14, "0 m", "Luft", "Umgebung", "Wort" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5439,6 +5436,11 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 118, "Zauberer", "Luft", "6", "30 min", 20, null, "var", 20, 8, "", "Reise der Seele", "dr", false, 11, "-", "Feuer", "Geist", "Gedanke" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
                 values: new object[] { 119, "1 Objekt", "Eis", "2", "Augenblick", 20, null, "0", 1, 1, "", "Rost", "dä", true, 14, "Berührung", "Metall", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
@@ -5454,11 +5456,6 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 84, "2 km Umkreis", "Magan", "1", "Augenblick", 20, null, "10 sec", 1, 2, "", "Hörnerklang", "dä", true, 14, "0 m", "Luft", "Umgebung", "Wort" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
                 values: new object[] { 114, "1 Wesen", "Eis", "5", "Augenblick", 20, null, "0", 40, 10, "Pestkrötenklaue (50 GS)", "Pestklaue", "sm", false, 16, "Berührung", "Erde", "Körper", "Geste" });
 
             migrationBuilder.InsertData(
@@ -5469,42 +5466,12 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 118, "Zauberer", "Luft", "6", "30 min", 20, null, "var", 20, 8, "", "Reise der Seele", "dr", false, 11, "-", "Feuer", "Geist", "Gedanke" });
+                values: new object[] { 108, "1 Wesen", "Erde", "3", "10 sec", 20, null, "10 min", 5, 5, "Marmorstaub (1 GS)", "Marmorhaut", "el", false, 15, "Berührung", "Erde", "Körper", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 102, "1 Wesen je Grad", "Magan", "3 je Grad", "20 sec", 20, null, "var", 10, 6, "", "Macht über Menschen", "dä", false, 10, "30 m", "Luft", "Geist", "Wort" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 103, "-", "Feuer", "2", "Augenblick", 20, null, "10 sec", 2, 3, "", "Macht über Unbelebtes", "dä", true, 11, "30 m", "Metall", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 87, "1 Wesen", "Eis", "1", "Augenblick", 20, null, "0", 1, 2, "", "Kraft entziehen", "sm", true, 16, "Berührung", "Feuer", "Körper", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 88, "1 m²", "Magan", "2", "10 sec", 20, null, "2 min, k", 2, 3, "", "Kraftraub", "dä", true, 16, "30 m", "Feuer", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 90, "-", "Magan", "1", "1 min", 20, null, "10 min, k", 1, 1, "", "Lauschen", "dä", true, 14, "30 cm", "Metall", "Umgebung", "Gedanke" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 91, "-", "Metall", "4", "1 min", 20, null, "10 min", 20, 8, "", "Lichtbrücke", "gö", false, 13, "50 m", "Feuer", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 92, "1 m²", "Feuer", "1", "10 min", 20, null, "?", 1, 2, "Nachtmarderhaarpinsel (50 GS)", "Lichtrunen", "dä", false, 14, "Berührung", "Metall", "Umgebung", "Geste" });
+                values: new object[] { 56, "Zauberer", "Feuer", "2", "10 sec", 20, null, "2 min", 2, 3, "", "Flammende Hand", "el", true, 13, "0 m", "Feuer", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5519,17 +5486,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 89, "1 Wesen", "Metall", "8", "20 sec", 20, null, "24 h", 40, 10, "Basiliskenschuppe (100 GS)", "Lähmung", "dä", false, 15, "30 m", "Erde", "Körper", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 96, "3 m Umkreis", "Luft", "4", "20 sec", 20, null, "1 h", 20, 8, "Perle (100 GS)", "Luftsphäre", "el", false, 13, "0 m", "Luft", "Umgebung", "Geste" });
-
-            migrationBuilder.InsertData(
-                table: "Spells",
-                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 101, "1 Wesen je Grad", "Magan", "3 je Grad", "20 sec", 20, null, "var", 15, 7, "", "Macht über magische Wesen", "dä", false, 10, "30 m", "Magan", "Geist", "Wort" });
+                values: new object[] { 103, "-", "Feuer", "2", "Augenblick", 20, null, "10 sec", 2, 3, "", "Macht über Unbelebtes", "dä", true, 11, "30 m", "Metall", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5539,17 +5496,22 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 100, "1 Wesen", "Eis", "mind. 8", "10 sec", 20, null, "2 min", 30, 9, "", "Macht über Leben", "dä", false, 16, "6 m", "Erde", "Körper", "Geste" });
+                values: new object[] { 96, "3 m Umkreis", "Luft", "4", "20 sec", 20, null, "1 h", 20, 8, "Perle (100 GS)", "Luftsphäre", "el", false, 13, "0 m", "Luft", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 99, "Zauberer", "Magan", "1 je Variation", "10 sec", 20, null, "2-10 min", 1, 2, "", "Macht über die Sinne", "dä", true, 10, "50 m", "Feuer", "Geist", "Geste" });
+                values: new object[] { 90, "-", "Magan", "1", "1 min", 20, null, "10 min, k", 1, 1, "", "Lauschen", "dä", true, 14, "30 cm", "Metall", "Umgebung", "Gedanke" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
                 columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
-                values: new object[] { 86, "Zauberer", "Feuer", "1", "Augenblick", 20, null, "2 min", 1, 2, "", "Kälteschutz", "dä", true, 15, "-", "Erde", "Körper", "Gedanke" });
+                values: new object[] { 89, "1 Wesen", "Metall", "8", "20 sec", 20, null, "24 h", 40, 10, "Basiliskenschuppe (100 GS)", "Lähmung", "dä", false, 15, "30 m", "Erde", "Körper", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 91, "-", "Metall", "4", "1 min", 20, null, "10 min", 20, 8, "", "Lichtbrücke", "gö", false, 13, "50 m", "Feuer", "Umgebung", "Geste" });
 
             migrationBuilder.InsertData(
                 table: "Spells",
@@ -5562,24 +5524,64 @@ namespace MidgardCharakterEditor.Migrations
                 values: new object[] { 97, "Zauberer", "Metall", "1", "10 sec", 20, null, "24 h, k", 1, 1, "", "Macht über das Selbst", "dä", true, 10, "-", "Feuer", "Körper", "Gedanke" });
 
             migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 36, "2W6", null, 0, 31, 61, "Bihänder", "", "", "nah", "", 69 });
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 92, "1 m²", "Feuer", "1", "10 min", 20, null, "?", 1, 2, "Nachtmarderhaarpinsel (50 GS)", "Lichtrunen", "dä", false, 14, "Berührung", "Metall", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 99, "Zauberer", "Magan", "1 je Variation", "10 sec", 20, null, "2-10 min", 1, 2, "", "Macht über die Sinne", "dä", true, 10, "50 m", "Feuer", "Geist", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 100, "1 Wesen", "Eis", "mind. 8", "10 sec", 20, null, "2 min", 30, 9, "", "Macht über Leben", "dä", false, 16, "6 m", "Erde", "Körper", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 86, "Zauberer", "Feuer", "1", "Augenblick", 20, null, "2 min", 1, 2, "", "Kälteschutz", "dä", true, 15, "-", "Erde", "Körper", "Gedanke" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 87, "1 Wesen", "Eis", "1", "Augenblick", 20, null, "0", 1, 2, "", "Kraft entziehen", "sm", true, 16, "Berührung", "Feuer", "Körper", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 101, "1 Wesen je Grad", "Magan", "3 je Grad", "20 sec", 20, null, "var", 15, 7, "", "Macht über magische Wesen", "dä", false, 10, "30 m", "Magan", "Geist", "Wort" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 88, "1 m²", "Magan", "2", "10 sec", 20, null, "2 min, k", 2, 3, "", "Kraftraub", "dä", true, 16, "30 m", "Feuer", "Umgebung", "Geste" });
+
+            migrationBuilder.InsertData(
+                table: "Spells",
+                columns: new[] { "Id", "AffectedArea", "Agent", "CastingCost", "CastingTime", "CategoryId", "Description", "Duration", "LearningCost", "Level", "Material", "Name", "Origin", "PossibleStarter", "ProcessId", "Range", "Reagent", "Target", "Type" },
+                values: new object[] { 102, "1 Wesen je Grad", "Magan", "3 je Grad", "20 sec", 20, null, "var", 10, 6, "", "Macht über Menschen", "dä", false, 10, "30 m", "Luft", "Geist", "Wort" });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 37, "1W6-4", null, 21, 21, 31, "Faustkampf", "betäuben", "", "nah", "", 70 });
+                values: new object[] { 47, "1W6-1", null, 0, 31, 31, "Wurfkeule", "Nahkampf wie Keule", "", "10/20/50", "", 73 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 38, "1W6-4", null, 31, 31, 21, "Ringen", "erstetzt Raufen", "", "nah", "", 70 });
+                values: new object[] { 39, "", null, 0, 61, 0, "Buckler", "gegen Einhandschwert, Zauberstab, Stich-, Stock- , Spießwaffe, Fecht-, Parierwaffe oder Buckler", "", "nah", "2 AP", 71 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 35, "1W6+2", null, 0, 21, 81, "Anderthalbhänder", "", "", "nah", "", 69 });
+                values: new object[] { 45, "1W6", null, 0, 61, 61, "Wurfeisen", "", "", "10/20/50", "", 73 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 44, "1W6", null, 0, 31, 31, "Wurfaxt", "Nahkampf wie Handaxt", "", "10/20/30", "", 73 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5594,22 +5596,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 42, "(1W6-3)/(1W6-4)", null, 0, 61, 31, "Kampfgabeln", "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "", "nah", "2 AP", 72 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
                 values: new object[] { 43, "", null, 0, 61, 0, "Parierdolch", "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "", "nah", "1 AP", 72 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 44, "1W6", null, 0, 31, 31, "Wurfaxt", "Nahkampf wie Handaxt", "", "10/20/30", "", 73 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 45, "1W6", null, 0, 61, 61, "Wurfeisen", "", "", "10/20/50", "", 73 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5619,27 +5606,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 47, "1W6-1", null, 0, 31, 31, "Wurfkeule", "Nahkampf wie Keule", "", "10/20/50", "", 73 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 48, "1W6-1", null, 0, 61, 0, "Wurfmesser", "Nahkampf wie Dolch", "", "10/15/20", "", 74 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 39, "", null, 0, 61, 0, "Buckler", "gegen Einhandschwert, Zauberstab, Stich-, Stock- , Spießwaffe, Fecht-, Parierwaffe oder Buckler", "", "nah", "2 AP", 71 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 56, "2W6-1", null, 0, 31, 61, "Armbrust, schwere", "Schuss jede 2. Runde", "", "30/120/240", "", 77 });
+                values: new object[] { 42, "(1W6-3)/(1W6-4)", null, 0, 61, 31, "Kampfgabeln", "gegen Einhandschwert, Zauberstab, Stich-, Stock-, Spießwaffe, Buckler oder andere Parierwaffe", "", "nah", "2 AP", 72 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
                 values: new object[] { 50, "1W6-2", null, 0, 61, 61, "Wurfscheibe", "pro Runde 2 Angriffe", "", "10/20/30", "", 75 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 49, "1W6-2", null, 0, 31, 11, "Wurfpfeil", "", "", "10/20/30", "", 74 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5664,7 +5641,17 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 38, "1W6-4", null, 31, 31, 21, "Ringen", "erstetzt Raufen", "", "nah", "", 70 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
                 values: new object[] { 55, "1W6", null, 0, 61, 0, "Armbrust, leichte", "", "", "30/120/220", "", 77 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 56, "2W6-1", null, 0, 31, 61, "Armbrust, schwere", "Schuss jede 2. Runde", "", "30/120/240", "", 77 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5699,7 +5686,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 34, "2W6", null, 0, 31, 81, "Stielhammer", "", "", "nah", "1W6+1", 68 });
+                values: new object[] { 48, "1W6-1", null, 0, 61, 0, "Wurfmesser", "Nahkampf wie Dolch", "", "10/15/20", "", 74 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5709,12 +5696,22 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 49, "1W6-2", null, 0, 31, 11, "Wurfpfeil", "", "", "10/20/30", "", 74 });
+                values: new object[] { 12, "", null, 0, 51, 11, "Rapier", "", "", "nah", "", 62 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 33, "2W6-2", null, 0, 0, 81, "Stabkeule", "", "", "nah", "", 68 });
+                values: new object[] { 36, "2W6", null, 0, 31, 61, "Bihänder", "", "", "nah", "", 69 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 16, "1W6", null, 0, 61, 11, "Glefe", "", "", "nah", "1W6+2", 64 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 15, "1W6-1", null, 0, 61, 31, "NunChaku", "entwaffnen", "", "nah", "", 63 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5724,62 +5721,7 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 31, "4W6-4", null, 0, 61, 91, "Ogerhammer", "", "", "nah", "", 68 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 64, "1W6", null, 0, 61, 0, "Schleuder", "", "", "30/60/90", "", 80 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 1, "1W6", null, 0, 0, 11, "Handaxt", "", "", "nah", "", 60 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 2, "1W6-1", null, 0, 0, 0, "Keule", "", "", "nah", "", 60 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 3, "1W6", null, 0, 11, 61, "Kriegshammer", "", "", "nah", "", 60 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 4, "1W6+1", null, 0, 21, 91, "Schlachtbeil", "", "", "nah", "", 60 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 5, "1W6-1", null, 0, 11, 61, "Streitaxt", "", "", "nah", "", 60 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 6, "1W6", null, 0, 0, 31, "Streitkolben", "", "", "nah", "", 60 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 7, "1W6+1", null, 0, 21, 81, "Anderthalbhänder", "", "", "nah", "", 61 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 8, "1W6", null, 0, 11, 31, "Krummschwert", "", "", "nah", "", 61 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 9, "1W6+1", null, 0, 21, 31, "Langschwert", "", "", "nah", "", 61 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 10, "", null, 0, 81, 0, "Florett", "", "", "nah", "", 62 });
+                values: new object[] { 13, "2W6-1", null, 0, 31, 61, "Kriegsflegel", "zweihändig", "", "nah", "", 63 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5789,22 +5731,52 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 12, "", null, 0, 51, 11, "Rapier", "", "", "nah", "", 62 });
+                values: new object[] { 10, "", null, 0, 81, 0, "Florett", "", "", "nah", "", 62 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 13, "2W6-1", null, 0, 31, 61, "Kriegsflegel", "zweihändig", "", "nah", "", 63 });
+                values: new object[] { 9, "1W6+1", null, 0, 21, 31, "Langschwert", "", "", "nah", "", 61 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 32, "1W6+3", null, 0, 21, 91, "Schlachtbeil", "", "", "nah", "", 68 });
+                values: new object[] { 8, "1W6", null, 0, 11, 31, "Krummschwert", "", "", "nah", "", 61 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 15, "1W6-1", null, 0, 61, 31, "NunChaku", "entwaffnen", "", "nah", "", 63 });
+                values: new object[] { 7, "1W6+1", null, 0, 21, 81, "Anderthalbhänder", "", "", "nah", "", 61 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 6, "1W6", null, 0, 0, 31, "Streitkolben", "", "", "nah", "", 60 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 5, "1W6-1", null, 0, 11, 61, "Streitaxt", "", "", "nah", "", 60 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 4, "1W6+1", null, 0, 21, 91, "Schlachtbeil", "", "", "nah", "", 60 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 3, "1W6", null, 0, 11, 61, "Kriegshammer", "", "", "nah", "", 60 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 2, "1W6-1", null, 0, 0, 0, "Keule", "", "", "nah", "", 60 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 1, "1W6", null, 0, 0, 11, "Handaxt", "", "", "nah", "", 60 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5829,47 +5801,27 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 21, "1W6-1", null, 0, 0, 0, "Dolch", "", "", "nah", "", 65 });
+                values: new object[] { 35, "1W6+2", null, 0, 21, 81, "Anderthalbhänder", "", "", "nah", "", 69 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 22, "1W6", null, 0, 0, 0, "Kurzschwert", "", "", "nah", "", 65 });
+                values: new object[] { 34, "2W6", null, 0, 31, 81, "Stielhammer", "", "", "nah", "1W6+1", 68 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 23, "", null, 0, 31, 0, "Ochsenzunge", "", "", "nah", "", 65 });
+                values: new object[] { 33, "2W6-2", null, 0, 0, 81, "Stabkeule", "", "", "nah", "", 68 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 24, "1W6", null, 0, 61, 21, "Bo-Stab", "Abwehr, Entwaffnen", "", "nah", "", 66 });
+                values: new object[] { 32, "1W6+3", null, 0, 21, 91, "Schlachtbeil", "", "", "nah", "", 68 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 25, "1W6", null, 0, 61, 31, "Kampfstab", "Abwehr, Entwaffnen", "", "nah", "", 66 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 26, "1W6", null, 0, 31, 0, "Magierstab", "bei Kämpfer wie Keule", "", "nah", "", 67 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 27, "", null, 0, 31, 31, "Magierstecken", "Abwehr, Entwaffnen", "", "nah", "", 67 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 28, "2W6", null, 0, 31, 81, "Barbarenstreitaxt", "", "", "nah", "", 68 });
-
-            migrationBuilder.InsertData(
-                table: "Weapons",
-                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 29, "1W6+2", null, 0, 61, 11, "Glefe", "", "", "nah", "1W6+2", 68 });
+                values: new object[] { 31, "4W6-4", null, 0, 61, 91, "Ogerhammer", "", "", "nah", "", 68 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",
@@ -5879,7 +5831,57 @@ namespace MidgardCharakterEditor.Migrations
             migrationBuilder.InsertData(
                 table: "Weapons",
                 columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
-                values: new object[] { 16, "1W6", null, 0, 61, 11, "Glefe", "", "", "nah", "1W6+2", 64 });
+                values: new object[] { 29, "1W6+2", null, 0, 61, 11, "Glefe", "", "", "nah", "1W6+2", 68 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 37, "1W6-4", null, 21, 21, 31, "Faustkampf", "betäuben", "", "nah", "", 70 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 28, "2W6", null, 0, 31, 81, "Barbarenstreitaxt", "", "", "nah", "", 68 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 26, "1W6", null, 0, 31, 0, "Magierstab", "bei Kämpfer wie Keule", "", "nah", "", 67 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 64, "1W6", null, 0, 61, 0, "Schleuder", "", "", "30/60/90", "", 80 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 25, "1W6", null, 0, 61, 31, "Kampfstab", "Abwehr, Entwaffnen", "", "nah", "", 66 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 24, "1W6", null, 0, 61, 21, "Bo-Stab", "Abwehr, Entwaffnen", "", "nah", "", 66 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 23, "", null, 0, 31, 0, "Ochsenzunge", "", "", "nah", "", 65 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 22, "1W6", null, 0, 0, 0, "Kurzschwert", "", "", "nah", "", 65 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 21, "1W6-1", null, 0, 0, 0, "Dolch", "", "", "nah", "", 65 });
+
+            migrationBuilder.InsertData(
+                table: "Weapons",
+                columns: new[] { "Id", "Damage", "Description", "MinAgility", "MinDexterity", "MinStrength", "Name", "Note", "Protection", "Range", "StormDamage", "WeaponGroupId" },
+                values: new object[] { 27, "", null, 0, 31, 31, "Magierstecken", "Abwehr, Entwaffnen", "", "nah", "", 67 });
 
             migrationBuilder.InsertData(
                 table: "Weapons",

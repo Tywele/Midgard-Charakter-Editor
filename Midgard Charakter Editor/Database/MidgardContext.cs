@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 using Splat;
 
 namespace MidgardCharakterEditor.Database
@@ -8,6 +8,12 @@ namespace MidgardCharakterEditor.Database
     public sealed class MidgardContext : DbContext, IMidgardContext
     {
         private readonly ISeeder _seeder;
+
+        //public MidgardContext()
+        //{
+        //    _seeder = new Seeder();
+        //    Database.Migrate();
+        //}
 
         public MidgardContext(ISeeder seeder = null)
         {

@@ -35,8 +35,12 @@ namespace MidgardCharakterEditor.ViewModel
         public ObservableCollection<CharacterHasWeapon> CharacterHasWeapons { get; set; } =
             new ObservableCollection<CharacterHasWeapon>();
 
+        public ObservableCollection<CharacterHasSkill> CharacterHasSkills { get; set; } =
+            new ObservableCollection<CharacterHasSkill>();
+
         [Reactive] public CharacterHasLanguage SelectedLanguage { get; set; }
-        [Reactive] public CharacterHasWeapon SelectedWeapon { get; set; }
+        [Reactive] public CharacterHasWeapon   SelectedWeapon   { get; set; }
+        [Reactive] public CharacterHasSkill    SelectedSkill    { get; set; }
 
         public ReactiveCommand<Unit, Unit> OpenLanguageSelection { get; }
         public ReactiveCommand<int, Unit>  RemoveLanguage        { get; }
@@ -45,6 +49,10 @@ namespace MidgardCharakterEditor.ViewModel
         public ReactiveCommand<Unit, Unit> OpenWeaponSelection { get; }
         public ReactiveCommand<int, Unit>  RemoveWeapon        { get; set; }
         public Interaction<Unit, Weapon>   AddWeaponFromDialog { get; set; }
+
+        public ReactiveCommand<Unit, Unit> OpenWeaponGroupSelection { get; set; }
+        public ReactiveCommand<int, Unit>  RemoveWeaponGroup        { get; set; }
+        public Interaction<Unit, Skill>    AddWeaponGroupFromDialog { get; set; }
 
         public ImportCharacterViewModel(IMidgardContext context = null) : base("Import")
         {
@@ -57,10 +65,13 @@ namespace MidgardCharakterEditor.ViewModel
             SocialClasses = _context.SocialClasses.ToList();
 
             OpenLanguageSelection = ReactiveCommand.Create(OpenLanguageSelectionImpl);
-            RemoveLanguage = ReactiveCommand.Create<int>(id => CharacterHasLanguages.Remove(SelectedLanguage));
+            RemoveLanguage        = ReactiveCommand.Create<int>(id => CharacterHasLanguages.Remove(SelectedLanguage));
+
+            OpenWeaponSelection = ReactiveCommand.Create(OpenWeaponSelectionImpl);
+            RemoveWeapon        = ReactiveCommand.Create<int>(id => CharacterHasWeapons.Remove(SelectedWeapon));
             
-            OpenWeaponSelection = ReactiveCommand.Create(OpenWeaponGroupSelectionImpl);
-            RemoveWeapon = ReactiveCommand.Create<int>(id => CharacterHasWeapons.Remove(SelectedWeapon));
+            OpenWeaponGroupSelection = ReactiveCommand.Create(OpenWeaponGroupSelectionImpl);
+            RemoveWeaponGroup = ReactiveCommand.Create<int>(id => CharacterHasSkills.Remove(SelectedSkill));
 
             // this.ValidationRule(
             //     viewModel => viewModel.Character.Level,
@@ -69,9 +80,36 @@ namespace MidgardCharakterEditor.ViewModel
 
             AddLanguageFromDialog = new Interaction<Unit, Language>();
             AddLanguageFromDialog.RegisterHandler(SelectLanguageHandler);
-            
+
             AddWeaponFromDialog = new Interaction<Unit, Weapon>();
             AddWeaponFromDialog.RegisterHandler(SelectWeaponHandler);
+            
+            AddWeaponGroupFromDialog = new Interaction<Unit, Skill>();
+            AddWeaponGroupFromDialog.RegisterHandler(SelectWeaponGroupHandler);
+        }
+
+        private void OpenWeaponGroupSelectionImpl()
+        {
+            AddWeaponGroupFromDialog.Handle(Unit.Default).Where(weaponGroup => weaponGroup != null).Subscribe(weaponGroup =>
+            {
+                CharacterHasSkills.Add(new CharacterHasSkill()
+                {
+                    Character = Character,
+                    Skill    = weaponGroup
+                });
+            });
+        }
+
+        private void SelectWeaponGroupHandler(InteractionContext<Unit, Skill> interaction)
+        {
+            var viewModel = new WeaponGroupSelectionViewModel(_context);
+            var view      = viewModel.GetView();
+            var confirm   = view.ShowDialog();
+
+            if (confirm != null && confirm.Value)
+                interaction.SetOutput(viewModel.SelectedWeaponGroup);
+            else
+                interaction.SetOutput(null);
         }
 
         private void SelectWeaponHandler(InteractionContext<Unit, Weapon> interaction)
@@ -86,14 +124,14 @@ namespace MidgardCharakterEditor.ViewModel
                 interaction.SetOutput(null);
         }
 
-        private void OpenWeaponGroupSelectionImpl()
+        private void OpenWeaponSelectionImpl()
         {
             AddWeaponFromDialog.Handle(Unit.Default).Where(weapon => weapon != null).Subscribe(weapon =>
             {
                 CharacterHasWeapons.Add(new CharacterHasWeapon()
                 {
                     Character = Character,
-                    Weapon  = weapon
+                    Weapon    = weapon
                 });
             });
         }

@@ -307,7 +307,7 @@
                 <TextBlock Grid.Column="0" Text="Waffengruppe" />
                 <TextBlock Grid.Column="1" Text="EW" />
             </Grid>
-            <ListView x:Name="WeaponListView" Height="Auto" MinHeight="50" MaxHeight="200"
+            <ListView x:Name="WeaponGroupListView" Height="Auto" MinHeight="50" MaxHeight="200"
                       HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -316,15 +316,15 @@
                                 <ColumnDefinition Width="3*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding Weapon.Name}" />
+                            <TextBlock Grid.Column="0" Text="{Binding Skill.Name}" />
                             <TextBox Grid.Column="1" Text="{Binding Value}" />
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="AddWeaponButton" Content="+ Waffengruppe hinzufügen"></Button>
-                <Button x:Name="RemoveWeaponButton" Content="- Waffengruppe entfernen"></Button>
+                <Button x:Name="AddWeaponGroupButton" Content="+ Waffengruppe hinzufügen"></Button>
+                <Button x:Name="RemoveWeaponGroupButton" Content="- Waffengruppe entfernen"></Button>
             </StackPanel>
         </StackPanel>
     </WrapPanel>

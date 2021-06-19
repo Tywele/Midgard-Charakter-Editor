@@ -1,11 +1,18 @@
+using System;
+using System.IO;
 using System.Threading.Tasks;
 using ElectronNET.API;
+using ElectronNET.API.Entities;
+using MCE.Model;
 using MCE_Blazor.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Syncfusion.Blazor;
+using Syncfusion.Licensing;
 
 namespace MCE
 {
@@ -26,11 +33,21 @@ namespace MCE
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddElectron();
+            services.AddSingleton<ISeeder, Seeder>();
+            services.AddDbContextFactory<MidgardContext>(opt =>
+                opt.UseSqlite($"Data Source={Path.Combine(Environment.CurrentDirectory, "m5editor.db")}"));
+
+            services.AddScoped(p =>
+                p.GetRequiredService<IDbContextFactory<MidgardContext>>()
+                 .CreateDbContext());
+            services.AddSyncfusionBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            SyncfusionLicenseProvider.RegisterLicense("NDYxMzUwQDMxMzkyZTMxMmUzMFJTV1VDOTlJUnd4V3NjU3NKM055OUthQXM4SWthTDlIUFJCVUFPTGc1d2c9");
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -53,17 +70,24 @@ namespace MCE
                 endpoints.MapFallbackToPage("/_Host");
             });
 
-            Electron.IpcMain.On("new-window", async (args) =>
+            if (HybridSupport.IsElectronActive)
             {
-                var browserWindow = await Electron.WindowManager.CreateWindowAsync();
-                browserWindow.RemoveMenu();
-            });
+                ElectronBootstrap();
+            }
+        }
 
-            Task.Run(async () =>
+        private async void ElectronBootstrap()
+        {
+            var browserWindow = await Electron.WindowManager.CreateWindowAsync(new BrowserWindowOptions
             {
-                var browserWindow = await Electron.WindowManager.CreateWindowAsync();
-                browserWindow.RemoveMenu();
+                Width  = 1152,
+                Height = 940,
+                Show   = false
             });
+            await browserWindow.WebContents.Session.ClearCacheAsync();
+            browserWindow.OnReadyToShow += () => browserWindow.Show();
+            browserWindow.SetTitle("Midgard Charakter Editor");
+            browserWindow.RemoveMenu();
         }
     }
 }

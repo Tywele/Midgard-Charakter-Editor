@@ -1,17 +1,28 @@
 ﻿@page "/counter"
+@using Microsoft.EntityFrameworkCore.Internal
+@using Microsoft.EntityFrameworkCore
+@using Syncfusion.Blazor.Buttons
+@using MCE.Model
+@inject IDbContextFactory<MidgardContext> DbFactory
 
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<SfButton IsPrimary="true" @onclick="IncrementCount">Primary</SfButton>
+@* <button class="btn btn-primary" @onclick="IncrementCount">Click me</button> *@
 
 @code {
     private int currentCount = 0;
 
     private void IncrementCount()
     {
+        using var context = DbFactory.CreateDbContext();
         currentCount++;
+
+        var spell = context.Spells.First();
+
+        Console.WriteLine(spell.Name);
     }
 
 }

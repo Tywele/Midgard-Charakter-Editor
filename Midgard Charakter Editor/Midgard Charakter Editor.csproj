@@ -158,6 +158,9 @@
     <Compile Include="View\Modals\WeaponSelectionWindow.xaml.cs">
       <DependentUpon>WeaponSelectionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\ListViewWithRemove.xaml.cs">
+      <DependentUpon>ListViewWithRemove.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -285,6 +288,7 @@
     <Page Include="View\Modals\LanguageSelectionWindow.xaml" />
     <Page Include="View\Modals\WeaponGroupSelectionWindow.xaml" />
     <Page Include="View\Modals\WeaponSelectionWindow.xaml" />
+    <Page Include="View\UserControls\ListViewWithRemove.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />

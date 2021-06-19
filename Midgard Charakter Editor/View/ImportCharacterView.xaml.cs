@@ -94,6 +94,8 @@ namespace MidgardCharakterEditor.View
                     .DisposeWith(disposables);
                 this.Bind(ViewModel, viewModel => viewModel.SelectedSkill,
                     view => view.WeaponGroupListView.SelectedItem);
+                this.BindCommand(ViewModel, viewModel => viewModel.RemoveWeapon, view => view.WeaponListView)
+                    .DisposeWith(disposables);
             });
         }
     }

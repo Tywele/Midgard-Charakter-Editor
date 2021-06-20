@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading.Tasks;
 using ElectronNET.API;
@@ -16,6 +17,7 @@ using Syncfusion.Licensing;
 
 namespace MCE
 {
+    [SuppressMessage("ReSharper", "CA1822")]
     public class Startup
     {
         public Startup(IConfiguration configuration)

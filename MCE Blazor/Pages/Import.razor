@@ -1,0 +1,56 @@
+﻿@page "/Import"
+@using MCE.Model
+@using Microsoft.EntityFrameworkCore
+@inject IDbContextFactory<MidgardContext> _dbContextFactory
+
+<h3>Import</h3>
+
+<SfTextBox @bind-Value="@_character.Name" Placeholder="Name" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+<SfDropDownList Placeholder="Klasse" TValue="int" TItem="Class" DataSource="@_classes" @bind-Value="@_character.ClassId" FloatLabelType="@FloatLabelType.Auto">
+    <DropDownListFieldSettings Value="Id" Text="Name"></DropDownListFieldSettings>
+</SfDropDownList>
+<SfDropDownList Placeholder="Rasse" TValue="int" TItem="Race" DataSource="@_races" @bind-Value="@_character.RaceId" FloatLabelType="@FloatLabelType.Auto">
+    <DropDownListFieldSettings Value="Id" Text="Name"></DropDownListFieldSettings>
+</SfDropDownList>
+<SfNumericTextBox TValue="int" @bind-Value="@_character.Level" Placeholder="Grad" Min="1" Max="30" Step="1" FloatLabelType="@FloatLabelType.Auto"></SfNumericTextBox>
+
+<SfTextBox Multiline=true Placeholder="Kurzbeschreibung des Charakters" @bind-Value="@_character.Story" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+
+<SfNumericTextBox @bind-Value="@_character.Age" Placeholder="Alter" Min="1" FloatLabelType="@FloatLabelType.Auto"></SfNumericTextBox>
+<SfTextBox @bind-Value="@_character.Size" Placeholder="Größe" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+<SfTextBox @bind-Value="@_character.Weight" Placeholder="Gewicht" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+<SfTextBox @bind-Value="@_character.Build" Placeholder="Gestalt" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+<SfTextBox @bind-Value="@_character.Handedness" Placeholder="Händigkeit" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+
+<SfDropDownList Placeholder="Herkunft" TValue="int" TItem="Land" DataSource="@_lands" @bind-Value="@_character.OriginId" FloatLabelType="@FloatLabelType.Auto">
+    <DropDownListFieldSettings Value="Id" Text="Name"></DropDownListFieldSettings>
+</SfDropDownList>
+<SfDropDownList Placeholder="Stand" TValue="int" TItem="SocialClass" DataSource="@_socialClasses" @bind-Value="@_character.SocialClassId" FloatLabelType="@FloatLabelType.Auto">
+    <DropDownListFieldSettings Value="Id" Text="Name"></DropDownListFieldSettings>
+</SfDropDownList>
+<SfTextBox @bind-Value="@_character.Religion" Placeholder="Glaube" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+<SfNumericTextBox @bind-Value="@_character.SmilingFate" Placeholder="Schicksalsgunst" FloatLabelType="@FloatLabelType.Auto"></SfNumericTextBox>
+<SfNumericTextBox @bind-Value="@_character.DivineMercy" Placeholder="Göttliche Gnade" FloatLabelType="@FloatLabelType.Auto"></SfNumericTextBox>
+
+@code {
+    private Character _character;
+    private List<Class> _classes;
+    private List<Race> _races;
+    private List<Land> _lands;
+    private List<SocialClass> _socialClasses;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var context = _dbContextFactory.CreateDbContext();
+
+        _character = new Character();
+
+        _classes = await context.Classes.ToListAsync();
+        _races = await context.Races.ToListAsync();
+        _lands = await context.Lands.ToListAsync();
+        _socialClasses = await context.SocialClasses.ToListAsync();
+        
+        await base.OnInitializedAsync();
+    }
+
+}

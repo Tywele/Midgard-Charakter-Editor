@@ -1,7 +1,5 @@
 ﻿@page "/counter"
-@using Microsoft.EntityFrameworkCore.Internal
 @using Microsoft.EntityFrameworkCore
-@using Syncfusion.Blazor.Buttons
 @using MCE.Model
 @inject IDbContextFactory<MidgardContext> DbFactory
 
@@ -10,19 +8,38 @@
 <p>Current count: @currentCount</p>
 
 <SfButton IsPrimary="true" @onclick="IncrementCount">Primary</SfButton>
-@* <button class="btn btn-primary" @onclick="IncrementCount">Click me</button> *@
+<SfListBox @ref="TestListBox" Value="_selectedSpells" Height="500px" DataSource="@_spells" TValue="int[]" TItem="Spell">
+    <ListBoxEvents TValue="int[]" ValueChange="change" TItem="Spell"></ListBoxEvents>
+    <ListBoxFieldSettings Text="Name" Value="Id"></ListBoxFieldSettings>
+</SfListBox>
 
 @code {
-    private int currentCount = 0;
+    private SfListBox<int[], Spell> TestListBox;
+    private int currentCount;
+    private List<Spell> _spells;
+    private int[] _selectedSpells;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await using var context = DbFactory.CreateDbContext();
+        _spells = await context.Spells.ToListAsync();
+        await base.OnInitializedAsync();
+    }
 
     private void IncrementCount()
     {
-        using var context = DbFactory.CreateDbContext();
         currentCount++;
+        foreach (var selectedSpell in _selectedSpells)
+        {
+            Console.WriteLine(selectedSpell.ToString());
+        }
+    }
 
-        var spell = context.Spells.First();
-
-        Console.WriteLine(spell.Name);
+    private void change(ListBoxChangeEventArgs<int[], Spell> args)
+    {
+    //Triggers when value changed
+        _selectedSpells = args.Value;
+        // Console.WriteLine(args.Value.First());
     }
 
 }
